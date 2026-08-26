@@ -1,0 +1,2502 @@
+<!DOCTYPE html>
+<html lang="lo">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LAO GAMING PRO X3D</title>
+
+<link rel="icon"
+href="https://i.ibb.co/0VsFgJV2/dd921ff9-89fd-4b47-a48e-e60383c2c987.jpg">
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --blue:#087cff;
+    --blue2:#19a8ff;
+    --light:#eaf8ff;
+    --bg:#f2faff;
+    --white:#ffffff;
+    --text:#142238;
+    --muted:#718399;
+    --border:#d8efff;
+    --red:#ef4444;
+    --green:#16a34a;
+    --shadow:0 12px 35px rgba(0,126,255,.10);
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,"Noto Sans Lao",sans-serif;
+    color:var(--text);
+    min-height:100vh;
+
+    background:
+        radial-gradient(
+            circle at 5% 0%,
+            #d9f5ff 0,
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 95% 15%,
+            #e4f8ff 0,
+            transparent 32%
+        ),
+        linear-gradient(
+            180deg,
+            #f5fbff,
+            #eef9ff
+        );
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:rgba(255,255,255,.92);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid var(--border);
+
+    box-shadow:
+        0 5px 25px rgba(0,126,255,.06);
+}
+
+.header-inner{
+    width:100%;
+    max-width:1200px;
+    height:74px;
+
+    margin:auto;
+    padding:0 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:11px;
+
+    cursor:pointer;
+    user-select:none;
+}
+
+.logo img{
+    width:48px;
+    height:48px;
+
+    object-fit:cover;
+
+    border-radius:13px;
+
+    box-shadow:
+        0 6px 22px rgba(8,124,255,.22);
+}
+
+.logo h1{
+    font-size:16px;
+    font-weight:950;
+    letter-spacing:.2px;
+}
+
+.logo span{
+    display:block;
+
+    margin-top:3px;
+
+    color:var(--blue);
+
+    font-size:9px;
+    font-weight:800;
+
+    letter-spacing:1.5px;
+}
+
+
+/* =====================================================
+   NAV
+===================================================== */
+
+.nav{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.nav button{
+    height:43px;
+
+    min-width:110px;
+
+    padding:0 15px;
+
+    border:1px solid transparent;
+
+    border-radius:12px;
+
+    background:#fff;
+
+    color:#506176;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    font-family:inherit;
+    font-size:13px;
+    font-weight:900;
+
+    cursor:pointer;
+
+    transition:.22s ease;
+}
+
+.nav button:hover{
+    transform:translateY(-2px);
+
+    color:var(--blue);
+
+    background:#eff9ff;
+
+    border-color:#cfeaff;
+
+    box-shadow:
+        0 8px 20px rgba(8,124,255,.09);
+}
+
+.nav button.home-btn{
+    color:var(--blue);
+
+    background:
+        linear-gradient(
+            135deg,
+            #edf8ff,
+            #ffffff
+        );
+
+    border-color:#cceaff;
+
+    box-shadow:
+        0 6px 18px rgba(8,124,255,.10);
+}
+
+
+/* =====================================================
+   HOME SVG
+===================================================== */
+
+.nav-home-icon{
+    width:19px;
+    height:19px;
+
+    flex-shrink:0;
+
+    fill:none;
+
+    stroke:currentColor;
+
+    stroke-width:2;
+
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.page{
+    display:none;
+}
+
+.page.active{
+    display:block;
+}
+
+
+/* =====================================================
+   HOME
+===================================================== */
+
+.home{
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:
+        24px
+        20px
+        70px;
+}
+
+
+/* =====================================================
+   BANNER
+===================================================== */
+
+.banner{
+    width:100%;
+    height:300px;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    background:#dff4ff;
+
+    border:1px solid #ccecff;
+
+    box-shadow:
+        0 18px 50px rgba(0,126,255,.16);
+}
+
+.banner img{
+    width:100%;
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+    transition:transform .6s ease;
+}
+
+.banner:hover img{
+    transform:scale(1.015);
+}
+
+
+/* =====================================================
+   ANNOUNCEMENT
+===================================================== */
+
+.announcement{
+    width:100%;
+
+    height:50px;
+
+    margin-top:13px;
+
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+
+    border-radius:14px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #087cff,
+            #1da9ff,
+            #087cff
+        );
+
+    box-shadow:
+        0 10px 28px rgba(0,126,255,.18);
+}
+
+.announcement-track{
+    display:flex;
+
+    width:max-content;
+
+    white-space:nowrap;
+
+    animation:
+        announcementMove
+        24s
+        linear
+        infinite;
+}
+
+.announcement-text{
+    padding-right:110px;
+
+    color:#fff;
+
+    font-size:14px;
+
+    font-weight:900;
+}
+
+@keyframes announcementMove{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+
+}
+
+
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+
+.section-title{
+    margin-top:36px;
+    margin-bottom:18px;
+}
+
+.section-title h2{
+    font-size:25px;
+    font-weight:950;
+}
+
+.section-title p{
+    margin-top:6px;
+
+    color:var(--muted);
+
+    font-size:13px;
+}
+
+
+/* =====================================================
+   CATEGORY
+===================================================== */
+
+.category-card{
+    background:rgba(255,255,255,.97);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:20px;
+
+    box-shadow:var(--shadow);
+}
+
+.category-top{
+    display:flex;
+    align-items:center;
+
+    gap:15px;
+}
+
+.category-icon{
+    width:75px;
+    height:75px;
+
+    overflow:hidden;
+
+    border-radius:17px;
+
+    border:1px solid #d5edff;
+
+    box-shadow:
+        0 7px 20px rgba(0,126,255,.10);
+}
+
+.category-icon img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.category-info{
+    flex:1;
+}
+
+.category-info h3{
+    font-size:19px;
+    font-weight:950;
+}
+
+.category-info p{
+    margin-top:5px;
+
+    color:var(--muted);
+
+    font-size:12px;
+}
+
+.view-category{
+    width:100%;
+
+    margin-top:18px;
+
+    padding:14px;
+
+    border:0;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #087cff,
+            #22aaff
+        );
+
+    color:#fff;
+
+    font-family:inherit;
+
+    font-size:14px;
+    font-weight:950;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 9px 25px rgba(8,124,255,.20);
+
+    transition:.2s;
+}
+
+.view-category:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 13px 30px rgba(8,124,255,.27);
+}
+
+
+/* =====================================================
+   PRODUCTS
+===================================================== */
+
+.products{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:17px;
+}
+
+.home-products{
+    margin-top:30px;
+}
+
+.product{
+    overflow:hidden;
+
+    background:
+        rgba(255,255,255,.98);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    box-shadow:
+        0 8px 30px rgba(0,126,255,.08);
+
+    transition:.25s ease;
+}
+
+.product:hover{
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 17px 40px rgba(0,126,255,.15);
+}
+
+
+/* =====================================================
+   PRODUCT IMAGE
+===================================================== */
+
+.product-image{
+    height:210px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:#eaf7ff;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+    transition:.35s;
+}
+
+.product:hover .product-image img{
+    transform:scale(1.04);
+}
+
+
+/* =====================================================
+   SOLD OVERLAY
+===================================================== */
+
+.sold-overlay{
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        rgba(0,0,0,.46);
+}
+
+.sold-badge{
+    padding:10px 22px;
+
+    border-radius:10px;
+
+    background:var(--red);
+
+    color:#fff;
+
+    font-size:19px;
+    font-weight:950;
+
+    transform:rotate(-7deg);
+
+    box-shadow:
+        0 8px 25px rgba(239,68,68,.25);
+}
+
+
+/* =====================================================
+   AVAILABLE BADGE
+===================================================== */
+
+.available-badge{
+    position:absolute;
+
+    top:12px;
+    left:12px;
+
+    padding:7px 12px;
+
+    border-radius:20px;
+
+    background:#16a34a;
+
+    color:#fff;
+
+    font-size:11px;
+    font-weight:900;
+
+    box-shadow:
+        0 6px 18px rgba(22,163,74,.22);
+}
+
+
+/* =====================================================
+   PRODUCT CONTENT
+===================================================== */
+
+.product-content{
+    padding:17px;
+}
+
+.product-title{
+    font-size:16px;
+
+    font-weight:950;
+
+    line-height:1.5;
+}
+
+.product-price{
+    margin-top:11px;
+
+    color:var(--blue);
+
+    font-size:18px;
+
+    font-weight:950;
+}
+
+.product-status{
+    margin-top:7px;
+
+    color:var(--green);
+
+    font-size:11px;
+
+    font-weight:900;
+}
+
+.product-status.sold{
+    color:var(--red);
+}
+
+.product-buttons{
+    margin-top:15px;
+}
+
+.btn-detail{
+    width:100%;
+
+    padding:12px;
+
+    border:0;
+
+    border-radius:11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #087cff,
+            #20a9ff
+        );
+
+    color:#fff;
+
+    font-family:inherit;
+
+    font-size:13px;
+
+    font-weight:950;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 7px 20px rgba(8,124,255,.17);
+
+    transition:.2s;
+}
+
+.btn-detail:hover{
+    transform:translateY(-2px);
+}
+
+.btn-detail.sold{
+    background:#e7e7e7;
+
+    color:#999;
+
+    box-shadow:none;
+
+    cursor:not-allowed;
+}
+
+
+/* =====================================================
+   SHOP PAGE
+===================================================== */
+
+.shop-page{
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:
+        30px
+        20px
+        70px;
+}
+
+.back-button{
+    border:1px solid var(--border);
+
+    background:#fff;
+
+    color:var(--blue);
+
+    padding:11px 16px;
+
+    border-radius:11px;
+
+    font-family:inherit;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.back-button:hover{
+    background:#edf8ff;
+
+    transform:translateY(-1px);
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search-box{
+    width:100%;
+    max-width:700px;
+
+    height:55px;
+
+    margin:20px auto 0;
+
+    display:flex;
+    align-items:center;
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    border-radius:15px;
+
+    padding:0 12px;
+
+    box-shadow:
+        0 8px 25px rgba(0,126,255,.08);
+}
+
+.search-icon{
+    width:40px;
+
+    text-align:center;
+
+    color:var(--blue);
+
+    font-size:24px;
+}
+
+.search-box input{
+    flex:1;
+
+    height:100%;
+
+    border:0;
+    outline:0;
+
+    background:transparent;
+
+    color:var(--text);
+
+    font-family:inherit;
+
+    font-size:14px;
+}
+
+.clear-search{
+    width:34px;
+    height:34px;
+
+    border:0;
+
+    border-radius:9px;
+
+    background:#edf8ff;
+
+    color:var(--blue);
+
+    font-size:18px;
+
+    cursor:pointer;
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal{
+    position:fixed;
+
+    inset:0;
+
+    z-index:3000;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+    background:
+        rgba(4,18,35,.62);
+
+    backdrop-filter:blur(8px);
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    width:100%;
+    max-width:850px;
+
+    max-height:90vh;
+
+    overflow:auto;
+
+    background:#fff;
+
+    border-radius:22px;
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.25);
+
+    animation:
+        modalShow
+        .22s
+        ease;
+}
+
+@keyframes modalShow{
+
+    from{
+        opacity:0;
+        transform:translateY(15px) scale(.98);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+
+}
+
+.modal-header{
+    position:sticky;
+    top:0;
+    z-index:2;
+
+    padding:17px 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background:rgba(255,255,255,.95);
+
+    backdrop-filter:blur(10px);
+
+    border-bottom:1px solid var(--border);
+}
+
+.modal-header h3{
+    font-size:18px;
+
+    font-weight:950;
+}
+
+.close-modal{
+    width:38px;
+    height:38px;
+
+    border:0;
+
+    border-radius:10px;
+
+    background:#edf8ff;
+
+    color:var(--blue);
+
+    font-size:23px;
+
+    cursor:pointer;
+}
+
+.modal-body{
+    padding:20px;
+}
+
+
+/* =====================================================
+   DETAIL GALLERY
+===================================================== */
+
+.detail-main-image{
+    width:100%;
+
+    height:390px;
+
+    overflow:hidden;
+
+    border-radius:16px;
+
+    background:#eaf7ff;
+
+    border:1px solid var(--border);
+}
+
+.detail-main-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+}
+
+.gallery{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:10px;
+
+    margin-top:12px;
+}
+
+.gallery img{
+    width:100%;
+    height:150px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+    border:1px solid var(--border);
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.gallery img:hover{
+    transform:translateY(-2px);
+
+    border-color:#8dd3ff;
+}
+
+
+/* =====================================================
+   DETAIL TEXT
+===================================================== */
+
+.detail-info{
+    margin-top:20px;
+}
+
+.detail-name{
+    font-size:24px;
+
+    font-weight:950;
+}
+
+.detail-price{
+    margin-top:9px;
+
+    color:var(--blue);
+
+    font-size:23px;
+
+    font-weight:950;
+}
+
+.detail-list{
+    margin-top:17px;
+
+    display:grid;
+
+    gap:9px;
+}
+
+.detail-item{
+    padding:12px 14px;
+
+    border-radius:11px;
+
+    background:#f4fbff;
+
+    border:1px solid #dcefff;
+
+    font-size:13px;
+
+    font-weight:800;
+}
+
+.buy-button{
+    width:100%;
+
+    margin-top:20px;
+
+    padding:15px;
+
+    border:0;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #087cff,
+            #20a9ff
+        );
+
+    color:#fff;
+
+    font-family:inherit;
+
+    font-size:15px;
+
+    font-weight:950;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 10px 28px rgba(8,124,255,.22);
+}
+
+
+/* =====================================================
+   PAYMENT
+===================================================== */
+
+.payment-box{
+    text-align:center;
+}
+
+.payment-title{
+    font-size:22px;
+
+    font-weight:950;
+}
+
+.payment-product{
+    margin-top:7px;
+
+    color:var(--muted);
+
+    font-size:13px;
+}
+
+.payment-price{
+    margin-top:13px;
+
+    color:var(--blue);
+
+    font-size:27px;
+
+    font-weight:950;
+}
+
+.qr-box{
+    width:260px;
+    height:260px;
+
+    margin:22px auto;
+
+    padding:10px;
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    border-radius:17px;
+
+    box-shadow:
+        0 12px 35px rgba(0,126,255,.12);
+}
+
+.qr-box img{
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+}
+
+.payment-note{
+    padding:13px;
+
+    border-radius:12px;
+
+    background:#eff9ff;
+
+    color:#52708c;
+
+    font-size:12px;
+
+    line-height:1.7;
+}
+
+.whatsapp-button{
+    width:100%;
+
+    margin-top:15px;
+
+    padding:14px;
+
+    border:0;
+
+    border-radius:12px;
+
+    background:#25D366;
+
+    color:#fff;
+
+    font-family:inherit;
+
+    font-size:14px;
+
+    font-weight:950;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 9px 25px rgba(37,211,102,.20);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    padding:28px 20px;
+
+    text-align:center;
+
+    background:#fff;
+
+    border-top:1px solid var(--border);
+
+    color:#8290a3;
+
+    font-size:12px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1000px){
+
+    .products{
+        grid-template-columns:
+            repeat(3,1fr);
+    }
+
+}
+
+@media(max-width:700px){
+
+    .products{
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:10px;
+    }
+
+    .banner{
+        height:230px;
+    }
+
+    .product-image{
+        height:180px;
+    }
+
+    .detail-main-image{
+        height:280px;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .header-inner{
+        height:65px;
+
+        padding:0 12px;
+    }
+
+    .logo img{
+        width:42px;
+        height:42px;
+    }
+
+    .logo h1{
+        font-size:12px;
+    }
+
+    .logo span{
+        font-size:7px;
+    }
+
+    .nav{
+        gap:4px;
+    }
+
+    .nav button{
+        min-width:auto;
+
+        width:43px;
+        height:40px;
+
+        padding:0;
+    }
+
+    .nav button span:last-child{
+        display:none;
+    }
+
+    .nav-home-icon{
+        width:19px;
+        height:19px;
+    }
+
+    .banner{
+        height:190px;
+
+        border-radius:16px;
+    }
+
+    .announcement{
+        height:43px;
+
+        border-radius:10px;
+    }
+
+    .announcement-text{
+        font-size:11px;
+
+        padding-right:60px;
+    }
+
+    .product-content{
+        padding:12px;
+    }
+
+    .product-title{
+        font-size:13px;
+    }
+
+    .product-price{
+        font-size:15px;
+    }
+
+    .product-image{
+        height:145px;
+    }
+
+    .sold-badge{
+        padding:8px 15px;
+
+        font-size:15px;
+    }
+
+    .detail-name{
+        font-size:19px;
+    }
+
+    .detail-price{
+        font-size:21px;
+    }
+
+    .gallery img{
+        height:95px;
+    }
+
+    .qr-box{
+        width:220px;
+        height:220px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+<div class="header-inner">
+
+
+<div
+class="logo"
+onclick="showPage('home')">
+
+<img
+src="https://i.ibb.co/0VsFgJV2/dd921ff9-89fd-4b47-a48e-e60383c2c987.jpg"
+alt="LAO GAMING PRO X3D">
+
+<div>
+
+<h1>
+LAO GAMING PRO X3D
+</h1>
+
+<span>
+ONLINE GAME SHOP
+</span>
+
+</div>
+
+</div>
+
+
+<nav class="nav">
+
+
+<!-- HOME -->
+
+<button
+class="home-btn"
+onclick="showPage('home')"
+title="ໜ້າຫຼັກ">
+
+<svg
+class="nav-home-icon"
+viewBox="0 0 24 24">
+
+<path d="M3 10.5L12 3l9 7.5"></path>
+
+<path d="M5.5 9.5V21h13V9.5"></path>
+
+<path d="M9.5 21v-7h5v7"></path>
+
+</svg>
+
+<span>
+ໜ້າຫຼັກ
+</span>
+
+</button>
+
+
+<!-- FREE FIRE -->
+
+<button
+onclick="showPage('shop')"
+title="Free Fire">
+
+<span>
+🔥
+</span>
+
+<span>
+Free Fire
+</span>
+
+</button>
+
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HOME
+===================================================== -->
+
+<section
+id="home"
+class="page active">
+
+<div class="home">
+
+
+<!-- BANNER -->
+
+<div class="banner">
+
+<img
+src="https://i.ibb.co/F4kxqytw/e0832eb5-d70f-46a1-b369-7a8051b63911.jpg"
+alt="LAO GAMING PRO X3D">
+
+</div>
+
+
+<!-- ANNOUNCEMENT -->
+
+<div class="announcement">
+
+<div class="announcement-track">
+
+
+<div class="announcement-text">
+
+📢 ປະກາດຈາກຮ້ານ
+&nbsp;&nbsp; • &nbsp;&nbsp;
+ຮັບຊື້ໄອດີຕະຫຼອດ
+&nbsp;&nbsp; • &nbsp;&nbsp;
+ເປີດຮ້ານ 10:30 - 23:30
+&nbsp;&nbsp; • &nbsp;&nbsp;
+ປິດຮ້ານທຸກມື້
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+</div>
+
+
+<div class="announcement-text">
+
+📢 ປະກາດຈາກຮ້ານ
+&nbsp;&nbsp; • &nbsp;&nbsp;
+ຮັບຊື້ໄອດີຕະຫຼອດ
+&nbsp;&nbsp; • &nbsp;&nbsp;
+ເປີດຮ້ານ 10:30 - 23:30
+&nbsp;&nbsp; • &nbsp;&nbsp;
+ປິດຮ້ານທຸກມື້
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- FREE FIRE -->
+
+<div class="section-title">
+
+<h2>
+🔥 Free Fire
+</h2>
+
+<p>
+Game ID &amp; Game Code
+</p>
+
+</div>
+
+
+<div class="category-card">
+
+<div class="category-top">
+
+<div class="category-icon">
+
+<img
+src="https://downloadr2.apkmirror.com/wp-content/uploads/2026/06/99/6a3b53fd56c93_com.dts.freefireth.png"
+alt="Free Fire">
+
+</div>
+
+
+<div class="category-info">
+
+<h3>
+🔥 Free Fire
+</h3>
+
+<p>
+Game ID &amp; Game Code
+</p>
+
+</div>
+
+</div>
+
+
+<button
+class="view-category"
+onclick="showPage('shop')">
+
+ເບິ່ງສິນຄ້າ
+
+</button>
+
+</div>
+
+
+<!-- PRODUCTS -->
+
+<div class="section-title">
+
+<h2>
+🛒 ສິນຄ້າທັງໝົດ
+</h2>
+
+<p>
+ຮ້ານ LAO GAMING PRO X3D ຈຳໜ່າຍ Free Fire Game ID
+</p>
+
+</div>
+
+
+<div
+id="homeProducts"
+class="products home-products">
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SHOP
+===================================================== -->
+
+<section
+id="shop"
+class="page">
+
+<div class="shop-page">
+
+
+<button
+class="back-button"
+onclick="showPage('home')">
+
+← ກັບໜ້າຫຼັກ
+
+</button>
+
+
+<div class="section-title">
+
+<h2>
+🔥 Free Fire
+</h2>
+
+<p>
+Game ID &amp; Game Code
+</p>
+
+</div>
+
+
+<div class="search-box">
+
+<div class="search-icon">
+⌕
+</div>
+
+<input
+id="search"
+type="text"
+placeholder="ຄົ້ນຫາສິນຄ້າ..."
+oninput="searchProducts()">
+
+<button
+class="clear-search"
+onclick="clearSearch()">
+
+×
+
+</button>
+
+</div>
+
+
+<div
+id="shopProducts"
+class="products"
+style="margin-top:25px;">
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DETAIL MODAL
+===================================================== -->
+
+<div
+id="detailModal"
+class="modal"
+onclick="closeOutside(event)">
+
+<div class="modal-box">
+
+<div class="modal-header">
+
+<h3>
+📦 ລາຍລະອຽດສິນຄ້າ
+</h3>
+
+<button
+class="close-modal"
+onclick="closeDetail()">
+
+×
+
+</button>
+
+</div>
+
+
+<div
+id="detailContent"
+class="modal-body">
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     PAYMENT MODAL
+===================================================== -->
+
+<div
+id="paymentModal"
+class="modal"
+onclick="closePaymentOutside(event)">
+
+<div class="modal-box">
+
+<div class="modal-header">
+
+<h3>
+💳 ຊຳລະເງິນ
+</h3>
+
+<button
+class="close-modal"
+onclick="closePayment()">
+
+×
+
+</button>
+
+</div>
+
+
+<div
+id="paymentContent"
+class="modal-body">
+</div>
+
+</div>
+
+</div>
+
+
+
+<footer>
+
+© 2026 LAO GAMING PRO X3D
+
+</footer>
+
+
+
+<script>
+
+/* =====================================================
+   QR PAYMENT
+===================================================== */
+
+const QR_IMAGE =
+"https://i.ibb.co/zhrYP1Qt/ad537117-f92d-4326-8ec3-cbf38e008e42.jpg";
+
+
+/* =====================================================
+   WHATSAPP
+===================================================== */
+
+const WHATSAPP =
+"8562092978004";
+
+
+/* =====================================================
+   PRODUCTS
+===================================================== */
+
+const products = [
+
+/* =========================
+   AVAILABLE
+========================= */
+
+{
+    id:16,
+
+    name:"𝐄𝐏 #𝟎𝟎𝟏𝟔",
+
+    price:329730,
+
+    stock:true,
+
+    image:
+    "https://i.ibb.co/k6qhc7Sp/b94a3ebf-7352-4a1a-95a5-bb2156417276.jpg",
+
+    gallery:[
+        "https://i.ibb.co/JRVhb6Ck/0bbeb49b-1c16-4667-8c3f-a840ac89b701.jpg",
+
+        "https://i.ibb.co/3mT1fvf7/f1dc4783-8164-45d4-81b5-30fda541813a.jpg",
+
+        "https://i.ibb.co/bgxsrWYH/244addb8-1370-41fa-a237-68d8b4ff5c57.jpg"
+    ],
+
+    description:[
+        "ລ້ອກອີນດ້ວຍ Google",
+        "ປະກັນ 7 ວັນຖ້າຂໍ້ມູນປ່ຽນບໍ່ຜ່ານ",
+        "ຍົກໃຫ້ທັງ Google ກູ້ ແລະ ເກມພ້ອມຍ້າຍ"
+    ]
+},
+
+{
+    id:15,
+
+    name:"𝐄𝐏 #𝟎𝟎𝟏𝟓",
+
+    price:467500,
+
+    stock:true,
+
+    image:
+    "https://i.ibb.co/bjPNLN3H/2dd27e54-cdf5-48ca-8f4d-6fa3fce56b3c.jpg",
+
+    gallery:[
+        "https://i.ibb.co/HDkqpxJB/f9d9f6d9-d906-452c-a226-83b58a8e68de.jpg",
+
+        "https://i.ibb.co/jvWh9FhZ/a1ca2f8f-6dad-4de7-ace3-8d80cd4c7684.jpg",
+
+        "https://i.ibb.co/21cWPZzq/a145471c-9c71-4fa6-b71d-8cd77f32e826.jpg"
+    ],
+
+    description:[
+        "ລ້ອກອີນດ້ວຍ Google",
+        "ປະກັນ 7 ວັນຖ້າຂໍ້ມູນປ່ຽນບໍ່ຜ່ານ",
+        "ຍົກໃຫ້ທັງ Google ກູ້ ແລະ ເກມພ້ອມຍ້າຍ"
+    ]
+},
+
+{
+    id:6,
+
+    name:"𝐄𝐏 #𝟎𝟎𝟔",
+
+    price:318360,
+
+    stock:true,
+
+    image:
+    "https://i.ibb.co/20djtVF6/9cd7b31f-6a32-4815-8209-63d5eab2349a.jpg",
+
+    gallery:[
+        "https://i.ibb.co/YFqcMWPR/f4637af9-20c2-4fa2-b28c-8409b990d9c5.jpg",
+
+        "https://i.ibb.co/RGc5YLm0/376fae17-4472-449d-a9d0-4bd53d326b61.jpg",
+
+        "https://i.ibb.co/nNBQbcqy/abaf4543-91bc-40ec-a3f4-09d8e61c3fa8.jpg"
+    ],
+
+    description:[
+        "ລ້ອກອີນດ້ວຍ Google",
+        "ປະກັນ 7 ວັນຖ້າຂໍ້ມູນປ່ຽນບໍ່ຜ່ານ",
+        "ຍົກໃຫ້ທັງ Google ກູ້ ແລະ ເກມພ້ອມຍ້າຍ"
+    ]
+},
+
+{
+    id:12,
+
+    name:"𝐄𝐏 #𝟎𝟎𝟏𝟐",
+
+    price:373500,
+
+    stock:true,
+
+    image:
+    "https://i.ibb.co/LfbqQwt/06a5b136-c7cb-462a-a821-538162890d26.jpg",
+
+    gallery:[
+        "https://i.ibb.co/S4yqX2p1/ddf979f7-5c7e-4b7a-8151-9626829dbf79.jpg",
+
+        "https://i.ibb.co/JjrKtFWJ/2724bd70-a0e7-4039-94b8-20643fe74acd.jpg",
+
+        "https://i.ibb.co/b5xXKyTn/2b4edaec-dd2e-4af8-92e9-c4da785b8df6.jpg"
+    ],
+
+    description:[
+        "ລ້ອກອີນດ້ວຍ Google",
+        "ປະກັນ 7 ວັນຖ້າຂໍ້ມູນປ່ຽນບໍ່ຜ່ານ",
+        "ຍົກໃຫ້ທັງ Google ກູ້ ແລະ ເກມພ້ອມຍ້າຍ"
+    ]
+},
+
+{
+    id:10,
+
+    name:"𝐄𝐏 #𝟎𝟎𝟏𝟎",
+
+    price:199000,
+
+    stock:true,
+
+    image:
+    "https://i.ibb.co/yBN5Mtmd/eb8242fe-8782-4498-a4fa-ac897fd2885e.jpg",
+
+    gallery:[
+        "https://i.ibb.co/MDcFR0WP/966159d1-86b9-40b8-b662-131700a7adf0.jpg",
+
+        "https://i.ibb.co/h5fVPWQ/3ac4e2f1-59aa-419d-8ce1-2b6e4029454e.jpg",
+
+        "https://i.ibb.co/j9yqqffC/82be464f-9f82-444f-965e-46d72cbfb0f3.jpg"
+    ],
+
+    description:[
+        "ລ້ອກອີນດ້ວຍ Google",
+        "ປະກັນ 7 ວັນຖ້າຂໍ້ມູນປ່ຽນບໍ່ຜ່ານ",
+        "ຍົກໃຫ້ທັງ Google ກູ້"
+    ]
+},
+
+
+/* =========================
+   SOLD
+========================= */
+
+{
+    id:9,
+    name:"𝐄𝐏 #𝟎𝟎𝟗",
+    stock:false,
+    image:
+    "https://i.ibb.co/Fkr932jL/ec85427a-f467-458f-b156-76226644b528.jpg"
+},
+
+{
+    id:11,
+    name:"𝐄𝐏 #𝟎𝟎𝟏𝟏",
+    stock:false,
+    image:
+    "https://i.ibb.co/DPHsJ7Jk/64a1a15d-99bf-4ffe-8da3-a293271f70db.jpg"
+},
+
+{
+    id:14,
+    name:"𝐄𝐏 #𝟎𝟎𝟏𝟒",
+    stock:false,
+    image:
+    "https://i.ibb.co/TDB7B5Hv/ddcb0c96-3c32-4767-b573-c4a7d37b83f2.jpg"
+},
+
+{
+    id:8,
+    name:"𝐄𝐏 #𝟎𝟎𝟖",
+    stock:false,
+    image:
+    "https://i.ibb.co/5X9RkQvx/89a1d754-b67a-43cc-b078-a59f4d824a81.jpg"
+},
+
+{
+    id:5,
+    name:"𝐄𝐏 #𝟎𝟎𝟓",
+    stock:false,
+    image:
+    "https://i.ibb.co/KxrRcSBD/278aa62a-5fb0-4ea2-9500-33b3306e0f40.jpg"
+},
+
+{
+    id:4,
+    name:"𝐄𝐏 #𝟎𝟎𝟒",
+    stock:false,
+    image:
+    "https://i.ibb.co/LDqfpwbc/62f20a8a-90c8-4fcf-aa84-0bb32e234dd3.jpg"
+},
+
+{
+    id:3,
+    name:"𝐄𝐏 #𝟎𝟎𝟑",
+    stock:false,
+    image:
+    "https://i.ibb.co/KcpGw4zP/8369e615-5537-485d-a04a-2c80072f4754.jpg"
+},
+
+{
+    id:7,
+    name:"𝐄𝐏 #𝟎𝟎𝟕",
+    stock:false,
+    image:
+    "https://i.ibb.co/ynCDzBXN/b9054ee9-53b0-4dde-a0cd-a29d02f8c8d7.jpg"
+}
+
+];
+
+
+/* =====================================================
+   FORMAT PRICE
+===================================================== */
+
+function formatPrice(price){
+
+    return new Intl.NumberFormat("lo-LA")
+        .format(price)
+        + " ກີບ";
+
+}
+
+
+/* =====================================================
+   CREATE PRODUCT CARD
+===================================================== */
+
+function createCard(product){
+
+    const card =
+        document.createElement("div");
+
+    card.className="product";
+
+    if(product.stock){
+
+        card.innerHTML=`
+
+        <div class="product-image">
+
+            <img
+            src="${product.image}"
+            alt="${product.name}">
+
+            <div class="available-badge">
+                ✓ ຍັງມີຢູ່
+            </div>
+
+        </div>
+
+
+        <div class="product-content">
+
+            <div class="product-title">
+                ${product.name}
+            </div>
+
+            <div class="product-price">
+                ${formatPrice(product.price)}
+            </div>
+
+            <div class="product-status">
+                ● ສິນຄ້າຍັງມີຢູ່
+            </div>
+
+            <div class="product-buttons">
+
+                <button
+                class="btn-detail"
+                onclick="openDetail(${product.id})">
+
+                    ເບິ່ງລາຍລະອຽດ
+
+                </button>
+
+            </div>
+
+        </div>
+
+        `;
+
+    }else{
+
+        card.innerHTML=`
+
+        <div class="product-image">
+
+            <img
+            src="${product.image}"
+            alt="${product.name}">
+
+            <div class="sold-overlay">
+
+                <div class="sold-badge">
+                    ຂາຍແລ້ວ
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="product-content">
+
+            <div class="product-title">
+                ${product.name}
+            </div>
+
+            <div class="product-price"
+                 style="color:#ef4444;">
+                ຂາຍແລ້ວ
+            </div>
+
+            <div class="product-status sold">
+                ● ຂາຍແລ້ວ
+            </div>
+
+            <div class="product-buttons">
+
+                <button
+                class="btn-detail sold"
+                disabled>
+
+                    ຂາຍແລ້ວ
+
+                </button>
+
+            </div>
+
+        </div>
+
+        `;
+
+    }
+
+    return card;
+
+}
+
+
+/* =====================================================
+   RENDER HOME
+   AVAILABLE FIRST
+===================================================== */
+
+function renderProducts(){
+
+    const home =
+        document.getElementById("homeProducts");
+
+    const shop =
+        document.getElementById("shopProducts");
+
+    home.innerHTML="";
+    shop.innerHTML="";
+
+    const sorted =
+        [...products]
+        .sort((a,b)=>
+            Number(b.stock)-Number(a.stock)
+        );
+
+    sorted.forEach(product=>{
+
+        home.appendChild(
+            createCard(product)
+        );
+
+        shop.appendChild(
+            createCard(product)
+        );
+
+    });
+
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+function showPage(page){
+
+    document
+        .querySelectorAll(".page")
+        .forEach(p=>{
+            p.classList.remove("active");
+        });
+
+    const target =
+        document.getElementById(page);
+
+    if(target){
+        target.classList.add("active");
+    }
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+function searchProducts(){
+
+    const keyword =
+        document
+        .getElementById("search")
+        .value
+        .toLowerCase()
+        .trim();
+
+    const shop =
+        document.getElementById("shopProducts");
+
+    shop.innerHTML="";
+
+    const result =
+        products.filter(product=>
+            product.name
+            .toLowerCase()
+            .includes(keyword)
+        );
+
+    result.forEach(product=>{
+
+        shop.appendChild(
+            createCard(product)
+        );
+
+    });
+
+}
+
+
+/* =====================================================
+   CLEAR SEARCH
+===================================================== */
+
+function clearSearch(){
+
+    document
+        .getElementById("search")
+        .value="";
+
+    const shop =
+        document.getElementById("shopProducts");
+
+    shop.innerHTML="";
+
+    products.forEach(product=>{
+
+        shop.appendChild(
+            createCard(product)
+        );
+
+    });
+
+}
+
+
+/* =====================================================
+   OPEN DETAIL
+===================================================== */
+
+function openDetail(id){
+
+    const product =
+        products.find(
+            p=>p.id===id
+        );
+
+    if(!product || !product.stock){
+        return;
+    }
+
+    let galleryHTML="";
+
+    product.gallery.forEach((img,index)=>{
+
+        galleryHTML+=`
+
+        <img
+        src="${img}"
+        alt="${product.name} image ${index+1}"
+        onclick="changeMainImage('${img}')">
+
+        `;
+
+    });
+
+
+    document.getElementById(
+        "detailContent"
+    ).innerHTML=`
+
+        <div class="detail-main-image">
+
+            <img
+            id="detailMainImage"
+            src="${product.image}"
+            alt="${product.name}">
+
+        </div>
+
+
+        <div class="gallery">
+
+            ${galleryHTML}
+
+        </div>
+
+
+        <div class="detail-info">
+
+            <div class="detail-name">
+                ${product.name}
+            </div>
+
+            <div class="detail-price">
+                ${formatPrice(product.price)}
+            </div>
+
+
+            <div class="detail-list">
+
+                ${product.description.map(
+                    item=>`
+                    <div class="detail-item">
+                        ✓ ${item}
+                    </div>
+                    `
+                ).join("")}
+
+            </div>
+
+
+            <button
+            class="buy-button"
+            onclick="openPayment(${product.id})">
+
+                🛒 ສັ່ງຊື້ສິນຄ້າ
+
+            </button>
+
+        </div>
+
+    `;
+
+
+    document
+        .getElementById("detailModal")
+        .classList.add("show");
+
+}
+
+
+/* =====================================================
+   CHANGE MAIN IMAGE
+===================================================== */
+
+function changeMainImage(url){
+
+    const img =
+        document.getElementById(
+            "detailMainImage"
+        );
+
+    if(img){
+        img.src=url;
+    }
+
+}
+
+
+/* =====================================================
+   CLOSE DETAIL
+===================================================== */
+
+function closeDetail(){
+
+    document
+        .getElementById("detailModal")
+        .classList.remove("show");
+
+}
+
+
+/* =====================================================
+   OUTSIDE DETAIL
+===================================================== */
+
+function closeOutside(event){
+
+    if(event.target.id==="detailModal"){
+        closeDetail();
+    }
+
+}
+
+
+/* =====================================================
+   OPEN PAYMENT
+===================================================== */
+
+function openPayment(id){
+
+    const product =
+        products.find(
+            p=>p.id===id
+        );
+
+    if(!product || !product.stock){
+        return;
+    }
+
+    document.getElementById(
+        "paymentContent"
+    ).innerHTML=`
+
+        <div class="payment-box">
+
+            <div class="payment-title">
+                ຊຳລະຄ່າສິນຄ້າ
+            </div>
+
+            <div class="payment-product">
+                ${product.name}
+            </div>
+
+            <div class="payment-price">
+                ${formatPrice(product.price)}
+            </div>
+
+
+            <div class="qr-box">
+
+                <img
+                src="${QR_IMAGE}"
+                alt="QR Payment">
+
+            </div>
+
+
+            <div class="payment-note">
+
+                ກະລຸນາໂອນເງິນຕາມຍອດທີ່ສະແດງ
+                ແລ້ວກົດປຸ່ມ
+                <b>ສົ່ງສະລິບຫາແອັດມິນ</b>
+
+            </div>
+
+
+            <button
+            class="whatsapp-button"
+            onclick="sendWhatsApp(${product.id})">
+
+                💬 ສົ່ງສະລິບຫາແອັດມິນ
+
+            </button>
+
+        </div>
+
+    `;
+
+
+    closeDetail();
+
+    document
+        .getElementById("paymentModal")
+        .classList.add("show");
+
+}
+
+
+/* =====================================================
+   WHATSAPP MESSAGE
+===================================================== */
+
+function sendWhatsApp(id){
+
+    const product =
+        products.find(
+            p=>p.id===id
+        );
+
+    if(!product){
+        return;
+    }
+
+    const message =
+`ສະບາຍດີ Lao Gaming Pro X3d
+ຂ້ອຍໄດ້ຊື້ສິນຄ້ານີ້ໃນເວັບແລ້ວ
+
+ລາຄາ: ${formatPrice(product.price)}
+ລະຫັດສິນຄ້າ: ${product.name}
+
+ຂໍຄວາມກວດສອບບິນໂອນແນ່ເຈົ້າ`;
+
+    const url =
+        "https://wa.me/"
+        + WHATSAPP
+        + "?text="
+        + encodeURIComponent(message);
+
+    window.open(
+        url,
+        "_blank"
+    );
+
+}
+
+
+/* =====================================================
+   CLOSE PAYMENT
+===================================================== */
+
+function closePayment(){
+
+    document
+        .getElementById("paymentModal")
+        .classList.remove("show");
+
+}
+
+
+/* =====================================================
+   OUTSIDE PAYMENT
+===================================================== */
+
+function closePaymentOutside(event){
+
+    if(event.target.id==="paymentModal"){
+        closePayment();
+    }
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+renderProducts();
+
+showPage("home");
+
+</script>
+
+</body>
+</html>
