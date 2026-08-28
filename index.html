@@ -1213,6 +1213,111 @@ const products = [
 
 
 /* =========================
+   EP 0018 - NEW
+========================= */
+
+{
+    id:18,
+    name:"𝐄𝐏 #𝟎𝟎𝟏𝟖",
+    price:580000,
+    stock:true,
+
+    image:
+    "https://i.ibb.co/3mn1yytP/fb436764-44fc-4ffb-b0e1-08c60696316b.jpg",
+
+    gallery:[
+        "https://i.ibb.co/6ct2cNwz/5537c797-b6c7-43d4-858e-86b0d3ca5c99.jpg",
+        "https://i.ibb.co/B2TVwB0d/d1dc1780-d6b0-40aa-8c09-cee3d2d84b5c.jpg",
+        "https://i.ibb.co/VYsCcnR1/d122f67b-85bd-4f46-b115-4f025181a254.jpg"
+    ],
+
+    description:[
+        "ລ້ອກອີນດ້ວຍ Google",
+        "ປະກັນ 7 ວັນຖ້າຂໍ້ມູນປ່ຽນບໍ່ຜ່ານ",
+        "ຍົກໃຫ້ທັງ Google ກູ້ ແລະ ເກມພ້ອມຍ້າຍ"
+    ]
+},
+
+/* =========================
+   EP 0019 - NEW
+========================= */
+
+{
+    id:19,
+    name:"𝐄𝐏 #𝟎𝟎𝟏𝟗",
+    price:350000,
+    stock:true,
+
+    image:
+    "https://i.ibb.co/TxJRT2KY/beeb10a7-cd42-4106-bb4c-159a4501fda2.jpg",
+
+    gallery:[
+        "https://i.ibb.co/DHvc2Fjp/786a21b0-56ad-4d76-8493-b3434b2804d4.jpg",
+        "https://i.ibb.co/gNqSM81/528afb04-ceec-4d47-8f99-72296ec964fa.jpg",
+        "https://i.ibb.co/7dSLg9hw/46c9e78d-1843-40d7-bec9-27c443db7225.jpg"
+    ],
+
+    description:[
+        "ລ້ອກອີນດ້ວຍ Google",
+        "ປະກັນ 7 ວັນຖ້າຂໍ້ມູນປ່ຽນບໍ່ຜ່ານ",
+        "ຍົກໃຫ້ທັງ Google ກູ້ ແລະ ເກມພ້ອມຍ້າຍ"
+    ]
+},
+
+/* =========================
+   EP 0020 - NEW
+========================= */
+
+{
+    id:20,
+    name:"𝐄𝐏 #𝟎𝟎𝟐𝟎",
+    price:370000,
+    stock:true,
+
+    image:
+    "https://i.ibb.co/rKPzBcvK/8b633f2c-30db-4302-9fb4-fcef64981e11.jpg",
+
+    gallery:[
+        "https://i.ibb.co/4nD4BLNs/2b3da1c3-b7dc-4252-8204-ea74286515df.jpg",
+        "https://i.ibb.co/9KLX2DY/7f25b9b3-f7c0-48a3-a9e4-f780619d63bd.jpg",
+        "https://i.ibb.co/9mVFh58k/18caa108-7d49-48ee-9513-e8c2e76f63fc.jpg"
+    ],
+
+    description:[
+        "ລ້ອກອີນດ້ວຍ Google",
+        "ປະກັນ 7 ວັນຖ້າຂໍ້ມູນປ່ຽນບໍ່ຜ່ານ",
+        "ຍົກໃຫ້ທັງ Google ກູ້"
+    ]
+},
+
+/* =========================
+   EP 0022 - NEW
+========================= */
+
+{
+    id:22,
+    name:"𝐄𝐏 #𝟎𝟎𝟐𝟐",
+    price:299000,
+    stock:true,
+
+    image:
+    "https://i.ibb.co/6hCdKJj/4cb2e6d8-c8bc-4841-a707-781cf14e5d4f.jpg",
+
+    gallery:[
+        "https://i.ibb.co/qFkb9JDR/4bba2bea-44c4-45a6-94b7-1534ca17658e.jpg",
+        "https://i.ibb.co/N2h183qy/10ce030d-5f5b-4075-8e5a-85f8a223bfe7.jpg",
+        "https://i.ibb.co/07dfcWc/c5468794-919e-4c51-a879-18ba1db35e65.jpg"
+    ],
+
+    description:[
+        "ລ້ອກອີນດ້ວຍ Google",
+        "ປະກັນ 7 ວັນຖ້າຂໍ້ມູນປ່ຽນບໍ່ຜ່ານ",
+        "ຍົກໃຫ້ທັງ Google ກູ້"
+    ]
+},
+
+
+/* =========================
    EP 006
 ========================= */
 
@@ -1361,6 +1466,10 @@ const products = [
 ========================= */
 
 function formatPrice(price){
+
+    if(price === null || price === undefined || price === ""){
+        return "ສອບຖາມລາຄາ";
+    }
 
     return new Intl.NumberFormat("lo-LA")
     .format(price)
@@ -1739,9 +1848,9 @@ function openPayment(id){
 
             <div class="payment-note">
 
-                ກະລຸນາໂອນເງິນຕາມຍອດທີ່ສະແດງ
-                ແລ້ວກົດ
-                <b>ສົ່ງສະລິບຫາແອັດມິນ</b>
+                ${product.price == null
+                    ? "ສິນຄ້ານີ້ຍັງມີຢູ່ ກະລຸນາກົດປຸ່ມດ້ານລຸ່ມເພື່ອສອບຖາມລາຄາ ແລະ ສັ່ງຊື້ກັບແອັດມິນ"
+                    : "ກະລຸນາໂອນເງິນຕາມຍອດທີ່ສະແດງ ແລ້ວກົດ <b>ສົ່ງສະລິບຫາແອັດມິນ</b>"}
 
             </div>
 
@@ -1785,8 +1894,7 @@ function sendWhatsApp(id){
 ສິນຄ້າ: ${product.name}
 ລາຄາ: ${formatPrice(product.price)}
 
-ຂ້ອຍໄດ້ໂອນເງິນແລ້ວ
-ກຳລັງສົ່ງສະລິບໃຫ້ກວດສອບ.`;
+${product.price == null ? "ຂ້ອຍຕ້ອງການສອບຖາມລາຄາ ແລະ ສັ່ງຊື້ສິນຄ້ານີ້" : "ຂ້ອຍໄດ້ໂອນເງິນແລ້ວ\nກຳລັງສົ່ງສະລິບໃຫ້ກວດສອບ."}`;
 
     const url=
         "https://wa.me/"
