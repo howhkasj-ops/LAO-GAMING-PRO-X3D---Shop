@@ -1,5 +1,5 @@
-```html
 <!DOCTYPE html>
+
 <html lang="lo">
 <head>
 <meta charset="UTF-8">
@@ -281,7 +281,6 @@ transition:.2s;
 
 .view-category:hover{
 transform:translateY(-2px);
-box-shadow:0 12px 28px rgba(8,124,255,.25);
 }
 
 .products{
@@ -335,7 +334,6 @@ background:#16a34a;
 color:#fff;
 font-size:11px;
 font-weight:900;
-box-shadow:0 6px 18px rgba(22,163,74,.22);
 }
 
 .sold-overlay{
@@ -355,7 +353,6 @@ color:#fff;
 font-size:19px;
 font-weight:950;
 transform:rotate(-7deg);
-box-shadow:0 8px 25px rgba(239,68,68,.28);
 }
 
 .product-content{padding:17px}
@@ -400,7 +397,6 @@ transition:.2s;
 
 .btn-detail:hover{
 transform:translateY(-2px);
-box-shadow:0 8px 22px rgba(8,124,255,.22);
 }
 
 .btn-detail.sold{
@@ -424,12 +420,6 @@ border-radius:11px;
 font-family:inherit;
 font-weight:900;
 cursor:pointer;
-transition:.2s;
-}
-
-.back-button:hover{
-background:#eff9ff;
-transform:translateX(-2px);
 }
 
 .search-box{
@@ -501,14 +491,8 @@ animation:modalShow .25s ease;
 }
 
 @keyframes modalShow{
-from{
-opacity:0;
-transform:translateY(15px) scale(.97);
-}
-to{
-opacity:1;
-transform:translateY(0) scale(1);
-}
+from{opacity:0;transform:translateY(15px) scale(.97)}
+to{opacity:1;transform:translateY(0) scale(1)}
 }
 
 .modal-header{
@@ -570,12 +554,6 @@ object-fit:cover;
 border-radius:12px;
 border:1px solid var(--border);
 cursor:pointer;
-transition:.2s;
-}
-
-.gallery img:hover{
-transform:scale(1.02);
-border-color:var(--blue);
 }
 
 .detail-info{margin-top:20px}
@@ -619,12 +597,102 @@ font-family:inherit;
 font-size:15px;
 font-weight:950;
 cursor:pointer;
-transition:.2s;
 }
 
-.buy-button:hover{
-transform:translateY(-2px);
-box-shadow:0 10px 25px rgba(8,124,255,.22);
+/* COUPON */
+.coupon-box{
+margin-top:20px;
+padding:16px;
+border-radius:15px;
+background:#f4fbff;
+border:1px solid #d8efff;
+}
+
+.coupon-title{
+font-size:14px;
+font-weight:950;
+margin-bottom:10px;
+}
+
+.coupon-row{
+display:flex;
+gap:8px;
+}
+
+.coupon-input{
+flex:1;
+height:46px;
+padding:0 13px;
+border:1px solid #cfe7f8;
+border-radius:10px;
+outline:none;
+font-family:inherit;
+font-size:14px;
+font-weight:800;
+text-transform:uppercase;
+}
+
+.coupon-input:focus{
+border-color:var(--blue);
+box-shadow:0 0 0 3px rgba(8,124,255,.08);
+}
+
+.coupon-apply{
+height:46px;
+padding:0 18px;
+border:0;
+border-radius:10px;
+background:linear-gradient(135deg,#087cff,#20a9ff);
+color:#fff;
+font-family:inherit;
+font-weight:950;
+cursor:pointer;
+}
+
+.coupon-message{
+margin-top:9px;
+font-size:12px;
+font-weight:900;
+min-height:18px;
+}
+
+.coupon-success{color:var(--green)}
+.coupon-error{color:var(--red)}
+
+.price-summary{
+margin-top:15px;
+padding:15px;
+border-radius:13px;
+background:#fff;
+border:1px solid #d8efff;
+}
+
+.price-line{
+display:flex;
+justify-content:space-between;
+gap:15px;
+margin-top:8px;
+font-size:13px;
+font-weight:800;
+}
+
+.price-line:first-child{margin-top:0}
+
+.price-line.discount{
+color:var(--green);
+}
+
+.price-line.total{
+margin-top:13px;
+padding-top:13px;
+border-top:1px dashed #cfe7f8;
+font-size:17px;
+font-weight:950;
+}
+
+.price-old{
+text-decoration:line-through;
+color:#8a99a9;
 }
 
 .payment-box{text-align:center}
@@ -647,6 +715,13 @@ font-size:27px;
 font-weight:950;
 }
 
+.payment-old{
+margin-top:5px;
+font-size:13px;
+color:#8a99a9;
+text-decoration:line-through;
+}
+
 .qr-box{
 width:260px;
 height:260px;
@@ -655,7 +730,6 @@ padding:10px;
 background:#fff;
 border:1px solid var(--border);
 border-radius:17px;
-box-shadow:0 10px 30px rgba(0,126,255,.08);
 }
 
 .qr-box img{
@@ -685,12 +759,6 @@ font-family:inherit;
 font-size:14px;
 font-weight:950;
 cursor:pointer;
-transition:.2s;
-}
-
-.whatsapp-button:hover{
-transform:translateY(-2px);
-box-shadow:0 8px 22px rgba(37,211,102,.22);
 }
 
 .contact-float{
@@ -727,30 +795,6 @@ height:29px;
 .float-whatsapp{background:#25D366}
 .float-facebook{background:#1877F2}
 
-.contact-float a::before{
-position:absolute;
-right:67px;
-padding:7px 10px;
-border-radius:8px;
-background:#142238;
-color:#fff;
-font-size:11px;
-font-weight:900;
-white-space:nowrap;
-opacity:0;
-pointer-events:none;
-transform:translateX(5px);
-transition:.2s;
-}
-
-.contact-float a:hover::before{
-opacity:1;
-transform:translateX(0);
-}
-
-.float-whatsapp::before{content:"WhatsApp"}
-.float-facebook::before{content:"Facebook"}
-
 footer{
 padding:28px 20px;
 text-align:center;
@@ -765,97 +809,38 @@ font-size:12px;
 }
 
 @media(max-width:700px){
-.products{
-grid-template-columns:repeat(2,1fr);
-gap:10px;
-}
+.products{grid-template-columns:repeat(2,1fr);gap:10px}
 .banner{height:230px}
 .product-image{height:180px}
 .detail-main-image{height:280px}
 }
 
 @media(max-width:500px){
-
-.header-inner{
-height:65px;
-padding:0 12px;
-}
-
-.logo img{
-width:42px;
-height:42px;
-}
-
+.header-inner{height:65px;padding:0 12px}
+.logo img{width:42px;height:42px}
 .logo h1{font-size:12px}
 .logo span{font-size:7px}
-
 .nav{gap:4px}
-
-.nav button{
-min-width:auto;
-width:43px;
-height:40px;
-padding:0;
-}
-
+.nav button{min-width:auto;width:43px;height:40px;padding:0}
 .nav button span:last-child{display:none}
-
-.banner{
-height:190px;
-border-radius:16px;
-}
-
-.announcement{
-height:43px;
-border-radius:10px;
-}
-
-.announcement-text{
-font-size:11px;
-padding-right:60px;
-}
-
+.banner{height:190px;border-radius:16px}
+.announcement{height:43px;border-radius:10px}
+.announcement-text{font-size:11px;padding-right:60px}
 .product-content{padding:12px}
-
 .product-title{font-size:13px}
 .product-price{font-size:15px}
 .product-image{height:145px}
-
 .detail-name{font-size:19px}
 .detail-price{font-size:21px}
-
 .gallery img{height:95px}
-
-.qr-box{
-width:220px;
-height:220px;
-}
-
-.contact-float{
-right:13px;
-bottom:13px;
-}
-
-.contact-float a{
-width:50px;
-height:50px;
-}
-}
-
-.snow-glow{
-position:fixed;
-width:5px;
-height:5px;
-border-radius:50%;
-background:#fff;
-box-shadow:
-0 0 8px rgba(255,255,255,.95),
-0 0 15px rgba(120,210,255,.65);
-pointer-events:none;
-z-index:9998;
-opacity:.8;
+.qr-box{width:220px;height:220px}
+.contact-float{right:13px;bottom:13px}
+.contact-float a{width:50px;height:50px}
+.coupon-row{flex-direction:column}
+.coupon-apply{width:100%}
 }
 </style>
+
 </head>
 
 <body>
@@ -866,28 +851,22 @@ opacity:.8;
 <div class="header-inner">
 
 <div class="logo" onclick="showPage('home')">
-
 <img src="https://i.ibb.co/0VsFgJV2/dd921ff9-89fd-4b47-a48e-e60383c2c987.jpg">
-
 <div>
 <h1>LAO GAMING PRO X3D</h1>
 <span>ONLINE GAME SHOP</span>
 </div>
-
 </div>
 
 <nav class="nav">
 
 <button class="home-btn" onclick="showPage('home')">
-
 <svg class="nav-home-icon" viewBox="0 0 24 24">
 <path d="M3 10.5L12 3l9 7.5"></path>
 <path d="M5.5 9.5V21h13V9.5"></path>
 <path d="M9.5 21v-7h5v7"></path>
 </svg>
-
 <span>ໜ້າຫຼັກ</span>
-
 </button>
 
 <button onclick="showPage('shop')">
@@ -908,7 +887,6 @@ opacity:.8;
 </div>
 
 <div class="announcement">
-
 <div class="announcement-track">
 
 <div class="announcement-text">
@@ -961,13 +939,8 @@ opacity:.8;
 </div>
 
 <div class="section-title">
-
 <h2>🛒 ສິນຄ້າທັງໝົດ</h2>
-
-<p>
-ຮ້ານ LAO GAMING PRO X3D ຈຳໜ່າຍ Free Fire Game ID
-</p>
-
+<p>ຮ້ານ LAO GAMING PRO X3D ຈຳໜ່າຍ Free Fire Game ID</p>
 </div>
 
 <div id="homeProducts" class="products home-products"></div>
@@ -1002,25 +975,17 @@ oninput="searchProducts()">
 
 </div>
 
-<div
-id="shopProducts"
-class="products"
-style="margin-top:25px">
-</div>
+<div id="shopProducts" class="products" style="margin-top:25px"></div>
 
 </div>
 </section>
 
 <div id="detailModal" class="modal" onclick="closeOutside(event)">
-
 <div class="modal-box">
 
 <div class="modal-header">
-
 <h3>📦 ລາຍລະອຽດສິນຄ້າ</h3>
-
 <button class="close-modal" onclick="closeDetail()">×</button>
-
 </div>
 
 <div id="detailContent" class="modal-body"></div>
@@ -1029,15 +994,11 @@ style="margin-top:25px">
 </div>
 
 <div id="paymentModal" class="modal" onclick="closePaymentOutside(event)">
-
 <div class="modal-box">
 
 <div class="modal-header">
-
 <h3>💳 ຊຳລະເງິນ</h3>
-
 <button class="close-modal" onclick="closePayment()">×</button>
-
 </div>
 
 <div id="paymentContent" class="modal-body"></div>
@@ -1047,46 +1008,26 @@ style="margin-top:25px">
 
 <div class="contact-float">
 
-<a
-class="float-whatsapp"
+<a class="float-whatsapp"
 href="https://wa.me/8562092978004"
 target="_blank"
-rel="noopener noreferrer"
-aria-label="WhatsApp">
+rel="noopener noreferrer">
 
 <svg viewBox="0 0 32 32" fill="none">
-
 <circle cx="16" cy="16" r="14" fill="white"></circle>
-
-<path
-d="M23.2 8.8A10.1 10.1 0 0 0 7.8 21.5L6.7 25.4l4-1a10.1 10.1 0 0 0 12.5-15.6Z"
-fill="#25D366">
-</path>
-
-<path
-d="M12.2 10.8c.3-.1.6-.1.8.3l1 2.2c.1.3.1.5-.1.7l-.6.7c-.2.2-.2.4 0 .7.5.9 1.2 1.6 2.1 2.1.3.2.5.2.7 0l.7-.7c.2-.2.4-.2.7-.1l2.2 1c.3.1.4.4.3.8-.2 1.1-1.1 1.9-2.2 1.8-3.1-.3-6.9-3.1-8-6.1-.4-1.1.3-2.2 1.4-2.5Z"
-fill="white">
-</path>
-
+<path d="M23.2 8.8A10.1 10.1 0 0 0 7.8 21.5L6.7 25.4l4-1a10.1 10.1 0 0 0 12.5-15.6Z" fill="#25D366"></path>
+<path d="M12.2 10.8c.3-.1.6-.1.8.3l1 2.2c.1.3.1.5-.1.7l-.6.7c-.2.2-.2.4 0 .7.5.9 1.2 1.6 2.1 2.1.3.2.5.2.7 0l.7-.7c.2-.2.4-.2.7-.1l2.2 1c.3.1.4.4.3.8-.2 1.1-1.1 1.9-2.2 1.8-3.1-.3-6.9-3.1-8-6.1-.4-1.1.3-2.2 1.4-2.5Z" fill="white"></path>
 </svg>
 </a>
 
-<a
-class="float-facebook"
+<a class="float-facebook"
 href="https://www.facebook.com/share/18x82jMTpz/"
 target="_blank"
-rel="noopener noreferrer"
-aria-label="Facebook">
+rel="noopener noreferrer">
 
 <svg viewBox="0 0 32 32">
-
 <circle cx="16" cy="16" r="16" fill="white"></circle>
-
-<path
-d="M17.8 27v-9h3l.5-3.5h-3.5v-2.3c0-1 .3-1.7 1.8-1.7h1.9V7.4c-.3 0-1.3-.2-2.5-.2-2.5 0-4.2 1.5-4.2 4.3v2.4H12V17h2.8v10h3Z"
-fill="#1877F2">
-</path>
-
+<path d="M17.8 27v-9h3l.5-3.5h-3.5v-2.3c0-1 .3-1.7 1.8-1.7h1.9V7.4c-.3 0-1.3-.2-2.5-.2-2.5 0-4.2 1.5-4.2 4.3v2.4H12V17h2.8v10h3Z" fill="#1877F2"></path>
 </svg>
 </a>
 
@@ -1099,7 +1040,7 @@ fill="#1877F2">
 <script>
 
 /* =========================
-   SNOW EFFECT
+SNOW
 ========================= */
 
 const snowCanvas=document.getElementById("snowCanvas");
@@ -1110,56 +1051,36 @@ let snowWidth=window.innerWidth;
 let snowHeight=window.innerHeight;
 
 function resizeSnow(){
-
 snowWidth=window.innerWidth;
 snowHeight=window.innerHeight;
-
 snowCanvas.width=snowWidth;
 snowCanvas.height=snowHeight;
-
 }
 
 resizeSnow();
-
 window.addEventListener("resize",resizeSnow);
 
 function createSnowflake(){
-
 return{
-
 x:Math.random()*snowWidth,
-
 y:Math.random()*snowHeight-snowHeight,
-
 radius:Math.random()*3+1,
-
 speed:Math.random()*1.2+0.5,
-
 wind:Math.random()*0.8-0.4,
-
 opacity:Math.random()*0.65+0.25,
-
 swing:Math.random()*Math.PI*2,
-
 swingSpeed:Math.random()*0.02+0.005
-
 };
-
 }
 
 function initSnow(){
 
 snowflakes=[];
 
-const amount=
-window.innerWidth<600
-?70
-:120;
+const amount=window.innerWidth<600?70:120;
 
 for(let i=0;i<amount;i++){
-
 snowflakes.push(createSnowflake());
-
 }
 
 }
@@ -1168,37 +1089,22 @@ initSnow();
 
 function drawSnow(){
 
-snowCtx.clearRect(
-0,
-0,
-snowWidth,
-snowHeight
-);
+snowCtx.clearRect(0,0,snowWidth,snowHeight);
 
 snowflakes.forEach(snow=>{
 
 snow.swing+=snow.swingSpeed;
 
-snow.x+=
-snow.wind+
-Math.sin(snow.swing)*0.25;
-
+snow.x+=snow.wind+Math.sin(snow.swing)*0.25;
 snow.y+=snow.speed;
 
 if(snow.y>snowHeight+10){
-
 snow.y=-10;
 snow.x=Math.random()*snowWidth;
-
 }
 
-if(snow.x>snowWidth+10){
-snow.x=-10;
-}
-
-if(snow.x<-10){
-snow.x=snowWidth+10;
-}
+if(snow.x>snowWidth+10)snow.x=-10;
+if(snow.x<-10)snow.x=snowWidth+10;
 
 snowCtx.beginPath();
 
@@ -1211,18 +1117,12 @@ Math.PI*2
 );
 
 snowCtx.fillStyle=
-"rgba(255,255,255,"
-+snow.opacity
-+")";
+"rgba(255,255,255,"+
+snow.opacity+
+")";
 
-snowCtx.shadowBlur=
-snow.radius>2
-?9
-:5;
-
-snowCtx.shadowColor=
-"rgba(150,220,255,.85)";
-
+snowCtx.shadowBlur=snow.radius>2?9:5;
+snowCtx.shadowColor="rgba(150,220,255,.85)";
 snowCtx.fill();
 
 });
@@ -1235,7 +1135,7 @@ drawSnow();
 
 
 /* =========================
-   SETTINGS
+SETTINGS
 ========================= */
 
 const QR_IMAGE=
@@ -1245,7 +1145,59 @@ const WHATSAPP="8562092978004";
 
 
 /* =========================
-   PRODUCTS
+COUPON SYSTEM
+========================= */
+
+const coupons={
+
+"VZXAS213":{
+productId:17,
+discount:22
+},
+
+"TTAXZP331":{
+productId:18,
+discount:20
+},
+
+"YZASX2009":{
+productId:10,
+discount:7
+}
+
+};
+
+
+/*
+ຈົດຈຳວ່າ Coupon ໃດເຄີຍໃຊ້ແລ້ວ
+*/
+
+function couponStorageKey(code){
+
+return "LAO_GAMING_COUPON_USED_"+code;
+
+}
+
+function isCouponUsed(code){
+
+return localStorage.getItem(
+couponStorageKey(code)
+)==="1";
+
+}
+
+function markCouponUsed(code){
+
+localStorage.setItem(
+couponStorageKey(code),
+"1"
+);
+
+}
+
+
+/* =========================
+PRODUCTS
 ========================= */
 
 const products=[
@@ -1255,16 +1207,12 @@ id:17,
 name:"𝐄𝐏 #𝟎𝟎𝟏𝟕",
 price:490000,
 stock:true,
-
-image:
-"https://i.ibb.co/NdZd4h8P/2ccc99c9-98d8-4991-8241-f95ff11a8346.jpg",
-
+image:"https://i.ibb.co/NdZd4h8P/2ccc99c9-98d8-4991-8241-f95ff11a8346.jpg",
 gallery:[
 "https://i.ibb.co/5g88MbZN/4477a58d-6e6c-40d0-8056-c295a79a61d3.jpg",
 "https://i.ibb.co/0pV0sGn4/fe657df1-c994-41d8-9f2c-c41559b6e9f3.jpg",
 "https://i.ibb.co/VWzd3jbn/31cf4ff5-c634-46cf-b73a-8c837f5b9681.jpg"
 ],
-
 description:[
 "ລ້ອກອີນດ້ວຍ Google",
 "ປະກັນ 7 ວັນຖ້າຂໍ້ມູນປ່ຽນບໍ່ຜ່ານ",
@@ -1277,16 +1225,12 @@ id:16,
 name:"𝐄𝐏 #𝟎𝟎𝟏𝟔",
 price:329730,
 stock:false,
-
-image:
-"https://i.ibb.co/k6qhc7Sp/b94a3ebf-7352-4a1a-95a5-bb2156417276.jpg",
-
+image:"https://i.ibb.co/k6qhc7Sp/b94a3ebf-7352-4a1a-95a5-bb2156417276.jpg",
 gallery:[
 "https://i.ibb.co/JRVhb6Ck/0bbeb49b-1c16-4667-8c3f-a840ac89b701.jpg",
 "https://i.ibb.co/3mT1fvf7/f1dc4783-8164-45d4-81b5-30fda541813a.jpg",
 "https://i.ibb.co/bgxsrWYH/244addb8-1370-41fa-a237-68d8b4ff5c57.jpg"
 ],
-
 description:[
 "ລ້ອກອີນດ້ວຍ Google",
 "ປະກັນ 7 ວັນຖ້າຂໍ້ມູນປ່ຽນບໍ່ຜ່ານ",
@@ -1299,16 +1243,12 @@ id:15,
 name:"𝐄𝐏 #𝟎𝟎𝟏𝟓",
 price:467500,
 stock:false,
-
-image:
-"https://i.ibb.co/bjPNLN3H/2dd27e54-cdf5-48ca-8f4d-6fa3fce56b3c.jpg",
-
+image:"https://i.ibb.co/bjPNLN3H/2dd27e54-cdf5-48ca-8f4d-6fa3fce56b3c.jpg",
 gallery:[
 "https://i.ibb.co/HDkqpxJB/f9d9f6d9-d906-452c-a226-83b58a8e68de.jpg",
 "https://i.ibb.co/jvWh9FhZ/a1ca2f8f-6dad-4de7-ace3-8d80cd4c7684.jpg",
 "https://i.ibb.co/21cWPZzq/a145471c-9c71-4fa6-b71d-8cd77f32e826.jpg"
 ],
-
 description:[
 "ລ້ອກອີນດ້ວຍ Google",
 "ປະກັນ 7 ວັນຖ້າຂໍ້ມູນປ່ຽນບໍ່ຜ່ານ",
@@ -1321,16 +1261,12 @@ id:18,
 name:"𝐄𝐏 #𝟎𝟎𝟏𝟖",
 price:580000,
 stock:true,
-
-image:
-"https://i.ibb.co/3mn1yytP/fb436764-44fc-4ffb-b0e1-08c60696316b.jpg",
-
+image:"https://i.ibb.co/3mn1yytP/fb436764-44fc-4ffb-b0e1-08c60696316b.jpg",
 gallery:[
 "https://i.ibb.co/6ct2cNwz/5537c797-b6c7-43d4-858e-86b0d3ca5c99.jpg",
 "https://i.ibb.co/B2TVwB0d/d1dc1780-d6b0-40aa-8c09-cee3d2d84b5c.jpg",
 "https://i.ibb.co/VYsCcnR1/d122f67b-85bd-4f46-b115-4f025181a254.jpg"
 ],
-
 description:[
 "ລ້ອກອີນດ້ວຍ Google",
 "ປະກັນ 7 ວັນຖ້າຂໍ້ມູນປ່ຽນບໍ່ຜ່ານ",
@@ -1343,16 +1279,12 @@ id:19,
 name:"𝐄𝐏 #𝟎𝟎𝟏𝟗",
 price:350000,
 stock:false,
-
-image:
-"https://i.ibb.co/TxJRT2KY/beeb10a7-cd42-4106-bb4c-159a4501fda2.jpg",
-
+image:"https://i.ibb.co/TxJRT2KY/beeb10a7-cd42-4106-bb4c-159a4501fda2.jpg",
 gallery:[
 "https://i.ibb.co/DHvc2Fjp/786a21b0-56ad-4d76-8493-b3434b2804d4.jpg",
 "https://i.ibb.co/gNqSM81/528afb04-ceec-4d47-8f99-72296ec964fa.jpg",
 "https://i.ibb.co/7dSLg9hw/46c9e78d-1843-40d7-bec9-27c443db7225.jpg"
 ],
-
 description:[
 "ລ້ອກອີນດ້ວຍ Google",
 "ປະກັນ 7 ວັນຖ້າຂໍ້ມູນປ່ຽນບໍ່ຜ່ານ",
@@ -1365,16 +1297,12 @@ id:20,
 name:"𝐄𝐏 #𝟎𝟎𝟐𝟎",
 price:370000,
 stock:false,
-
-image:
-"https://i.ibb.co/rKPzBcvK/8b633f2c-30db-4302-9fb4-fcef64981e11.jpg",
-
+image:"https://i.ibb.co/rKPzBcvK/8b633f2c-30db-4302-9fb4-fcef64981e11.jpg",
 gallery:[
 "https://i.ibb.co/4nD4BLNs/2b3da1c3-b7dc-4252-8204-ea74286515df.jpg",
 "https://i.ibb.co/9KLX2DY/7f25b9b3-f7c0-48a3-a9e4-f780619d63bd.jpg",
 "https://i.ibb.co/9mVFh58k/18caa108-7d49-48ee-9513-e8c2e76f63fc.jpg"
 ],
-
 description:[
 "ລ້ອກອີນດ້ວຍ Google",
 "ປະກັນ 7 ວັນຖ້າຂໍ້ມູນປ່ຽນບໍ່ຜ່ານ",
@@ -1382,23 +1310,17 @@ description:[
 ]
 },
 
-/* EP #0022 — ຂາຍແລ້ວ + ລາຄາ 350,000 */
-
 {
 id:22,
 name:"𝐄𝐏 #𝟎𝟎𝟐𝟐",
 price:350000,
 stock:false,
-
-image:
-"https://i.ibb.co/qYWLmX38/d88817d4-b9f0-46aa-b44e-5a01e98b4587.jpg",
-
+image:"https://i.ibb.co/qYWLmX38/d88817d4-b9f0-46aa-b44e-5a01e98b4587.jpg",
 gallery:[
 "https://i.ibb.co/yc3dkS6g/7c4d89fa-d31b-4f18-a3e9-8a5d8cf84817.jpg",
 "https://i.ibb.co/sXnrXLN/be09696f-3898-46eb-9a01-5390d38894bc.jpg",
 "https://i.ibb.co/jvmP13mP/91c386e9-9dce-49cf-af74-463c151eab45.jpg"
 ],
-
 description:[
 "ລ້ອກອີນດ້ວຍ Google",
 "ປະກັນ 7 ວັນຖ້າຂໍ້ມູນປ່ຽນບໍ່ຜ່ານ",
@@ -1411,16 +1333,12 @@ id:21,
 name:"𝐄𝐏 #𝟎𝟎𝟐𝟏",
 price:299000,
 stock:false,
-
-image:
-"https://i.ibb.co/6hCdKJj/4cb2e6d8-c8bc-4841-a707-781cf14e5d4f.jpg",
-
+image:"https://i.ibb.co/6hCdKJj/4cb2e6d8-c8bc-4841-a707-781cf14e5d4f.jpg",
 gallery:[
 "https://i.ibb.co/qFkb9JDR/4bba2bea-44c4-45a6-94b7-1534ca17658e.jpg",
 "https://i.ibb.co/N2h183qy/10ce030d-5f5b-4075-8e5a-85f8a223bfe7.jpg",
 "https://i.ibb.co/07dfcWc/c5468794-919e-4c51-a879-18ba1db35e65.jpg"
 ],
-
 description:[
 "ລ້ອກອີນດ້ວຍ Google",
 "ປະກັນ 7 ວັນຖ້າຂໍ້ມູນປ່ຽນບໍ່ຜ່ານ",
@@ -1433,16 +1351,12 @@ id:6,
 name:"𝐄𝐏 #𝟎𝟎𝟔",
 price:318360,
 stock:false,
-
-image:
-"https://i.ibb.co/20djtVF6/9cd7b31f-6a32-4815-8209-63d5eab2349a.jpg",
-
+image:"https://i.ibb.co/20djtVF6/9cd7b31f-6a32-4815-8209-63d5eab2349a.jpg",
 gallery:[
 "https://i.ibb.co/YFqcMWPR/f4637af9-20c2-4fa2-b28c-8409b990d9c5.jpg",
 "https://i.ibb.co/RGc5YLm0/376fae17-4472-449d-a9d0-4bd53d326b61.jpg",
 "https://i.ibb.co/nNBQbcqy/abaf4543-91bc-40ec-a3f4-09d8e61c3fa8.jpg"
 ],
-
 description:[
 "ລ້ອກອີນດ້ວຍ Google",
 "ປະກັນ 7 ວັນຖ້າຂໍ້ມູນປ່ຽນບໍ່ຜ່ານ",
@@ -1455,16 +1369,12 @@ id:12,
 name:"𝐄𝐏 #𝟎𝟎𝟏𝟐",
 price:373500,
 stock:false,
-
-image:
-"https://i.ibb.co/LfbqQwt/06a5b136-c7cb-462a-a821-538162890d26.jpg",
-
+image:"https://i.ibb.co/LfbqQwt/06a5b136-c7cb-462a-a821-538162890d26.jpg",
 gallery:[
 "https://i.ibb.co/S4yqX2p1/ddf979f7-5c7e-4b7a-8151-9626829dbf79.jpg",
 "https://i.ibb.co/JjrKtFWJ/2724bd70-a0e7-4039-94b8-20643fe74acd.jpg",
 "https://i.ibb.co/b5xXKyTn/2b4edaec-dd2e-4af8-92e9-c4da785b8df6.jpg"
 ],
-
 description:[
 "ລ້ອກອີນດ້ວຍ Google",
 "ປະກັນ 7 ວັນຖ້າຂໍ້ມູນປ່ຽນບໍ່ຜ່ານ",
@@ -1477,16 +1387,12 @@ id:10,
 name:"𝐄𝐏 #𝟎𝟎𝟏𝟎",
 price:199000,
 stock:true,
-
-image:
-"https://i.ibb.co/yBN5Mtmd/eb8242fe-8782-4498-a4fa-ac897fd2885e.jpg",
-
+image:"https://i.ibb.co/yBN5Mtmd/eb8242fe-8782-4498-a4fa-ac897fd2885e.jpg",
 gallery:[
 "https://i.ibb.co/MDcFR0WP/966159d1-86b9-40b8-b662-131700a7adf0.jpg",
 "https://i.ibb.co/h5fVPWQ/3ac4e2f1-59aa-419d-8ce1-2b6e4029454e.jpg",
 "https://i.ibb.co/j9yqqffC/82be464f-9f82-444f-965e-46d72cbfb0f3.jpg"
 ],
-
 description:[
 "ລ້ອກອີນດ້ວຍ Google",
 "ປະກັນ 7 ວັນຖ້າຂໍ້ມູນປ່ຽນບໍ່ຜ່ານ",
@@ -1554,25 +1460,24 @@ image:"https://i.ibb.co/ynCDzBXN/b9054ee9-53b0-4dde-a0cd-a29d02f8c8d7.jpg"
 
 
 /* =========================
-   FUNCTIONS
+PRICE
 ========================= */
 
 function formatPrice(price){
 
-if(
-price===null||
-price===undefined||
-price===""
-){
+if(price===null||price===undefined||price===""){
 return "ສອບຖາມລາຄາ";
 }
 
 return new Intl.NumberFormat("lo-LA")
-.format(price)
-+" ກີບ";
+.format(price)+" ກີບ";
 
 }
 
+
+/* =========================
+PRODUCT CARD
+========================= */
 
 function createCard(product){
 
@@ -1586,9 +1491,7 @@ card.innerHTML=`
 
 <div class="product-image">
 
-<img
-src="${product.image}"
-alt="${product.name}">
+<img src="${product.image}" alt="${product.name}">
 
 <div class="available-badge">
 ✓ ຍັງມີຢູ່
@@ -1612,8 +1515,7 @@ ${formatPrice(product.price)}
 
 <div class="product-buttons">
 
-<button
-class="btn-detail"
+<button class="btn-detail"
 onclick="openDetail(${product.id})">
 
 ເບິ່ງລາຍລະອຽດ
@@ -1632,9 +1534,7 @@ card.innerHTML=`
 
 <div class="product-image">
 
-<img
-src="${product.image}"
-alt="${product.name}">
+<img src="${product.image}" alt="${product.name}">
 
 <div class="sold-overlay">
 
@@ -1652,9 +1552,7 @@ alt="${product.name}">
 ${product.name}
 </div>
 
-<div
-class="product-price"
-style="color:#ef4444">
+<div class="product-price" style="color:#ef4444">
 
 ${product.price!=null
 ?formatPrice(product.price)
@@ -1668,12 +1566,8 @@ ${product.price!=null
 
 <div class="product-buttons">
 
-<button
-class="btn-detail sold"
-disabled>
-
+<button class="btn-detail sold" disabled>
 ຂາຍແລ້ວ
-
 </button>
 
 </div>
@@ -1689,49 +1583,42 @@ return card;
 }
 
 
+/* =========================
+RENDER
+========================= */
+
 function renderProducts(){
 
-const home=
-document.getElementById("homeProducts");
-
-const shop=
-document.getElementById("shopProducts");
+const home=document.getElementById("homeProducts");
+const shop=document.getElementById("shopProducts");
 
 home.innerHTML="";
 shop.innerHTML="";
 
-const sorted=
-[...products].sort(
-(a,b)=>
-Number(b.stock)-
-Number(a.stock)
+const sorted=[...products].sort(
+(a,b)=>Number(b.stock)-Number(a.stock)
 );
 
 sorted.forEach(product=>{
 
-home.appendChild(
-createCard(product)
-);
-
-shop.appendChild(
-createCard(product)
-);
+home.appendChild(createCard(product));
+shop.appendChild(createCard(product));
 
 });
 
 }
 
 
+/* =========================
+PAGE
+========================= */
+
 function showPage(page){
 
-document
-.querySelectorAll(".page")
-.forEach(
-p=>p.classList.remove("active")
-);
+document.querySelectorAll(".page")
+.forEach(p=>p.classList.remove("active"));
 
-const target=
-document.getElementById(page);
+const target=document.getElementById(page);
 
 if(target){
 target.classList.add("active");
@@ -1745,32 +1632,28 @@ behavior:"smooth"
 }
 
 
+/* =========================
+SEARCH
+========================= */
+
 function searchProducts(){
 
 const keyword=
-document
-.getElementById("search")
+document.getElementById("search")
 .value
 .toLowerCase()
 .trim();
 
-const shop=
-document.getElementById("shopProducts");
+const shop=document.getElementById("shopProducts");
 
 shop.innerHTML="";
 
 products
 .filter(product=>
-product.name
-.toLowerCase()
-.includes(keyword)
+product.name.toLowerCase().includes(keyword)
 )
 .forEach(product=>{
-
-shop.appendChild(
-createCard(product)
-);
-
+shop.appendChild(createCard(product));
 });
 
 }
@@ -1778,51 +1661,28 @@ createCard(product)
 
 function clearSearch(){
 
-document
-.getElementById("search")
-.value="";
+document.getElementById("search").value="";
 
-const shop=
-document.getElementById("shopProducts");
-
-shop.innerHTML="";
-
-const sorted=
-[...products].sort(
-(a,b)=>
-Number(b.stock)-
-Number(a.stock)
-);
-
-sorted.forEach(product=>{
-
-shop.appendChild(
-createCard(product)
-);
-
-});
+searchProducts();
 
 }
 
 
+/* =========================
+DETAIL
+========================= */
+
 function openDetail(id){
 
-const product=
-products.find(
-p=>p.id===id
-);
+const product=products.find(p=>p.id===id);
 
-if(
-!product||
-!product.stock
-){
+if(!product||!product.stock){
 return;
 }
 
 let galleryHTML="";
 
-product.gallery.forEach(
-(img,index)=>{
+(product.gallery||[]).forEach((img,index)=>{
 
 galleryHTML+=`
 
@@ -1835,9 +1695,7 @@ onclick="changeMainImage('${img}')">
 
 });
 
-document.getElementById(
-"detailContent"
-).innerHTML=`
+document.getElementById("detailContent").innerHTML=`
 
 <div class="detail-main-image">
 
@@ -1848,11 +1706,7 @@ alt="${product.name}">
 
 </div>
 
-<div class="gallery">
-
-${galleryHTML}
-
-</div>
+${galleryHTML?`<div class="gallery">${galleryHTML}</div>`:""}
 
 <div class="detail-info">
 
@@ -1867,16 +1721,14 @@ ${formatPrice(product.price)}
 <div class="detail-list">
 
 ${
-product.description
-.map(
-item=>`
+(product.description||[])
+.map(item=>`
 
 <div class="detail-item">
 ✓ ${item}
 </div>
 
-`
-)
+`)
 .join("")
 }
 
@@ -1894,19 +1746,14 @@ onclick="openPayment(${product.id})">
 
 `;
 
-document
-.getElementById("detailModal")
-.classList.add("show");
+document.getElementById("detailModal").classList.add("show");
 
 }
 
 
 function changeMainImage(url){
 
-const img=
-document.getElementById(
-"detailMainImage"
-);
+const img=document.getElementById("detailMainImage");
 
 if(img){
 img.src=url;
@@ -1917,8 +1764,7 @@ img.src=url;
 
 function closeDetail(){
 
-document
-.getElementById("detailModal")
+document.getElementById("detailModal")
 .classList.remove("show");
 
 }
@@ -1926,33 +1772,44 @@ document
 
 function closeOutside(event){
 
-if(
-event.target.id===
-"detailModal"
-){
+if(event.target.id==="detailModal"){
 closeDetail();
 }
 
 }
 
 
+/* =========================
+PAYMENT
+========================= */
+
 function openPayment(id){
 
-const product=
-products.find(
-p=>p.id===id
-);
+const product=products.find(p=>p.id===id);
 
-if(
-!product||
-!product.stock
-){
+if(!product||!product.stock){
 return;
 }
 
-document.getElementById(
-"paymentContent"
-).innerHTML=`
+let coupon=Object.entries(coupons)
+.find(([code,data])=>data.productId===product.id);
+
+let couponCode="";
+let discountPercent=0;
+
+if(coupon){
+
+couponCode=coupon[0];
+discountPercent=coupon[1].discount;
+
+}
+
+/*
+ຈະຍັງສະແດງລາຄາເດີມ.
+ລາຄາຈະປ່ຽນຫຼັງຈາກກົດໃຊ້ Coupon ເທົ່ານັ້ນ.
+*/
+
+document.getElementById("paymentContent").innerHTML=`
 
 <div class="payment-box">
 
@@ -1964,8 +1821,79 @@ document.getElementById(
 ${product.name}
 </div>
 
-<div class="payment-price">
+<div class="payment-price" id="paymentPrice">
 ${formatPrice(product.price)}
+</div>
+
+<div id="paymentOldPrice"></div>
+
+<div class="coupon-box">
+
+<div class="coupon-title">
+🎟️ ໃສ່ໂຄ້ດສ່ວນລຸດ
+</div>
+
+<div class="coupon-row">
+
+<input
+id="couponInput"
+class="coupon-input"
+type="text"
+maxlength="30"
+placeholder="ໃສ່ Coupon Code"
+autocomplete="off">
+
+<button
+class="coupon-apply"
+onclick="applyCoupon(${product.id})">
+
+ໃຊ້ໂຄ້ດ
+
+</button>
+
+</div>
+
+<div id="couponMessage" class="coupon-message"></div>
+
+</div>
+
+<div class="price-summary">
+
+<div class="price-line">
+
+<span>ລາຄາເດີມ</span>
+
+<strong id="summaryOriginal">
+${formatPrice(product.price)}
+</strong>
+
+</div>
+
+<div
+class="price-line discount"
+id="discountLine"
+style="display:none">
+
+<span id="discountText">
+ສ່ວນລຸດ
+</span>
+
+<strong id="discountAmount">
+0 ກີບ
+</strong>
+
+</div>
+
+<div class="price-line total">
+
+<span>ລາຄາທີ່ຕ້ອງຈ່າຍ</span>
+
+<strong id="summaryTotal">
+${formatPrice(product.price)}
+</strong>
+
+</div>
+
 </div>
 
 <div class="qr-box">
@@ -1996,68 +1924,253 @@ onclick="sendWhatsApp(${product.id})">
 
 `;
 
+/*
+ບັນທຶກ Coupon ປັດຈຸບັນໄວ້ໃນ payment modal
+*/
+
+window.currentPayment={
+productId:product.id,
+couponCode:"",
+discountPercent:0,
+finalPrice:product.price
+};
+
 closeDetail();
 
-document
-.getElementById("paymentModal")
+document.getElementById("paymentModal")
 .classList.add("show");
 
 }
 
 
+/* =========================
+APPLY COUPON
+========================= */
+
+function applyCoupon(productId){
+
+const input=document.getElementById("couponInput");
+const message=document.getElementById("couponMessage");
+
+if(!input||!message){
+return;
+}
+
+const code=input.value
+.trim()
+.toUpperCase();
+
+message.className="coupon-message";
+
+if(!code){
+
+message.classList.add("coupon-error");
+message.textContent="❌ ກະລຸນາໃສ່ໂຄ້ດກ່ອນ";
+
+return;
+}
+
+const coupon=coupons[code];
+
+if(!coupon){
+
+message.classList.add("coupon-error");
+message.textContent="❌ ໂຄ້ດບໍ່ຖືກຕ້ອງ";
+
+return;
+}
+
+if(coupon.productId!==productId){
+
+message.classList.add("coupon-error");
+message.textContent=
+"❌ ໂຄ້ດນີ້ໃຊ້ກັບສິນຄ້ານີ້ບໍ່ໄດ້";
+
+return;
+}
+
+if(isCouponUsed(code)){
+
+message.classList.add("coupon-error");
+message.textContent=
+"❌ ໂຄ້ດນີ້ໃຊ້ແລ້ວ";
+
+return;
+}
+
+const product=products.find(
+p=>p.id===productId
+);
+
+if(!product||!product.stock){
+
+message.classList.add("coupon-error");
+message.textContent=
+"❌ ສິນຄ້ານີ້ຂາຍແລ້ວ";
+
+return;
+}
+
+/*
+ຄຳນວນລາຄາໃໝ່
+*/
+
+const discountAmount=
+Math.round(
+product.price*coupon.discount/100
+);
+
+const finalPrice=
+product.price-discountAmount;
+
+/*
+ສະແດງລາຄາຫຼັງຫັກ
+*/
+
+document.getElementById("paymentPrice").innerHTML=
+formatPrice(finalPrice);
+
+document.getElementById("paymentOldPrice").innerHTML=`
+
+<div class="payment-old">
+ລາຄາເດີມ ${formatPrice(product.price)}
+</div>
+
+`;
+
+document.getElementById("discountLine").style.display="flex";
+
+document.getElementById("discountText").textContent=
+`ສ່ວນລຸດ ${coupon.discount}%`;
+
+document.getElementById("discountAmount").textContent=
+"- "+formatPrice(discountAmount);
+
+document.getElementById("summaryTotal").textContent=
+formatPrice(finalPrice);
+
+message.classList.add("coupon-success");
+
+message.textContent=
+`✓ ໃຊ້ໂຄ້ດສຳເລັດ ລົດ ${coupon.discount}%`;
+
+/*
+ຈຸດສຳຄັນ:
+ກົດໃຊ້ສຳເລັດແລ້ວ
+Coupon ນີ້ຈະຖືກ mark ວ່າໃຊ້ແລ້ວ
+*/
+
+markCouponUsed(code);
+
+window.currentPayment={
+productId:productId,
+couponCode:code,
+discountPercent:coupon.discount,
+discountAmount:discountAmount,
+finalPrice:finalPrice
+};
+
+input.disabled=true;
+
+const button=document.querySelector(".coupon-apply");
+
+if(button){
+button.disabled=true;
+button.style.opacity=".55";
+button.style.cursor="not-allowed";
+}
+
+}
+
+
+/* =========================
+WHATSAPP
+========================= */
+
 function sendWhatsApp(id){
 
-const product=
-products.find(
-p=>p.id===id
-);
+const product=products.find(p=>p.id===id);
 
 if(!product){
 return;
 }
 
+let finalPrice=product.price;
+let couponCode="";
+let discountPercent=0;
+let discountAmount=0;
+
+/*
+ດຶງລາຄາທີ່ໃຊ້ຈ່າຍ
+*/
+
+if(
+window.currentPayment &&
+window.currentPayment.productId===id
+){
+
+finalPrice=
+window.currentPayment.finalPrice;
+
+couponCode=
+window.currentPayment.couponCode||"";
+
+discountPercent=
+window.currentPayment.discountPercent||0;
+
+discountAmount=
+window.currentPayment.discountAmount||0;
+
+}
+
 const message=
 `ສະບາຍດີ LAO GAMING PRO X3D
+
 ຂ້ອຍສົນໃຈສິນຄ້າ:
 
 ສິນຄ້າ: ${product.name}
-ລາຄາ: ${formatPrice(product.price)}
+
+ລາຄາເດີມ: ${formatPrice(product.price)}
+
+${couponCode
+?`Coupon: ${couponCode}
+ສ່ວນລຸດ: ${discountPercent}%
+ຫັກອອກ: ${formatPrice(discountAmount)}
+
+ລາຄາຫຼັງຫັກ: ${formatPrice(finalPrice)}`
+:`ລາຄາທີ່ຈ່າຍ: ${formatPrice(finalPrice)}`}
 
 ຂ້ອຍໄດ້ໂອນເງິນແລ້ວ
 ກຳລັງສົ່ງສະລິບໃຫ້ກວດສອບ.`;
 
 const url=
 "https://wa.me/"
-+
-WHATSAPP
-+
-"?text="
-+
-encodeURIComponent(message);
++WHATSAPP
++"?text="
++encodeURIComponent(message);
 
-window.open(
-url,
-"_blank"
-);
+window.open(url,"_blank");
 
 }
 
 
+/* =========================
+CLOSE PAYMENT
+========================= */
+
 function closePayment(){
 
-document
-.getElementById("paymentModal")
+document.getElementById("paymentModal")
 .classList.remove("show");
+
+window.currentPayment=null;
 
 }
 
 
 function closePaymentOutside(event){
 
-if(
-event.target.id===
-"paymentModal"
-){
+if(event.target.id==="paymentModal"){
 closePayment();
 }
 
@@ -2065,7 +2178,7 @@ closePayment();
 
 
 /* =========================
-   START
+START
 ========================= */
 
 renderProducts();
@@ -2076,4 +2189,3 @@ showPage("home");
 
 </body>
 </html>
-```
