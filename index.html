@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="lo">
 <head>
@@ -1022,6 +1023,10 @@ body{
     0 8px 22px rgba(37,211,102,.22);
 }
 
+/* =====================================================
+   FLOAT CONTACT
+===================================================== */
+
 .contact-float{
     position:fixed;
 
@@ -1054,6 +1059,8 @@ body{
     0 8px 25px rgba(0,0,0,.18);
 
     transition:.2s;
+
+    position:relative;
 }
 
 .contact-float a:hover{
@@ -1067,12 +1074,22 @@ body{
     height:29px;
 }
 
+/* WhatsApp */
+
 .float-whatsapp{
     background:#25D366;
 }
 
+/* Facebook */
+
 .float-facebook{
     background:#1877F2;
+}
+
+/* Email */
+
+.float-email{
+    background:#087cff;
 }
 
 .contact-float a::before{
@@ -1117,6 +1134,10 @@ body{
     content:"Facebook";
 }
 
+.float-email::before{
+    content:"Email";
+}
+
 footer{
     padding:28px 20px;
 
@@ -1129,6 +1150,22 @@ footer{
     color:#8290a3;
 
     font-size:12px;
+}
+
+.footer-email{
+    display:block;
+
+    margin-top:8px;
+
+    color:var(--blue);
+
+    text-decoration:none;
+
+    font-weight:900;
+}
+
+.footer-email:hover{
+    text-decoration:underline;
 }
 
 @media(max-width:1000px){
@@ -1605,7 +1642,11 @@ class="modal-body">
 
 </div>
 
+<!-- CONTACT FLOAT BUTTONS -->
+
 <div class="contact-float">
+
+<!-- WhatsApp -->
 
 <a
 class="float-whatsapp"
@@ -1639,6 +1680,8 @@ fill="white">
 
 </a>
 
+<!-- Facebook -->
+
 <a
 class="float-facebook"
 href="https://www.facebook.com/share/18x82jMTpz/"
@@ -1665,11 +1708,51 @@ fill="#1877F2">
 
 </a>
 
+<!-- EMAIL -->
+
+<a
+class="float-email"
+href="mailto:laogamingprox3d.support@gmail.com"
+aria-label="Email">
+
+<svg
+viewBox="0 0 32 32"
+fill="none">
+
+<rect
+x="4"
+y="7"
+width="24"
+height="18"
+rx="3"
+fill="white">
+</rect>
+
+<path
+d="M5 9L16 18L27 9"
+stroke="#087cff"
+stroke-width="2.5"
+stroke-linecap="round"
+stroke-linejoin="round">
+</path>
+
+</svg>
+
+</a>
+
 </div>
 
 <footer>
 
 © 2026 LAO GAMING PRO X3D
+
+<a
+class="footer-email"
+href="mailto:laogamingprox3d.support@gmail.com">
+
+📧 laogamingprox3d.support@gmail.com
+
+</a>
 
 </footer>
 
@@ -1880,19 +1963,15 @@ const QR_IMAGE =
 const WHATSAPP =
 "8562092978004";
 
-const products = [
+const SUPPORT_EMAIL =
+"laogamingprox3d.support@gmail.com";
 
-/* =====================================================
-   EP #0023 — ຍັງມີຢູ່
-===================================================== */
+const products = [
 
 {
     id:23,
-
     name:"𝐄𝐏 #𝟎𝟎𝟐𝟑",
-
     price:350000,
-
     stock:true,
 
     image:
@@ -1900,11 +1979,8 @@ const products = [
 
     gallery:[
         "https://i.ibb.co/jvw1q9n9/230b8f20-4e07-4989-aeb1-509d6f18b3aa.jpg",
-
         "https://i.ibb.co/zWs8S3j6/2f6edcc7-ffd8-4a46-a6cc-3ad6d33af73d.jpg",
-
         "https://i.ibb.co/hJqHv4vQ/20c68f5a-3efe-452f-a6d0-12da7ce930ce.jpg",
-
         "https://i.ibb.co/hJqHv4vQ/20c68f5a-3efe-452f-a6d0-12da7ce930ce.jpg"
     ],
 
@@ -1914,10 +1990,6 @@ const products = [
         "ຍົກໃຫ້ທັງ Google ກູ້ ແລະ ເກມພ້ອມຍ້າຍ"
     ]
 },
-
-/* =====================================================
-   EP #0017
-===================================================== */
 
 {
     id:17,
@@ -1941,10 +2013,6 @@ const products = [
     ]
 },
 
-/* =====================================================
-   EP #0016 — ຂາຍແລ້ວ
-===================================================== */
-
 {
     id:16,
     name:"𝐄𝐏 #𝟎𝟎𝟏𝟔",
@@ -1966,10 +2034,6 @@ const products = [
         "ຍົກໃຫ້ທັງ Google ກູ້ ແລະ ເກມພ້ອມຍ້າຍ"
     ]
 },
-
-/* =====================================================
-   EP #0015 — ຂາຍແລ້ວ
-===================================================== */
 
 {
     id:15,
@@ -1993,10 +2057,6 @@ const products = [
     ]
 },
 
-/* =====================================================
-   EP #0018
-===================================================== */
-
 {
     id:18,
     name:"𝐄𝐏 #𝟎𝟎𝟏𝟖",
@@ -2018,10 +2078,6 @@ const products = [
         "ຍົກໃຫ້ທັງ Google ກູ້ ແລະ ເກມພ້ອມຍ້າຍ"
     ]
 },
-
-/* =====================================================
-   EP #0019 — ຂາຍແລ້ວ
-===================================================== */
 
 {
     id:19,
@@ -2045,10 +2101,6 @@ const products = [
     ]
 },
 
-/* =====================================================
-   EP #0020 — ຂາຍແລ້ວ
-===================================================== */
-
 {
     id:20,
     name:"𝐄𝐏 #𝟎𝟎𝟐𝟎",
@@ -2070,10 +2122,6 @@ const products = [
         "ຍົກໃຫ້ທັງ Google ກູ້"
     ]
 },
-
-/* =====================================================
-   EP #0021 — ຂາຍແລ້ວ
-===================================================== */
 
 {
     id:21,
@@ -2097,17 +2145,10 @@ const products = [
     ]
 },
 
-/* =====================================================
-   EP #006 — ຂາຍແລ້ວ
-===================================================== */
-
 {
     id:6,
-
     name:"𝐄𝐏 #𝟎𝟎𝟔",
-
     price:318360,
-
     stock:false,
 
     image:
@@ -2125,10 +2166,6 @@ const products = [
         "ຍົກໃຫ້ທັງ Google ກູ້ ແລະ ເກມພ້ອມຍ້າຍ"
     ]
 },
-
-/* =====================================================
-   EP #0012 — ຂາຍແລ້ວ
-===================================================== */
 
 {
     id:12,
@@ -2151,10 +2188,6 @@ const products = [
         "ຍົກໃຫ້ທັງ Google ກູ້ ແລະ ເກມພ້ອມຍ້າຍ"
     ]
 },
-
-/* =====================================================
-   EP #0010 — ຍັງມີຢູ່
-===================================================== */
 
 {
     id:10,
@@ -2699,6 +2732,15 @@ function openPayment(id){
 
             </button>
 
+            <button
+            class="buy-button"
+            style="margin-top:10px"
+            onclick="sendEmail(${product.id})">
+
+                📧 ຕິດຕໍ່ຜ່ານ Email
+
+            </button>
+
         </div>
 
     `;
@@ -2752,6 +2794,56 @@ function sendWhatsApp(id){
 
 }
 
+/* =====================================================
+   EMAIL CONTACT
+===================================================== */
+
+function sendEmail(id){
+
+    const product =
+    products.find(
+        p=>p.id===id
+    );
+
+    if(!product){
+        return;
+    }
+
+    const subject =
+    "ສົນໃຈສິນຄ້າ "
+    +
+    product.name;
+
+    const body =
+`ສະບາຍດີ LAO GAMING PRO X3D
+
+ຂ້ອຍສົນໃຈສິນຄ້າ:
+
+ສິນຄ້າ: ${product.name}
+ລາຄາ: ${formatPrice(product.price)}
+
+ກະລຸນາແຈ້ງລາຍລະອຽດການຊື້ໃຫ້ຂ້ອຍແນ່.
+
+ຂອບໃຈ.`;
+
+    const mailto =
+    "mailto:"
+    +
+    SUPPORT_EMAIL
+    +
+    "?subject="
+    +
+    encodeURIComponent(subject)
+    +
+    "&body="
+    +
+    encodeURIComponent(body);
+
+    window.location.href =
+    mailto;
+
+}
+
 function closePayment(){
 
     document
@@ -2781,3 +2873,4 @@ showPage("home");
 
 </body>
 </html>
+```
