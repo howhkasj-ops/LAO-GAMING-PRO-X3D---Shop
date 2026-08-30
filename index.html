@@ -6,8 +6,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>LAO GAMING PRO X3D</title>
 
-<link rel="icon"
-href="https://i.ibb.co/0VsFgJV2/dd921ff9-89fd-4b47-a48e-e60383c2c987.jpg">
+<link rel="icon" href="https://i.ibb.co/0VsFgJV2/dd921ff9-89fd-4b47-a48e-e60383c2c987.jpg">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -770,7 +769,6 @@ font-size:12px;
 grid-template-columns:repeat(2,1fr);
 gap:10px;
 }
-
 .banner{height:230px}
 .product-image{height:180px}
 .detail-main-image{height:280px}
@@ -818,6 +816,7 @@ padding-right:60px;
 }
 
 .product-content{padding:12px}
+
 .product-title{font-size:13px}
 .product-price{font-size:15px}
 .product-image{height:145px}
@@ -962,8 +961,13 @@ opacity:.8;
 </div>
 
 <div class="section-title">
+
 <h2>🛒 ສິນຄ້າທັງໝົດ</h2>
-<p>ຮ້ານ LAO GAMING PRO X3D ຈຳໜ່າຍ Free Fire Game ID</p>
+
+<p>
+ຮ້ານ LAO GAMING PRO X3D ຈຳໜ່າຍ Free Fire Game ID
+</p>
+
 </div>
 
 <div id="homeProducts" class="products home-products"></div>
@@ -998,7 +1002,8 @@ oninput="searchProducts()">
 
 </div>
 
-<div id="shopProducts"
+<div
+id="shopProducts"
 class="products"
 style="margin-top:25px">
 </div>
@@ -1093,6 +1098,10 @@ fill="#1877F2">
 
 <script>
 
+/* =========================
+   SNOW EFFECT
+========================= */
+
 const snowCanvas=document.getElementById("snowCanvas");
 const snowCtx=snowCanvas.getContext("2d");
 
@@ -1111,19 +1120,29 @@ snowCanvas.height=snowHeight;
 }
 
 resizeSnow();
+
 window.addEventListener("resize",resizeSnow);
 
 function createSnowflake(){
 
 return{
+
 x:Math.random()*snowWidth,
+
 y:Math.random()*snowHeight-snowHeight,
+
 radius:Math.random()*3+1,
+
 speed:Math.random()*1.2+0.5,
+
 wind:Math.random()*0.8-0.4,
+
 opacity:Math.random()*0.65+0.25,
+
 swing:Math.random()*Math.PI*2,
+
 swingSpeed:Math.random()*0.02+0.005
+
 };
 
 }
@@ -1132,10 +1151,15 @@ function initSnow(){
 
 snowflakes=[];
 
-const amount=window.innerWidth<600?70:120;
+const amount=
+window.innerWidth<600
+?70
+:120;
 
 for(let i=0;i<amount;i++){
+
 snowflakes.push(createSnowflake());
+
 }
 
 }
@@ -1155,7 +1179,8 @@ snowflakes.forEach(snow=>{
 
 snow.swing+=snow.swingSpeed;
 
-snow.x+=snow.wind+
+snow.x+=
+snow.wind+
 Math.sin(snow.swing)*0.25;
 
 snow.y+=snow.speed;
@@ -1186,12 +1211,14 @@ Math.PI*2
 );
 
 snowCtx.fillStyle=
-"rgba(255,255,255,"+
-snow.opacity+
-")";
+"rgba(255,255,255,"
++snow.opacity
++")";
 
 snowCtx.shadowBlur=
-snow.radius>2?9:5;
+snow.radius>2
+?9
+:5;
 
 snowCtx.shadowColor=
 "rgba(150,220,255,.85)";
@@ -1206,11 +1233,20 @@ requestAnimationFrame(drawSnow);
 
 drawSnow();
 
+
+/* =========================
+   SETTINGS
+========================= */
+
 const QR_IMAGE=
 "https://i.ibb.co/zhrYP1Qt/ad537117-f92d-4326-8ec3-cbf38e008e42.jpg";
 
-const WHATSAPP=
-"8562092978004";
+const WHATSAPP="8562092978004";
+
+
+/* =========================
+   PRODUCTS
+========================= */
 
 const products=[
 
@@ -1346,13 +1382,13 @@ description:[
 ]
 },
 
-/* EP #0022 — ແກ້ລາຄາເປັນ 350,000 ກີບ */
+/* EP #0022 — ຂາຍແລ້ວ + ລາຄາ 350,000 */
 
 {
 id:22,
 name:"𝐄𝐏 #𝟎𝟎𝟐𝟐",
 price:350000,
-stock:true,
+stock:false,
 
 image:
 "https://i.ibb.co/qYWLmX38/d88817d4-b9f0-46aa-b44e-5a01e98b4587.jpg",
@@ -1516,6 +1552,11 @@ image:"https://i.ibb.co/ynCDzBXN/b9054ee9-53b0-4dde-a0cd-a29d02f8c8d7.jpg"
 
 ];
 
+
+/* =========================
+   FUNCTIONS
+========================= */
+
 function formatPrice(price){
 
 if(
@@ -1527,12 +1568,16 @@ return "ສອບຖາມລາຄາ";
 }
 
 return new Intl.NumberFormat("lo-LA")
-.format(price)+" ກີບ";
+.format(price)
++" ກີບ";
+
 }
+
 
 function createCard(product){
 
 const card=document.createElement("div");
+
 card.className="product";
 
 if(product.stock){
@@ -1640,28 +1685,42 @@ disabled>
 }
 
 return card;
+
 }
+
 
 function renderProducts(){
 
-const home=document.getElementById("homeProducts");
-const shop=document.getElementById("shopProducts");
+const home=
+document.getElementById("homeProducts");
+
+const shop=
+document.getElementById("shopProducts");
 
 home.innerHTML="";
 shop.innerHTML="";
 
-const sorted=[...products].sort(
-(a,b)=>Number(b.stock)-Number(a.stock)
+const sorted=
+[...products].sort(
+(a,b)=>
+Number(b.stock)-
+Number(a.stock)
 );
 
 sorted.forEach(product=>{
 
-home.appendChild(createCard(product));
-shop.appendChild(createCard(product));
+home.appendChild(
+createCard(product)
+);
+
+shop.appendChild(
+createCard(product)
+);
 
 });
 
 }
+
 
 function showPage(page){
 
@@ -1671,7 +1730,8 @@ document
 p=>p.classList.remove("active")
 );
 
-const target=document.getElementById(page);
+const target=
+document.getElementById(page);
 
 if(target){
 target.classList.add("active");
@@ -1684,15 +1744,18 @@ behavior:"smooth"
 
 }
 
+
 function searchProducts(){
 
-const keyword=document
+const keyword=
+document
 .getElementById("search")
 .value
 .toLowerCase()
 .trim();
 
-const shop=document.getElementById("shopProducts");
+const shop=
+document.getElementById("shopProducts");
 
 shop.innerHTML="";
 
@@ -1712,16 +1775,23 @@ createCard(product)
 
 }
 
+
 function clearSearch(){
 
-document.getElementById("search").value="";
+document
+.getElementById("search")
+.value="";
 
-const shop=document.getElementById("shopProducts");
+const shop=
+document.getElementById("shopProducts");
 
 shop.innerHTML="";
 
-const sorted=[...products].sort(
-(a,b)=>Number(b.stock)-Number(a.stock)
+const sorted=
+[...products].sort(
+(a,b)=>
+Number(b.stock)-
+Number(a.stock)
 );
 
 sorted.forEach(product=>{
@@ -1734,9 +1804,11 @@ createCard(product)
 
 }
 
+
 function openDetail(id){
 
-const product=products.find(
+const product=
+products.find(
 p=>p.id===id
 );
 
@@ -1777,7 +1849,9 @@ alt="${product.name}">
 </div>
 
 <div class="gallery">
+
 ${galleryHTML}
+
 </div>
 
 <div class="detail-info">
@@ -1826,9 +1900,11 @@ document
 
 }
 
+
 function changeMainImage(url){
 
-const img=document.getElementById(
+const img=
+document.getElementById(
 "detailMainImage"
 );
 
@@ -1838,6 +1914,7 @@ img.src=url;
 
 }
 
+
 function closeDetail(){
 
 document
@@ -1846,17 +1923,23 @@ document
 
 }
 
+
 function closeOutside(event){
 
-if(event.target.id==="detailModal"){
+if(
+event.target.id===
+"detailModal"
+){
 closeDetail();
 }
 
 }
 
+
 function openPayment(id){
 
-const product=products.find(
+const product=
+products.find(
 p=>p.id===id
 );
 
@@ -1921,9 +2004,11 @@ document
 
 }
 
+
 function sendWhatsApp(id){
 
-const product=products.find(
+const product=
+products.find(
 p=>p.id===id
 );
 
@@ -1942,9 +2027,12 @@ const message=
 ກຳລັງສົ່ງສະລິບໃຫ້ກວດສອບ.`;
 
 const url=
-"https://wa.me/"+
-WHATSAPP+
-"?text="+
+"https://wa.me/"
++
+WHATSAPP
++
+"?text="
++
 encodeURIComponent(message);
 
 window.open(
@@ -1954,6 +2042,7 @@ url,
 
 }
 
+
 function closePayment(){
 
 document
@@ -1961,6 +2050,7 @@ document
 .classList.remove("show");
 
 }
+
 
 function closePaymentOutside(event){
 
@@ -1973,7 +2063,13 @@ closePayment();
 
 }
 
+
+/* =========================
+   START
+========================= */
+
 renderProducts();
+
 showPage("home");
 
 </script>
