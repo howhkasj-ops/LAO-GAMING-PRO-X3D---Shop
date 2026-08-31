@@ -138,8 +138,6 @@ body{
     border-color:#cfeaff;
 }
 
-/* HOME LOGO */
-
 .home-logo{
     width:28px;
     height:28px;
@@ -148,27 +146,17 @@ body{
     justify-content:center;
     border-radius:8px;
     color:#087cff;
-    background:linear-gradient(
-        135deg,
-        #eaf7ff,
-        #d8f0ff
-    );
+    background:linear-gradient(135deg,#eaf7ff,#d8f0ff);
     border:1px solid #cceaff;
-    box-shadow:
-        0 4px 12px rgba(8,124,255,.12);
+    box-shadow:0 4px 12px rgba(8,124,255,.12);
 }
 
 .nav button:hover .home-logo,
 .nav button.active .home-logo{
     color:#fff;
-    background:linear-gradient(
-        135deg,
-        #087cff,
-        #20a9ff
-    );
+    background:linear-gradient(135deg,#087cff,#20a9ff);
     border-color:#087cff;
-    box-shadow:
-        0 5px 15px rgba(8,124,255,.22);
+    box-shadow:0 5px 15px rgba(8,124,255,.22);
 }
 
 .page{
@@ -355,7 +343,7 @@ body{
     transform:translateY(-1px);
 }
 
-/* VIDEO MODAL */
+/* VIDEO */
 
 .video-modal-box{
     width:100%;
@@ -676,6 +664,229 @@ body{
     cursor:pointer;
 }
 
+/* =========================
+   STATUS PAGES
+========================= */
+
+.status-page{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+    padding:24px 20px 120px;
+}
+
+.status-header{
+    padding:22px;
+    border-radius:22px;
+    background:linear-gradient(135deg,#fff,#eef9ff);
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+}
+
+.status-header-top{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.status-header-icon{
+    width:54px;
+    height:54px;
+    flex:0 0 54px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:16px;
+    font-size:25px;
+    background:linear-gradient(135deg,#087cff,#20a9ff);
+    color:#fff;
+    box-shadow:0 8px 22px rgba(8,124,255,.22);
+}
+
+.status-header h2{
+    font-size:22px;
+    font-weight:950;
+}
+
+.status-header p{
+    margin-top:5px;
+    color:var(--muted);
+    font-size:12px;
+    font-weight:700;
+}
+
+.status-count{
+    margin-top:18px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:13px 15px;
+    border-radius:13px;
+    background:#fff;
+    border:1px solid #dcefff;
+}
+
+.status-count span:first-child{
+    color:#63758a;
+    font-size:12px;
+    font-weight:850;
+}
+
+.status-count strong{
+    color:var(--blue);
+    font-size:18px;
+    font-weight:950;
+}
+
+.status-products{
+    margin-top:20px;
+}
+
+.empty-status{
+    grid-column:1/-1;
+    padding:55px 20px;
+    text-align:center;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:20px;
+    box-shadow:var(--shadow);
+}
+
+.empty-status-icon{
+    width:65px;
+    height:65px;
+    margin:0 auto 13px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:18px;
+    background:#eff9ff;
+    font-size:28px;
+}
+
+.empty-status h3{
+    font-size:16px;
+    font-weight:950;
+}
+
+.empty-status p{
+    margin-top:5px;
+    color:var(--muted);
+    font-size:12px;
+}
+
+.available-page .status-header-icon{
+    background:linear-gradient(135deg,#16a34a,#43d477);
+}
+
+.available-page .status-count strong{
+    color:#16a34a;
+}
+
+.stock-page .status-header-icon{
+    background:linear-gradient(135deg,#087cff,#20a9ff);
+}
+
+.stock-page .status-count strong{
+    color:#087cff;
+}
+
+.sold-page .status-header-icon{
+    background:linear-gradient(135deg,#ef4444,#ff7777);
+}
+
+.sold-page .status-count strong{
+    color:#ef4444;
+}
+
+/* =========================
+   BOTTOM MENU
+========================= */
+
+.bottom-nav{
+    position:fixed;
+    left:50%;
+    bottom:14px;
+    transform:translateX(-50%);
+    width:calc(100% - 28px);
+    max-width:560px;
+    height:72px;
+    z-index:2400;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:6px;
+    padding:7px;
+
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid #d7efff;
+    border-radius:22px;
+
+    box-shadow:
+        0 18px 45px rgba(0,100,220,.18),
+        0 3px 12px rgba(0,0,0,.05);
+}
+
+.bottom-nav button{
+    position:relative;
+    border:0;
+    background:transparent;
+    border-radius:17px;
+    color:#718399;
+    font-family:inherit;
+    font-size:10px;
+    font-weight:950;
+    cursor:pointer;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:4px;
+    transition:.22s;
+}
+
+.bottom-nav button .bottom-icon{
+    width:34px;
+    height:34px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:11px;
+    font-size:17px;
+    background:#f1f9ff;
+    border:1px solid #dcefff;
+    transition:.22s;
+}
+
+.bottom-nav button:hover{
+    color:var(--blue);
+}
+
+.bottom-nav button.active{
+    color:var(--blue);
+}
+
+.bottom-nav button.active .bottom-icon{
+    color:#fff;
+    background:linear-gradient(135deg,#087cff,#20a9ff);
+    border-color:#087cff;
+    box-shadow:0 7px 18px rgba(8,124,255,.25);
+}
+
+.bottom-nav button.active::after{
+    content:"";
+    position:absolute;
+    bottom:3px;
+    width:5px;
+    height:5px;
+    border-radius:50%;
+    background:#087cff;
+}
+
 /* MODAL */
 
 .modal{
@@ -980,6 +1191,10 @@ footer{
 
 @media(max-width:700px){
 
+    body{
+        padding-bottom:85px;
+    }
+
     .products{
         grid-template-columns:repeat(2,1fr);
         gap:10px;
@@ -999,6 +1214,43 @@ footer{
 
     .stock-summary{
         grid-template-columns:repeat(3,1fr);
+    }
+
+    .bottom-nav{
+        bottom:10px;
+        width:calc(100% - 20px);
+        height:68px;
+        border-radius:20px;
+    }
+
+    .bottom-nav button{
+        font-size:9px;
+    }
+
+    .bottom-nav button .bottom-icon{
+        width:32px;
+        height:32px;
+        font-size:16px;
+    }
+
+    .status-page{
+        padding:18px 12px 105px;
+    }
+
+    .status-header{
+        padding:17px;
+        border-radius:18px;
+    }
+
+    .status-header h2{
+        font-size:19px;
+    }
+
+    .status-header-icon{
+        width:48px;
+        height:48px;
+        flex-basis:48px;
+        border-radius:14px;
     }
 }
 
@@ -1133,6 +1385,13 @@ footer{
         font-size:11px;
     }
 }
+
+@media(min-width:701px){
+
+    .bottom-nav{
+        display:none;
+    }
+}
 </style>
 </head>
 
@@ -1151,11 +1410,8 @@ src="https://i.ibb.co/0VsFgJV2/dd921ff9-89fd-4b47-a48e-e60383c2c987.jpg"
 alt="LAO GAMING PRO X3D">
 
 <div>
-
 <h1>LAO GAMING PRO X3D</h1>
-
 <span>ONLINE GAME SHOP</span>
-
 </div>
 
 </div>
@@ -1225,15 +1481,11 @@ alt="Banner">
 
 </div>
 
-
-<!-- ANNOUNCEMENT -->
-
 <div class="announcement">
 
 <div class="announcement-track">
 
 <div class="announcement-text">
-
 📢 ປະກາດຈາກຮ້ານ
 &nbsp; • &nbsp;
 ຮັບຊື້ໄອດີຕະຫຼອດ
@@ -1241,11 +1493,9 @@ alt="Banner">
 ເປີດຮ້ານ 10:30 - 23:30
 &nbsp; • &nbsp;
 ພ້ອມໃຫ້ບໍລິການ
-
 </div>
 
 <div class="announcement-text">
-
 📢 ປະກາດຈາກຮ້ານ
 &nbsp; • &nbsp;
 ຮັບຊື້ໄອດີຕະຫຼອດ
@@ -1253,98 +1503,73 @@ alt="Banner">
 ເປີດຮ້ານ 10:30 - 23:30
 &nbsp; • &nbsp;
 ພ້ອມໃຫ້ບໍລິການ
-
 </div>
 
 </div>
-
 </div>
 
-
-<!-- WARNING -->
 
 <div class="warning-box">
 
 <div class="warning-title">
-
 ⚠️ ຄຳເຕືອນສຳຄັນ — ກະລຸນາອ່ານໃຫ້ຄົບ
-
 </div>
 
 <div class="warning-list">
 
 <div class="warning-item">
-
 <b>1.</b>
 ຫຼັງຈາກໄດ້ຮັບສິນຄ້າ
 ລົບກວນໃຫ້ປ່ຽນຂໍ້ມູນເມວທັນທີ.
-
 </div>
 
 <div class="warning-item">
-
 <b>2.</b>
 ຫຼັງຈາກປ່ຽນຂໍ້ມູນແລ້ວ
 ໃຫ້ແຈ້ງແອັດມິນວ່າ
 “ປ່ຽນແລ້ວ”
 ເພື່ອໃຫ້ແອັດມິນລົບເມວ.
-
 </div>
 
 <div class="warning-item">
-
 <b>3.</b>
 ຫຼັງຈາກແອັດມິນລົບເມວແລ້ວ
 ທາງຮ້ານບໍ່ຮັບປະກັນຫຼັງການຂາຍ.
-
 </div>
 
 <div class="warning-item">
-
 <b>4.</b>
 ໄລຍະເວລາເມວຢູ່ກັບຮ້ານພຽງ
 <b>1–3 ວັນ</b>.
 ກາຍຈາກນີ້ ຖ້າມີບັນຫາເລື່ອງເມວ
 ທາງແອັດມິນບໍ່ຮັບຜິດຊອບ.
-
 </div>
 
 <div class="warning-item">
-
 ⚠️
 <b>
 ກະລຸນາອ່ານໃຫ້ຄົບຖ້ວນ
 ແລະເຮັດຕາມຄຳເຕືອນຂ້າງເທິງ.
 </b>
-
 </div>
 
 </div>
-
 </div>
 
-
-<!-- VIDEO HELP -->
 
 <div class="video-help">
-
-<!-- EMAIL -->
 
 <div class="video-help-card">
 
 <div class="video-help-logo">
-
 <img
 src="https://cdn.simpleicons.org/gmail"
 alt="Email">
-
 </div>
 
 <div class="video-help-info">
 
-<h3>
-✉️ ວິທີປ່ຽນຂໍ້ມູນເມວ
-</h3>
+<h3>✉️ ວິທີປ່ຽນຂໍ້ມູນເມວ</h3>
 
 <p>
 ກົດປຸ່ມດ້ານລຸ່ມ
@@ -1360,11 +1585,8 @@ onclick="openVideo('email')">
 </button>
 
 </div>
-
 </div>
 
-
-<!-- GAME ACCOUNT -->
 
 <div class="video-help-card">
 
@@ -1378,9 +1600,7 @@ alt="Free Fire">
 
 <div class="video-help-info">
 
-<h3>
-🎮 ວິທີຍ້າຍບັນຊີເກມ
-</h3>
+<h3>🎮 ວິທີຍ້າຍບັນຊີເກມ</h3>
 
 <p>
 ກົດປຸ່ມດ້ານລຸ່ມ
@@ -1396,13 +1616,10 @@ onclick="openVideo('game')">
 </button>
 
 </div>
-
 </div>
 
 </div>
 
-
-<!-- FREE FIRE -->
 
 <div class="section-title">
 
@@ -1411,7 +1628,6 @@ onclick="openVideo('game')">
 <p>Game ID &amp; Game Code</p>
 
 </div>
-
 
 <div class="category-card">
 
@@ -1445,8 +1661,6 @@ onclick="showPage('shop')">
 
 </div>
 
-
-<!-- STOCK -->
 
 <div class="stock-summary">
 
@@ -1495,8 +1709,6 @@ class="stock-number">
 </div>
 
 
-<!-- PRODUCTS -->
-
 <div class="section-title">
 
 <h2>🛒 ສິນຄ້າທັງໝົດ</h2>
@@ -1513,7 +1725,6 @@ class="products">
 </div>
 
 </div>
-
 </section>
 
 
@@ -1551,18 +1762,15 @@ onclick="showPage('home')">
 
 </div>
 
-
 <div class="search-box">
 
-<div class="search-icon">
-⌕
-</div>
+<div class="search-icon">⌕</div>
 
 <input
 id="search"
 type="text"
 placeholder="ຄົ້ນຫາສິນຄ້າ..."
-oninput="searchProducts">
+oninput="searchProducts()">
 
 <button
 class="clear-search"
@@ -1574,7 +1782,6 @@ onclick="clearSearch()">
 
 </div>
 
-
 <div
 id="shopProducts"
 class="products"
@@ -1582,8 +1789,212 @@ style="margin-top:25px">
 </div>
 
 </div>
-
 </section>
+
+
+<!-- =========================
+     AVAILABLE
+========================= -->
+
+<section
+id="available"
+class="page available-page">
+
+<div class="status-page">
+
+<div class="status-header">
+
+<div class="status-header-top">
+
+<div class="status-header-icon">
+✓
+</div>
+
+<div>
+
+<h2>🟢 ສິນຄ້າຍັງຢູ່</h2>
+
+<p>
+ລາຍການສິນຄ້າທີ່ພ້ອມສັ່ງຊື້
+</p>
+
+</div>
+
+</div>
+
+<div class="status-count">
+
+<span>ສິນຄ້າພ້ອມຂາຍ</span>
+
+<strong id="availablePageCount">0</strong>
+
+</div>
+
+</div>
+
+<div
+id="availableProducts"
+class="products status-products">
+</div>
+
+</div>
+</section>
+
+
+<!-- =========================
+     STOCK
+========================= -->
+
+<section
+id="stock"
+class="page stock-page">
+
+<div class="status-page">
+
+<div class="status-header">
+
+<div class="status-header-top">
+
+<div class="status-header-icon">
+📦
+</div>
+
+<div>
+
+<h2>📦 ສະຕ້ອກສິນຄ້າ</h2>
+
+<p>
+ສະແດງຈຳນວນໂຕທີ່ເຫຼືອໃນສະຕ້ອກ
+</p>
+
+</div>
+
+</div>
+
+<div class="status-count">
+
+<span>ຈຳນວນທັງໝົດໃນສະຕ້ອກ</span>
+
+<strong id="stockPageCount">0</strong>
+
+</div>
+
+</div>
+
+<div
+id="stockProducts"
+class="products status-products">
+</div>
+
+</div>
+</section>
+
+
+<!-- =========================
+     SOLD
+========================= -->
+
+<section
+id="sold"
+class="page sold-page">
+
+<div class="status-page">
+
+<div class="status-header">
+
+<div class="status-header-top">
+
+<div class="status-header-icon">
+✕
+</div>
+
+<div>
+
+<h2>🔴 ສິນຄ້າຂາຍແລ້ວ</h2>
+
+<p>
+ລາຍການສິນຄ້າທີ່ໝົດແລ້ວ
+</p>
+
+</div>
+
+</div>
+
+<div class="status-count">
+
+<span>ສິນຄ້າຂາຍແລ້ວ</span>
+
+<strong id="soldPageCount">0</strong>
+
+</div>
+
+</div>
+
+<div
+id="soldProducts"
+class="products status-products">
+</div>
+
+</div>
+</section>
+
+
+<!-- =========================
+     BOTTOM MENU
+========================= -->
+
+<nav class="bottom-nav">
+
+<button
+id="bottomHome"
+class="active"
+onclick="showPage('home')">
+
+<div class="bottom-icon">
+🏠
+</div>
+
+<span>ໜ້າຫຼັກ</span>
+
+</button>
+
+<button
+id="bottomAvailable"
+onclick="showPage('available')">
+
+<div class="bottom-icon">
+✓
+</div>
+
+<span>ຍັງຢູ່</span>
+
+</button>
+
+<button
+id="bottomStock"
+onclick="showPage('stock')">
+
+<div class="bottom-icon">
+📦
+</div>
+
+<span>ສະຕ້ອກ</span>
+
+</button>
+
+<button
+id="bottomSold"
+onclick="showPage('sold')">
+
+<div class="bottom-icon">
+✕
+</div>
+
+<span>ຂາຍແລ້ວ</span>
+
+</button>
+
+</nav>
 
 
 <!-- DETAIL MODAL -->
@@ -1617,11 +2028,10 @@ class="modal-body">
 </div>
 
 </div>
-
 </div>
 
 
-<!-- PAYMENT MODAL -->
+<!-- PAYMENT -->
 
 <div
 id="paymentModal"
@@ -1632,9 +2042,7 @@ onclick="closePaymentOutside(event)">
 
 <div class="modal-header">
 
-<h3>
-💳 ຊຳລະເງິນ
-</h3>
+<h3>💳 ຊຳລະເງິນ</h3>
 
 <button
 class="close-modal"
@@ -1652,11 +2060,10 @@ class="modal-body">
 </div>
 
 </div>
-
 </div>
 
 
-<!-- VIDEO MODAL -->
+<!-- VIDEO -->
 
 <div
 id="videoModal"
@@ -1698,7 +2105,6 @@ allowfullscreen>
 </div>
 
 </div>
-
 </div>
 
 
@@ -1982,8 +2388,6 @@ description:[
 ]
 },
 
-/* EP #0010 — ປ່ຽນເປັນຂາຍແລ້ວ */
-
 {
 id:10,
 name:"𝐄𝐏 #𝟎𝟎𝟏𝟎",
@@ -2157,7 +2561,6 @@ function createCard(product){
             </div>
 
         </div>
-
         `;
 
     }else{
@@ -2215,7 +2618,6 @@ function createCard(product){
             </div>
 
         </div>
-
         `;
     }
 
@@ -2229,24 +2631,25 @@ function updateStockSummary(){
 
     const available =
         products.filter(
-            p=>
+            p =>
             p.stock &&
-            Number(p.stockQty||0)>0
+            Number(p.stockQty || 0)>0
         ).length;
 
     const sold =
         products.filter(
-            p=>
+            p =>
             !p.stock ||
-            Number(p.stockQty||0)<=0
+            Number(p.stockQty || 0)<=0
         ).length;
 
     const totalQty =
         products.reduce(
-            (sum,p)=>
-            sum+Number(p.stockQty||0),
+            (sum,p) =>
+            sum+Number(p.stockQty || 0),
             0
         );
+
 
     document.getElementById(
         "availableCount"
@@ -2259,6 +2662,63 @@ function updateStockSummary(){
     document.getElementById(
         "soldCount"
     ).textContent=sold;
+
+
+    const availablePage =
+        document.getElementById(
+            "availablePageCount"
+        );
+
+    const stockPage =
+        document.getElementById(
+            "stockPageCount"
+        );
+
+    const soldPage =
+        document.getElementById(
+            "soldPageCount"
+        );
+
+
+    if(availablePage)
+        availablePage.textContent=available;
+
+    if(stockPage)
+        stockPage.textContent=totalQty;
+
+    if(soldPage)
+        soldPage.textContent=sold;
+}
+
+
+/* EMPTY */
+
+function showEmptyStatus(
+    element,
+    icon,
+    title,
+    text
+){
+
+    element.innerHTML=`
+
+        <div class="empty-status">
+
+            <div class="empty-status-icon">
+                ${icon}
+            </div>
+
+            <h3>
+                ${title}
+            </h3>
+
+            <p>
+                ${text}
+            </p>
+
+        </div>
+
+    `;
 }
 
 
@@ -2276,14 +2736,36 @@ function renderProducts(){
             "shopProducts"
         );
 
+    const availableBox =
+        document.getElementById(
+            "availableProducts"
+        );
+
+    const stockBox =
+        document.getElementById(
+            "stockProducts"
+        );
+
+    const soldBox =
+        document.getElementById(
+            "soldProducts"
+        );
+
+
     home.innerHTML="";
     shop.innerHTML="";
+
+    availableBox.innerHTML="";
+    stockBox.innerHTML="";
+    soldBox.innerHTML="";
+
 
     const sorted =
         [...products].sort(
             (a,b)=>
             Number(b.stock)-Number(a.stock)
         );
+
 
     sorted.forEach(product=>{
 
@@ -2297,6 +2779,93 @@ function renderProducts(){
 
     });
 
+
+    const availableProducts =
+        products.filter(
+            p =>
+            p.stock &&
+            Number(p.stockQty||0)>0
+        );
+
+
+    availableProducts.forEach(product=>{
+
+        availableBox.appendChild(
+            createCard(product)
+        );
+
+    });
+
+
+    if(availableProducts.length===0){
+
+        showEmptyStatus(
+            availableBox,
+            "✓",
+            "ບໍ່ມີສິນຄ້າພ້ອມຂາຍ",
+            "ຕອນນີ້ບໍ່ມີສິນຄ້າຢູ່ໃນສະຕ້ອກ"
+        );
+
+    }
+
+
+    const stockProducts =
+        products.filter(
+            p =>
+            Number(p.stockQty||0)>0
+        );
+
+
+    stockProducts.forEach(product=>{
+
+        stockBox.appendChild(
+            createCard(product)
+        );
+
+    });
+
+
+    if(stockProducts.length===0){
+
+        showEmptyStatus(
+            stockBox,
+            "📦",
+            "ສະຕ້ອກເປັນ 0",
+            "ຕອນນີ້ບໍ່ມີສິນຄ້າເຫຼືອ"
+        );
+
+    }
+
+
+    const soldProducts =
+        products.filter(
+            p =>
+            !p.stock ||
+            Number(p.stockQty||0)<=0
+        );
+
+
+    soldProducts.forEach(product=>{
+
+        soldBox.appendChild(
+            createCard(product)
+        );
+
+    });
+
+
+    if(soldProducts.length===0){
+
+        showEmptyStatus(
+            soldBox,
+            "✓",
+            "ຍັງບໍ່ມີສິນຄ້າຂາຍແລ້ວ",
+            "ສິນຄ້າທັງໝົດຍັງພ້ອມຂາຍ"
+        );
+
+    }
+
+
     updateStockSummary();
 }
 
@@ -2308,16 +2877,23 @@ function showPage(page){
     document
     .querySelectorAll(".page")
     .forEach(
-        p=>
-        p.classList.remove("active")
+        p=>p.classList.remove("active")
     );
+
 
     document
     .querySelectorAll(".nav button")
     .forEach(
-        b=>
-        b.classList.remove("active")
+        b=>b.classList.remove("active")
     );
+
+
+    document
+    .querySelectorAll(".bottom-nav button")
+    .forEach(
+        b=>b.classList.remove("active")
+    );
+
 
     const target =
         document.getElementById(page);
@@ -2326,21 +2902,55 @@ function showPage(page){
         target.classList.add("active");
     }
 
+
     if(page==="home"){
 
         document
         .getElementById("homeNav")
-        .classList.add("active");
+        ?.classList.add("active");
+
+        document
+        .getElementById("bottomHome")
+        ?.classList.add("active");
 
     }
+
 
     if(page==="shop"){
 
         document
         .getElementById("shopNav")
-        .classList.add("active");
+        ?.classList.add("active");
 
     }
+
+
+    if(page==="available"){
+
+        document
+        .getElementById("bottomAvailable")
+        ?.classList.add("active");
+
+    }
+
+
+    if(page==="stock"){
+
+        document
+        .getElementById("bottomStock")
+        ?.classList.add("active");
+
+    }
+
+
+    if(page==="sold"){
+
+        document
+        .getElementById("bottomSold")
+        ?.classList.add("active");
+
+    }
+
 
     window.scrollTo({
         top:0,
@@ -2368,9 +2978,10 @@ function searchProducts(){
 
     shop.innerHTML="";
 
+
     products
     .filter(
-        product=>
+        product =>
         product.name
         .toLowerCase()
         .includes(keyword)
@@ -2408,10 +3019,12 @@ function openDetail(id){
         return;
     }
 
+
     const qty =
         Number(product.stockQty||0);
 
     let galleryHTML="";
+
 
     (product.gallery||[])
     .forEach(
@@ -2429,8 +3042,10 @@ function openDetail(id){
         }
     );
 
+
     const available =
         product.stock && qty>0;
+
 
     document.getElementById(
         "detailContent"
@@ -2527,6 +3142,7 @@ function openDetail(id){
         </div>
     `;
 
+
     document.getElementById(
         "detailModal"
     ).classList.add("show");
@@ -2579,6 +3195,7 @@ function openPayment(id){
         return;
     }
 
+
     document.getElementById(
         "paymentContent"
     ).innerHTML=`
@@ -2624,7 +3241,9 @@ function openPayment(id){
         </div>
     `;
 
+
     closeDetail();
+
 
     document.getElementById(
         "paymentModal"
@@ -2643,6 +3262,7 @@ function sendWhatsApp(id){
         return;
     }
 
+
     const message =
 `ສະບາຍດີ LAO GAMING PRO X3D
 ຂ້ອຍສົນໃຈສິນຄ້າ:
@@ -2659,6 +3279,7 @@ function sendWhatsApp(id){
         + WHATSAPP
         + "?text="
         + encodeURIComponent(message);
+
 
     window.open(
         url,
@@ -2864,4 +3485,3 @@ showPage("home");
 
 </body>
 </html>
-```
