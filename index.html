@@ -346,6 +346,137 @@ body{
 }
 
 /* =========================
+   EMAIL GUIDE
+========================= */
+
+.email-guide{
+    margin-top:22px;
+}
+
+.email-guide-card{
+    background:rgba(255,255,255,.98);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:20px;
+    box-shadow:var(--shadow);
+}
+
+.email-guide-top{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.email-guide-icon{
+    width:75px;
+    height:75px;
+    padding:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:17px;
+    background:#fff4f4;
+    border:1px solid #ffdada;
+    overflow:hidden;
+}
+
+.email-guide-icon img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+.email-guide-info{
+    flex:1;
+}
+
+.email-guide-info h3{
+    font-size:19px;
+    font-weight:950;
+}
+
+.email-guide-info p{
+    margin-top:5px;
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.6;
+}
+
+.email-guide-button{
+    width:100%;
+    margin-top:18px;
+    padding:14px;
+    border:0;
+    border-radius:12px;
+    background:linear-gradient(135deg,#087cff,#22aaff);
+    color:#fff;
+    font-family:inherit;
+    font-size:14px;
+    font-weight:950;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.email-guide-button:hover{
+    transform:translateY(-2px);
+}
+
+/* =========================
+   VIDEO GUIDE
+========================= */
+
+.video-guide{
+    margin-top:18px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.video-card{
+    overflow:hidden;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:18px;
+    box-shadow:var(--shadow);
+}
+
+.video-title{
+    padding:14px 15px;
+    font-size:14px;
+    font-weight:950;
+}
+
+.video-title span{
+    display:block;
+    margin-top:4px;
+    color:var(--muted);
+    font-size:11px;
+    font-weight:700;
+}
+
+.video-frame{
+    width:100%;
+    aspect-ratio:9/16;
+    background:#000;
+    overflow:hidden;
+}
+
+.video-frame iframe{
+    width:100%;
+    height:100%;
+    border:0;
+    display:block;
+}
+
+.video-note{
+    padding:11px 14px;
+    color:#64748b;
+    font-size:11px;
+    line-height:1.6;
+    background:#f7fcff;
+}
+
+/* =========================
    STOCK SUMMARY
 ========================= */
 
@@ -629,6 +760,58 @@ body{
 }
 
 /* =========================
+   GUIDE MODAL
+========================= */
+
+.guide-modal-box{
+    max-width:900px;
+}
+
+.guide-intro{
+    padding:14px;
+    border-radius:12px;
+    background:#eff9ff;
+    border:1px solid #d7efff;
+    color:#52708c;
+    font-size:12px;
+    line-height:1.7;
+    margin-bottom:18px;
+}
+
+.guide-video-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+}
+
+.guide-video{
+    overflow:hidden;
+    border:1px solid var(--border);
+    border-radius:16px;
+    background:#fff;
+}
+
+.guide-video h4{
+    padding:14px;
+    font-size:14px;
+    font-weight:950;
+}
+
+.guide-video p{
+    padding:0 14px 12px;
+    color:var(--muted);
+    font-size:11px;
+}
+
+.guide-video iframe{
+    width:100%;
+    aspect-ratio:9/16;
+    border:0;
+    display:block;
+    background:#000;
+}
+
+/* =========================
    DETAIL
 ========================= */
 
@@ -896,6 +1079,11 @@ footer{
     .stock-summary{
         grid-template-columns:1fr 1fr 1fr;
     }
+
+    .video-guide,
+    .guide-video-grid{
+        grid-template-columns:1fr;
+    }
 }
 
 @media(max-width:500px){
@@ -994,6 +1182,21 @@ footer{
         width:27px;
         height:27px;
     }
+
+    .email-guide-icon{
+        width:62px;
+        height:62px;
+        padding:12px;
+    }
+
+    .email-guide-info h3{
+        font-size:16px;
+    }
+
+    .video-frame,
+    .guide-video iframe{
+        aspect-ratio:9/16;
+    }
 }
 </style>
 </head>
@@ -1006,40 +1209,29 @@ footer{
 <div class="header-inner">
 
 <div class="logo" onclick="showPage('home')">
-
 <img src="https://i.ibb.co/0VsFgJV2/dd921ff9-89fd-4b47-a48e-e60383c2c987.jpg">
-
 <div>
 <h1>LAO GAMING PRO X3D</h1>
 <span>ONLINE GAME SHOP</span>
 </div>
-
 </div>
 
 <nav class="nav">
 
-<button id="homeNav"
-class="active"
-onclick="showPage('home')">
-
+<button id="homeNav" class="active" onclick="showPage('home')">
 <span>🏠</span>
 <span>ໜ້າຫຼັກ</span>
-
 </button>
 
-<button id="shopNav"
-onclick="showPage('shop')">
-
+<button id="shopNav" onclick="showPage('shop')">
 <span>🔥</span>
 <span>Free Fire</span>
-
 </button>
 
 </nav>
 
 </div>
 </header>
-
 
 <!-- =========================
      HOME
@@ -1050,11 +1242,8 @@ onclick="showPage('shop')">
 <div class="home">
 
 <div class="banner">
-
 <img src="https://i.ibb.co/F4kxqytw/e0832eb5-d70f-46a1-b369-7a8051b63911.jpg">
-
 </div>
-
 
 <div class="announcement">
 
@@ -1083,186 +1272,200 @@ onclick="showPage('shop')">
 </div>
 </div>
 
+<!-- WARNING -->
 
-<!-- =========================
-     CATEGORY
-========================= -->
+<div class="warning-box">
 
-<div class="section-title">
-
-<h2>🔥 Free Fire</h2>
-
-<p>Game ID &amp; Game Code</p>
-
+<div class="warning-title">
+⚠️ ຄຳເຕືອນສຳຄັນ — ກະລຸນາອ່ານໃຫ້ຄົບ
 </div>
 
+<div class="warning-list">
+
+<div class="warning-item">
+<b>1.</b>
+ຫຼັງຈາກໄດ້ຮັບສິນຄ້າ ລົບກວນໃຫ້ປ່ຽນຂໍ້ມູນເມວທັນທີ.
+</div>
+
+<div class="warning-item">
+<b>2.</b>
+ຫຼັງຈາກປ່ຽນຂໍ້ມູນແລ້ວ ໃຫ້ແຈ້ງແອັດມິນວ່າ “ປ່ຽນແລ້ວ” ເພື່ອໃຫ້ແອັດມິນລົບເມວ.
+</div>
+
+<div class="warning-item">
+<b>3.</b>
+ຫຼັງຈາກແອັດມິນລົບເມວແລ້ວ ທາງຮ້ານບໍ່ຮັບປະກັນຫຼັງການຂາຍ.
+</div>
+
+<div class="warning-item">
+<b>4.</b>
+ໄລຍະເວລາເມວຢູ່ກັບຮ້ານພຽງ <b>1–3 ວັນ</b>. ກາຍຈາກນີ້ ຖ້າມີບັນຫາເລື່ອງເມວ ທາງແອັດມິນບໍ່ຮັບຜິດຊອບ.
+</div>
+
+<div class="warning-item">
+⚠️ <b>ກະລຸນາອ່ານໃຫ້ຄົບຖ້ວນ ແລະເຮັດຕາມຄຳເຕືອນຂ້າງເທິງ.</b>
+</div>
+
+</div>
+</div>
+
+<div class="section-title">
+<h2>🔥 Free Fire</h2>
+<p>Game ID &amp; Game Code</p>
+</div>
 
 <div class="category-card">
 
 <div class="category-top">
 
 <div class="category-icon">
-
 <img src="https://downloadr2.apkmirror.com/wp-content/uploads/2026/06/99/6a3b53fd56c93_com.dts.freefireth.png">
-
 </div>
 
 <div class="category-info">
-
 <h3>🔥 Free Fire</h3>
-
 <p>Game ID &amp; Game Code</p>
+</div>
+
+</div>
+
+<button class="view-category" onclick="showPage('shop')">
+ເບິ່ງສິນຄ້າ
+</button>
+
+</div>
+
+<!-- =========================
+     EMAIL GUIDE
+========================= -->
+
+<div class="section-title">
+<h2>📧 ວິທີປ່ຽນຂໍ້ມູນເມວ</h2>
+<p>ວິທີປ່ຽນ Gmail ແລະ ວິທີຍ້າຍບັນຊີເກມ</p>
+</div>
+
+<div class="email-guide">
+
+<div class="email-guide-card">
+
+<div class="email-guide-top">
+
+<div class="email-guide-icon">
+
+<img
+src="https://cdn.simpleicons.org/gmail"
+alt="Gmail">
+
+</div>
+
+<div class="email-guide-info">
+
+<h3>📧 ວິທີປ່ຽນຂໍ້ມູນເມວ</h3>
+
+<p>
+ຫຼັງຈາກໄດ້ຮັບສິນຄ້າ
+ກະລຸນາປ່ຽນຂໍ້ມູນເມວທັນທີ
+ແລະເຮັດຕາມວິດີໂອຄູ່ມືດ້ານລຸ່ມ.
+</p>
 
 </div>
 
 </div>
 
 <button
-class="view-category"
-onclick="showPage('shop')">
+class="email-guide-button"
+onclick="openGuide()">
 
-ເບິ່ງສິນຄ້າ
+📧 ເບິ່ງວິທີປ່ຽນເມວ + ວິທີຍ້າຍບັນຊີເກມ
 
 </button>
 
 </div>
 
+</div>
 
-<!-- =========================
-     STOCK SUMMARY
-========================= -->
+<!-- VIDEO PREVIEW -->
+
+<div class="video-guide">
+
+<div class="video-card">
+
+<div class="video-title">
+📧 ວິທີປ່ຽນຂໍ້ມູນເມວ
+<span>ກົດ Play ເພື່ອເບິ່ງວິທີ</span>
+</div>
+
+<div class="video-frame">
+
+<iframe
+src="https://www.youtube.com/embed/2zS-88r4AxU"
+title="ວິທີປ່ຽນຂໍ້ມູນເມວ"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
+
+</div>
+
+<div class="video-note">
+📌 ກະລຸນາເບິ່ງວີດີໂອໃຫ້ຈົບ ແລ້ວຈຶ່ງປ່ຽນຂໍ້ມູນເມວ.
+</div>
+
+</div>
+
+<div class="video-card">
+
+<div class="video-title">
+🎮 ວິທີຍ້າຍບັນຊີເກມ
+<span>ວິທີຍ້າຍບັນຊີເກມໄປຍັງເມວຂອງຕົນເອງ</span>
+</div>
+
+<div class="video-frame">
+
+<iframe
+src="https://www.youtube.com/embed/3KObkRoKfcQ"
+title="ວິທີຍ້າຍບັນຊີເກມ"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
+
+</div>
+
+<div class="video-note">
+📌 ຫຼັງຈາກປ່ຽນເມວແລ້ວ ກະລຸນາກວດສອບວ່າບັນຊີເກມຢູ່ກັບເມວໃໝ່ແລ້ວ.
+</div>
+
+</div>
+
+</div>
 
 <div class="stock-summary">
 
 <div class="stock-box">
-
-<div id="availableCount"
-class="stock-number">
-0
+<div id="availableCount" class="stock-number">0</div>
+<div class="stock-label">ສິນຄ້າຍັງມີ</div>
 </div>
-
-<div class="stock-label">
-ສິນຄ້າຍັງມີ
-</div>
-
-</div>
-
 
 <div class="stock-box">
-
-<div id="stockQtyCount"
-class="stock-number">
-0
+<div id="stockQtyCount" class="stock-number">0</div>
+<div class="stock-label">ຈຳນວນໂຕທີ່ເຫຼືອ</div>
 </div>
-
-<div class="stock-label">
-ຈຳນວນໂຕທີ່ເຫຼືອ
-</div>
-
-</div>
-
 
 <div class="stock-box">
-
-<div id="soldCount"
-class="stock-number">
-0
-</div>
-
-<div class="stock-label">
-ຂາຍແລ້ວ
+<div id="soldCount" class="stock-number">0</div>
+<div class="stock-label">ຂາຍແລ້ວ</div>
 </div>
 
 </div>
-
-</div>
-
-
-<!-- =========================
-     WARNING — MOVED HERE
-========================= -->
-
-<div class="warning-box">
-
-<div class="warning-title">
-
-⚠️ ຄຳເຕືອນສຳຄັນ — ກະລຸນາອ່ານໃຫ້ຄົບ
-
-</div>
-
-
-<div class="warning-list">
-
-<div class="warning-item">
-
-<b>1.</b>
-ຫຼັງຈາກໄດ້ຮັບສິນຄ້າ ລົບກວນໃຫ້ປ່ຽນຂໍ້ມູນເມວທັນທີ.
-
-</div>
-
-
-<div class="warning-item">
-
-<b>2.</b>
-ຫຼັງຈາກປ່ຽນຂໍ້ມູນແລ້ວ ໃຫ້ແຈ້ງແອັດມິນວ່າ “ປ່ຽນແລ້ວ” ເພື່ອໃຫ້ແອັດມິນລົບເມວ.
-
-</div>
-
-
-<div class="warning-item">
-
-<b>3.</b>
-ຫຼັງຈາກແອັດມິນລົບເມວແລ້ວ ທາງຮ້ານບໍ່ຮັບປະກັນຫຼັງການຂາຍ.
-
-</div>
-
-
-<div class="warning-item">
-
-<b>4.</b>
-ໄລຍະເວລາເມວຢູ່ກັບຮ້ານພຽງ <b>1–3 ວັນ</b>.
-ກາຍຈາກນີ້ ຖ້າມີບັນຫາເລື່ອງເມວ
-ທາງແອັດມິນບໍ່ຮັບຜິດຊອບ.
-
-</div>
-
-
-<div class="warning-item">
-
-⚠️
-<b>
-ກະລຸນາອ່ານໃຫ້ຄົບຖ້ວນ
-ແລະ ເຮັດຕາມຄຳເຕືອນຂ້າງເທິງ.
-</b>
-
-</div>
-
-</div>
-</div>
-
-
-<!-- =========================
-     ALL PRODUCTS
-========================= -->
 
 <div class="section-title">
-
 <h2>🛒 ສິນຄ້າທັງໝົດ</h2>
-
-<p>
-LAO GAMING PRO X3D — Free Fire Game ID
-</p>
-
+<p>LAO GAMING PRO X3D — Free Fire Game ID</p>
 </div>
 
-<div id="homeProducts"
-class="products">
-</div>
+<div id="homeProducts" class="products"></div>
 
 </div>
-
 </section>
-
 
 <!-- =========================
      SHOP
@@ -1272,67 +1475,46 @@ class="products">
 
 <div class="shop-page">
 
-<button
-class="back-button"
+<button class="back-button"
 style="border:1px solid #d8efff;background:#fff;color:#087cff;padding:11px 16px;border-radius:11px;font-weight:900;cursor:pointer"
 onclick="showPage('home')">
-
 ← ກັບໜ້າຫຼັກ
-
 </button>
 
-
 <div class="section-title">
-
 <h2>🔥 Free Fire</h2>
-
-<p>
-ເລືອກສິນຄ້າທີ່ຕ້ອງການ
-</p>
-
+<p>ເລືອກສິນຄ້າທີ່ຕ້ອງການ</p>
 </div>
-
 
 <div class="search-box">
 
-<div class="search-icon">
-⌕
-</div>
+<div class="search-icon">⌕</div>
 
 <input
 id="search"
 type="text"
 placeholder="ຄົ້ນຫາສິນຄ້າ..."
-oninput="searchProducts()">
+oninput="searchProducts">
 
-<button
-class="clear-search"
-onclick="clearSearch()">
-
+<button class="clear-search" onclick="clearSearch()">
 ×
-
 </button>
 
 </div>
 
-
-<div
-id="shopProducts"
+<div id="shopProducts"
 class="products"
 style="margin-top:25px">
 </div>
 
 </div>
-
 </section>
-
 
 <!-- =========================
      DETAIL MODAL
 ========================= -->
 
-<div
-id="detailModal"
+<div id="detailModal"
 class="modal"
 onclick="closeOutside(event)">
 
@@ -1340,36 +1522,25 @@ onclick="closeOutside(event)">
 
 <div class="modal-header">
 
-<h3>
-📦 ລາຍລະອຽດສິນຄ້າ
-</h3>
+<h3>📦 ລາຍລະອຽດສິນຄ້າ</h3>
 
-<button
-class="close-modal"
+<button class="close-modal"
 onclick="closeDetail()">
-
 ×
-
 </button>
 
 </div>
 
-<div
-id="detailContent"
-class="modal-body">
-</div>
+<div id="detailContent" class="modal-body"></div>
 
 </div>
-
 </div>
-
 
 <!-- =========================
      PAYMENT MODAL
 ========================= -->
 
-<div
-id="paymentModal"
+<div id="paymentModal"
 class="modal"
 onclick="closePaymentOutside(event)">
 
@@ -1377,33 +1548,100 @@ onclick="closePaymentOutside(event)">
 
 <div class="modal-header">
 
-<h3>
-💳 ຊຳລະເງິນ
-</h3>
+<h3>💳 ຊຳລະເງິນ</h3>
 
-<button
-class="close-modal"
+<button class="close-modal"
 onclick="closePayment()">
-
 ×
-
 </button>
 
 </div>
 
-<div
-id="paymentContent"
-class="modal-body">
-</div>
+<div id="paymentContent" class="modal-body"></div>
 
 </div>
-
 </div>
-
 
 <!-- =========================
-     CONTACT
+     GUIDE MODAL
 ========================= -->
+
+<div id="guideModal"
+class="modal"
+onclick="closeGuideOutside(event)">
+
+<div class="modal-box guide-modal-box">
+
+<div class="modal-header">
+
+<h3>📧 ຄູ່ມືປ່ຽນເມວ & ຍ້າຍບັນຊີ</h3>
+
+<button
+class="close-modal"
+onclick="closeGuide()">
+×
+</button>
+
+</div>
+
+<div class="modal-body">
+
+<div class="guide-intro">
+
+⚠️ <b>ສຳຄັນ:</b>
+ຫຼັງຈາກໄດ້ຮັບສິນຄ້າ
+ກະລຸນາປ່ຽນຂໍ້ມູນເມວທັນທີ.
+ເມື່ອປ່ຽນສຳເລັດແລ້ວ
+ໃຫ້ແຈ້ງແອັດມິນວ່າ
+<b>“ປ່ຽນແລ້ວ”</b>
+ເພື່ອໃຫ້ແອັດມິນລົບເມວ.
+</div>
+
+<div class="guide-video-grid">
+
+<div class="guide-video">
+
+<h4>📧 ຄລິບ 1 — ວິທີປ່ຽນຂໍ້ມູນເມວ</h4>
+
+<p>
+ວິທີປ່ຽນຂໍ້ມູນເມວຕາມວີດີໂອ
+</p>
+
+<iframe
+src="https://www.youtube.com/embed/2zS-88r4AxU"
+title="ວິທີປ່ຽນຂໍ້ມູນເມວ"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
+
+</div>
+
+<div class="guide-video">
+
+<h4>🎮 ຄລິບ 2 — ວິທີຍ້າຍບັນຊີເກມ</h4>
+
+<p>
+ວິທີຍ້າຍບັນຊີເກມໄປເມວໃໝ່
+</p>
+
+<iframe
+src="https://www.youtube.com/embed/3KObkRoKfcQ"
+title="ວິທີຍ້າຍບັນຊີເກມ"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CONTACT -->
 
 <div class="contact-float">
 
@@ -1413,11 +1651,8 @@ href="https://wa.me/8562092978004"
 target="_blank"
 rel="noopener noreferrer">
 
-<img
-src="https://cdn.simpleicons.org/whatsapp/ffffff">
-
+<img src="https://cdn.simpleicons.org/whatsapp/ffffff">
 </a>
-
 
 <a
 class="float-facebook"
@@ -1425,11 +1660,8 @@ href="https://www.facebook.com/share/18x82jMTpz/"
 target="_blank"
 rel="noopener noreferrer">
 
-<img
-src="https://cdn.simpleicons.org/facebook/ffffff">
-
+<img src="https://cdn.simpleicons.org/facebook/ffffff">
 </a>
-
 
 <a
 class="float-email"
@@ -1440,7 +1672,6 @@ href="mailto:laogamingprox3d.support@gmail.com">
 </a>
 
 </div>
-
 
 <footer>
 
@@ -1458,7 +1689,6 @@ href="mailto:laogamingprox3d.support@gmail.com">
 
 </footer>
 
-
 <script>
 
 /* =========================
@@ -1474,9 +1704,9 @@ const WHATSAPP =
 const CONTACT_EMAIL =
 "laogamingprox3d.support@gmail.com";
 
-
 /* =========================
    PRODUCTS
+   stockQty = ຈຳນວນໂຕທີ່ເຫຼືອ
 ========================= */
 
 const products = [
@@ -1710,7 +1940,6 @@ image:"https://i.ibb.co/ynCDzBXN/b9054ee9-53b0-4dde-a0cd-a29d02f8c8d7.jpg"
 
 ];
 
-
 /* =========================
    PRICE
 ========================= */
@@ -1725,7 +1954,6 @@ function formatPrice(price){
         .format(price)+" ກີບ";
 }
 
-
 /* =========================
    CARD
 ========================= */
@@ -1733,7 +1961,6 @@ function formatPrice(price){
 function createCard(product){
 
     const card=document.createElement("div");
-
     card.className="product";
 
     const qty=Number(product.stockQty || 0);
@@ -1746,8 +1973,7 @@ function createCard(product){
 
         <div class="product-image">
 
-            <img
-            src="${product.image}"
+            <img src="${product.image}"
             alt="${product.name}">
 
             <div class="available-badge">
@@ -1759,7 +1985,6 @@ function createCard(product){
             </div>
 
         </div>
-
 
         <div class="product-content">
 
@@ -1797,8 +2022,7 @@ function createCard(product){
 
         <div class="product-image">
 
-            <img
-            src="${product.image}"
+            <img src="${product.image}"
             alt="${product.name}">
 
             <div class="sold-overlay">
@@ -1811,15 +2035,13 @@ function createCard(product){
 
         </div>
 
-
         <div class="product-content">
 
             <div class="product-title">
                 ${product.name}
             </div>
 
-            <div
-            class="product-price"
+            <div class="product-price"
             style="color:#ef4444">
 
                 ${
@@ -1854,7 +2076,6 @@ function createCard(product){
 
     return card;
 }
-
 
 /* =========================
    SUMMARY
@@ -1891,7 +2112,6 @@ function updateStockSummary(){
         "soldCount"
     ).textContent=sold;
 }
-
 
 /* =========================
    RENDER
@@ -1930,7 +2150,6 @@ function renderProducts(){
     updateStockSummary();
 }
 
-
 /* =========================
    PAGE
 ========================= */
@@ -1957,19 +2176,15 @@ function showPage(page){
     }
 
     if(page==="home"){
-
         document
         .getElementById("homeNav")
         .classList.add("active");
-
     }
 
     if(page==="shop"){
-
         document
         .getElementById("shopNav")
         .classList.add("active");
-
     }
 
     window.scrollTo({
@@ -1977,7 +2192,6 @@ function showPage(page){
         behavior:"smooth"
     });
 }
-
 
 /* =========================
    SEARCH
@@ -2006,15 +2220,12 @@ function searchProducts(){
         .includes(keyword)
     )
     .forEach(product=>{
-
         shop.appendChild(
             createCard(product)
         );
-
     });
 
 }
-
 
 function clearSearch(){
 
@@ -2035,15 +2246,12 @@ function clearSearch(){
     );
 
     sorted.forEach(product=>{
-
         shop.appendChild(
             createCard(product)
         );
-
     });
 
 }
-
 
 /* =========================
    DETAIL
@@ -2109,13 +2317,11 @@ function openDetail(id){
             </div>
 
             <div class="detail-price">
-
                 ${
                     product.price!=null
                     ? formatPrice(product.price)
                     : "ສອບຖາມລາຄາ"
                 }
-
             </div>
 
             <div class="detail-stock ${available?"":"sold"}">
@@ -2146,7 +2352,6 @@ function openDetail(id){
 
             <button
             class="buy-button ${available?"":"disabled"}"
-
             ${
                 available
                 ? `onclick="openPayment(${product.id})"`
@@ -2170,7 +2375,6 @@ function openDetail(id){
     ).classList.add("show");
 }
 
-
 function changeMainImage(url){
 
     const img=
@@ -2181,27 +2385,21 @@ function changeMainImage(url){
     if(img){
         img.src=url;
     }
-
 }
-
 
 function closeDetail(){
 
     document.getElementById(
         "detailModal"
     ).classList.remove("show");
-
 }
-
 
 function closeOutside(event){
 
     if(event.target.id==="detailModal"){
         closeDetail();
     }
-
 }
-
 
 /* =========================
    PAYMENT
@@ -2273,9 +2471,7 @@ function openPayment(id){
     document.getElementById(
         "paymentModal"
     ).classList.add("show");
-
 }
-
 
 function sendWhatsApp(id){
 
@@ -2309,27 +2505,49 @@ function sendWhatsApp(id){
         url,
         "_blank"
     );
-
 }
-
 
 function closePayment(){
 
     document.getElementById(
         "paymentModal"
     ).classList.remove("show");
-
 }
-
 
 function closePaymentOutside(event){
 
     if(event.target.id==="paymentModal"){
         closePayment();
     }
+}
+
+/* =========================
+   EMAIL / GAME GUIDE
+========================= */
+
+function openGuide(){
+
+    document.getElementById(
+        "guideModal"
+    ).classList.add("show");
 
 }
 
+function closeGuide(){
+
+    document.getElementById(
+        "guideModal"
+    ).classList.remove("show");
+
+}
+
+function closeGuideOutside(event){
+
+    if(event.target.id==="guideModal"){
+        closeGuide();
+    }
+
+}
 
 /* =========================
    SNOW
@@ -2351,7 +2569,6 @@ let snowWidth=
 let snowHeight=
     window.innerHeight;
 
-
 function resizeSnow(){
 
     snowWidth=
@@ -2365,18 +2582,14 @@ function resizeSnow(){
 
     snowCanvas.height=
         snowHeight;
-
 }
 
-
 resizeSnow();
-
 
 window.addEventListener(
     "resize",
     resizeSnow
 );
-
 
 function createSnowflake(){
 
@@ -2384,32 +2597,22 @@ function createSnowflake(){
 
         x:Math.random()*snowWidth,
 
-        y:
-            Math.random()*snowHeight
-            -snowHeight,
+        y:Math.random()*snowHeight-snowHeight,
 
-        radius:
-            Math.random()*3+1,
+        radius:Math.random()*3+1,
 
-        speed:
-            Math.random()*1.2+.5,
+        speed:Math.random()*1.2+.5,
 
-        wind:
-            Math.random()*.8-.4,
+        wind:Math.random()*.8-.4,
 
-        opacity:
-            Math.random()*.65+.25,
+        opacity:Math.random()*.65+.25,
 
-        swing:
-            Math.random()*Math.PI*2,
+        swing:Math.random()*Math.PI*2,
 
-        swingSpeed:
-            Math.random()*.02+.005
+        swingSpeed:Math.random()*.02+.005
 
     };
-
 }
-
 
 function initSnow(){
 
@@ -2431,12 +2634,9 @@ function initSnow(){
         );
 
     }
-
 }
 
-
 initSnow();
-
 
 function drawSnow(){
 
@@ -2503,19 +2703,15 @@ function drawSnow(){
     requestAnimationFrame(
         drawSnow
     );
-
 }
 
-
 drawSnow();
-
 
 /* =========================
    START
 ========================= */
 
 renderProducts();
-
 showPage("home");
 
 </script>
