@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="lo">
 <head>
@@ -137,6 +136,39 @@ body{
     color:var(--blue);
     background:#eff9ff;
     border-color:#cfeaff;
+}
+
+/* HOME LOGO */
+
+.home-logo{
+    width:28px;
+    height:28px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:8px;
+    color:#087cff;
+    background:linear-gradient(
+        135deg,
+        #eaf7ff,
+        #d8f0ff
+    );
+    border:1px solid #cceaff;
+    box-shadow:
+        0 4px 12px rgba(8,124,255,.12);
+}
+
+.nav button:hover .home-logo,
+.nav button.active .home-logo{
+    color:#fff;
+    background:linear-gradient(
+        135deg,
+        #087cff,
+        #20a9ff
+    );
+    border-color:#087cff;
+    box-shadow:
+        0 5px 15px rgba(8,124,255,.22);
 }
 
 .page{
@@ -1001,6 +1033,11 @@ footer{
         display:none;
     }
 
+    .home-logo{
+        width:28px;
+        height:28px;
+    }
+
     .banner{
         height:190px;
         border-radius:16px;
@@ -1130,7 +1167,26 @@ id="homeNav"
 class="active"
 onclick="showPage('home')">
 
-<span>🏠</span>
+<span class="home-logo">
+
+<svg
+viewBox="0 0 24 24"
+width="21"
+height="21"
+fill="none"
+stroke="currentColor"
+stroke-width="2.2"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<path d="M3 10.5L12 3l9 7.5"></path>
+<path d="M5.5 9.5V21h13V9.5"></path>
+<path d="M9.5 21v-6h5v6"></path>
+
+</svg>
+
+</span>
+
 <span>ໜ້າຫຼັກ</span>
 
 </button>
@@ -1151,7 +1207,9 @@ onclick="showPage('shop')">
 </header>
 
 
-<!-- HOME -->
+<!-- =========================
+     HOME
+========================= -->
 
 <section
 id="home"
@@ -1167,6 +1225,8 @@ alt="Banner">
 
 </div>
 
+
+<!-- ANNOUNCEMENT -->
 
 <div class="announcement">
 
@@ -1201,6 +1261,8 @@ alt="Banner">
 </div>
 
 
+<!-- WARNING -->
+
 <div class="warning-box">
 
 <div class="warning-title">
@@ -1212,47 +1274,61 @@ alt="Banner">
 <div class="warning-list">
 
 <div class="warning-item">
+
 <b>1.</b>
 ຫຼັງຈາກໄດ້ຮັບສິນຄ້າ
 ລົບກວນໃຫ້ປ່ຽນຂໍ້ມູນເມວທັນທີ.
+
 </div>
 
 <div class="warning-item">
+
 <b>2.</b>
 ຫຼັງຈາກປ່ຽນຂໍ້ມູນແລ້ວ
 ໃຫ້ແຈ້ງແອັດມິນວ່າ
 “ປ່ຽນແລ້ວ”
 ເພື່ອໃຫ້ແອັດມິນລົບເມວ.
+
 </div>
 
 <div class="warning-item">
+
 <b>3.</b>
 ຫຼັງຈາກແອັດມິນລົບເມວແລ້ວ
 ທາງຮ້ານບໍ່ຮັບປະກັນຫຼັງການຂາຍ.
+
 </div>
 
 <div class="warning-item">
+
 <b>4.</b>
 ໄລຍະເວລາເມວຢູ່ກັບຮ້ານພຽງ
 <b>1–3 ວັນ</b>.
 ກາຍຈາກນີ້ ຖ້າມີບັນຫາເລື່ອງເມວ
 ທາງແອັດມິນບໍ່ຮັບຜິດຊອບ.
+
 </div>
 
 <div class="warning-item">
+
 ⚠️
 <b>
 ກະລຸນາອ່ານໃຫ້ຄົບຖ້ວນ
 ແລະເຮັດຕາມຄຳເຕືອນຂ້າງເທິງ.
 </b>
-</div>
 
 </div>
 
 </div>
 
+</div>
+
+
+<!-- VIDEO HELP -->
 
 <div class="video-help">
+
+<!-- EMAIL -->
 
 <div class="video-help-card">
 
@@ -1287,6 +1363,8 @@ onclick="openVideo('email')">
 
 </div>
 
+
+<!-- GAME ACCOUNT -->
 
 <div class="video-help-card">
 
@@ -1323,6 +1401,8 @@ onclick="openVideo('game')">
 
 </div>
 
+
+<!-- FREE FIRE -->
 
 <div class="section-title">
 
@@ -1365,6 +1445,8 @@ onclick="showPage('shop')">
 
 </div>
 
+
+<!-- STOCK -->
 
 <div class="stock-summary">
 
@@ -1413,6 +1495,8 @@ class="stock-number">
 </div>
 
 
+<!-- PRODUCTS -->
+
 <div class="section-title">
 
 <h2>🛒 ສິນຄ້າທັງໝົດ</h2>
@@ -1433,7 +1517,9 @@ class="products">
 </section>
 
 
-<!-- SHOP -->
+<!-- =========================
+     SHOP
+========================= -->
 
 <section
 id="shop"
@@ -1480,7 +1566,7 @@ oninput="searchProducts">
 
 <button
 class="clear-search"
-onclick="clearSearch">
+onclick="clearSearch()">
 
 ×
 
@@ -1896,9 +1982,7 @@ description:[
 ]
 },
 
-/* =========================
-   EP #0010 — ຂາຍແລ້ວ
-========================= */
+/* EP #0010 — ປ່ຽນເປັນຂາຍແລ້ວ */
 
 {
 id:10,
