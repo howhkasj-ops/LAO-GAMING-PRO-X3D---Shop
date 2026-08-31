@@ -1,8 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="lo">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
 <title>LAO GAMING PRO X3D</title>
 
 <link rel="icon"
@@ -288,6 +290,7 @@ body{
 
 .video-help-info{
     flex:1;
+    min-width:0;
 }
 
 .video-help-info h3{
@@ -379,9 +382,11 @@ body{
 .category-icon{
     width:75px;
     height:75px;
+    flex:0 0 75px;
     overflow:hidden;
     border-radius:17px;
     border:1px solid #d5edff;
+    background:#eff9ff;
 }
 
 .category-icon img{
@@ -392,17 +397,22 @@ body{
 
 .category-info{
     flex:1;
+    min-width:0;
 }
 
 .category-info h3{
+    margin:0;
     font-size:19px;
     font-weight:950;
+    line-height:1.3;
 }
 
 .category-info p{
-    margin-top:5px;
+    margin:5px 0 0;
     color:var(--muted);
     font-size:12px;
+    line-height:1.4;
+    font-weight:700;
 }
 
 .view-category{
@@ -930,6 +940,7 @@ footer{
 /* RESPONSIVE */
 
 @media(max-width:1000px){
+
     .products{
         grid-template-columns:repeat(3,1fr);
     }
@@ -955,7 +966,7 @@ footer{
     }
 
     .stock-summary{
-        grid-template-columns:1fr 1fr 1fr;
+        grid-template-columns:repeat(3,1fr);
     }
 }
 
@@ -1066,6 +1077,24 @@ footer{
         height:52px;
         flex-basis:52px;
     }
+
+    .category-top{
+        gap:12px;
+    }
+
+    .category-icon{
+        width:62px;
+        height:62px;
+        flex-basis:62px;
+    }
+
+    .category-info h3{
+        font-size:16px;
+    }
+
+    .category-info p{
+        font-size:11px;
+    }
 }
 </style>
 </head>
@@ -1075,22 +1104,29 @@ footer{
 <canvas id="snowCanvas"></canvas>
 
 <header class="header">
+
 <div class="header-inner">
 
 <div class="logo" onclick="showPage('home')">
 
-<img src="https://i.ibb.co/0VsFgJV2/dd921ff9-89fd-4b47-a48e-e60383c2c987.jpg">
+<img
+src="https://i.ibb.co/0VsFgJV2/dd921ff9-89fd-4b47-a48e-e60383c2c987.jpg"
+alt="LAO GAMING PRO X3D">
 
 <div>
+
 <h1>LAO GAMING PRO X3D</h1>
+
 <span>ONLINE GAME SHOP</span>
+
 </div>
 
 </div>
 
 <nav class="nav">
 
-<button id="homeNav"
+<button
+id="homeNav"
 class="active"
 onclick="showPage('home')">
 
@@ -1099,7 +1135,8 @@ onclick="showPage('home')">
 
 </button>
 
-<button id="shopNav"
+<button
+id="shopNav"
 onclick="showPage('shop')">
 
 <span>🔥</span>
@@ -1110,25 +1147,37 @@ onclick="showPage('shop')">
 </nav>
 
 </div>
+
 </header>
 
-<!-- HOME -->
 
-<section id="home" class="page active">
+<!-- =========================
+     HOME
+========================= -->
+
+<section
+id="home"
+class="page active">
 
 <div class="home">
 
 <div class="banner">
 
-<img src="https://i.ibb.co/F4kxqytw/e0832eb5-d70f-46a1-b369-7a8051b63911.jpg">
+<img
+src="https://i.ibb.co/F4kxqytw/e0832eb5-d70f-46a1-b369-7a8051b63911.jpg"
+alt="Banner">
 
 </div>
+
+
+<!-- ANNOUNCEMENT -->
 
 <div class="announcement">
 
 <div class="announcement-track">
 
 <div class="announcement-text">
+
 📢 ປະກາດຈາກຮ້ານ
 &nbsp; • &nbsp;
 ຮັບຊື້ໄອດີຕະຫຼອດ
@@ -1136,9 +1185,11 @@ onclick="showPage('shop')">
 ເປີດຮ້ານ 10:30 - 23:30
 &nbsp; • &nbsp;
 ພ້ອມໃຫ້ບໍລິການ
+
 </div>
 
 <div class="announcement-text">
+
 📢 ປະກາດຈາກຮ້ານ
 &nbsp; • &nbsp;
 ຮັບຊື້ໄອດີຕະຫຼອດ
@@ -1146,12 +1197,157 @@ onclick="showPage('shop')">
 ເປີດຮ້ານ 10:30 - 23:30
 &nbsp; • &nbsp;
 ພ້ອມໃຫ້ບໍລິການ
+
 </div>
 
 </div>
+
 </div>
 
-<!-- CATEGORY -->
+
+<!-- WARNING -->
+
+<div class="warning-box">
+
+<div class="warning-title">
+
+⚠️ ຄຳເຕືອນສຳຄັນ — ກະລຸນາອ່ານໃຫ້ຄົບ
+
+</div>
+
+<div class="warning-list">
+
+<div class="warning-item">
+
+<b>1.</b>
+ຫຼັງຈາກໄດ້ຮັບສິນຄ້າ
+ລົບກວນໃຫ້ປ່ຽນຂໍ້ມູນເມວທັນທີ.
+
+</div>
+
+<div class="warning-item">
+
+<b>2.</b>
+ຫຼັງຈາກປ່ຽນຂໍ້ມູນແລ້ວ
+ໃຫ້ແຈ້ງແອັດມິນວ່າ
+“ປ່ຽນແລ້ວ”
+ເພື່ອໃຫ້ແອັດມິນລົບເມວ.
+
+</div>
+
+<div class="warning-item">
+
+<b>3.</b>
+ຫຼັງຈາກແອັດມິນລົບເມວແລ້ວ
+ທາງຮ້ານບໍ່ຮັບປະກັນຫຼັງການຂາຍ.
+
+</div>
+
+<div class="warning-item">
+
+<b>4.</b>
+ໄລຍະເວລາເມວຢູ່ກັບຮ້ານພຽງ
+<b>1–3 ວັນ</b>.
+ກາຍຈາກນີ້ ຖ້າມີບັນຫາເລື່ອງເມວ
+ທາງແອັດມິນບໍ່ຮັບຜິດຊອບ.
+
+</div>
+
+<div class="warning-item">
+
+⚠️
+<b>
+ກະລຸນາອ່ານໃຫ້ຄົບຖ້ວນ
+ແລະເຮັດຕາມຄຳເຕືອນຂ້າງເທິງ.
+</b>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- VIDEO HELP -->
+
+<div class="video-help">
+
+
+<!-- EMAIL -->
+
+<div class="video-help-card">
+
+<div class="video-help-logo">
+
+<img
+src="https://cdn.simpleicons.org/gmail"
+alt="Email">
+
+</div>
+
+<div class="video-help-info">
+
+<h3>
+✉️ ວິທີປ່ຽນຂໍ້ມູນເມວ
+</h3>
+
+<p>
+ກົດປຸ່ມດ້ານລຸ່ມ
+ເພື່ອເບິ່ງວິທີປ່ຽນຂໍ້ມູນເມວ
+</p>
+
+<button
+class="video-help-button"
+onclick="openVideo('email')">
+
+▶ ເບິ່ງວິທີປ່ຽນເມວ
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- GAME ACCOUNT -->
+
+<div class="video-help-card">
+
+<div class="video-help-logo">
+
+<img
+src="https://downloadr2.apkmirror.com/wp-content/uploads/2026/06/99/6a3b53fd56c93_com.dts.freefireth.png"
+alt="Free Fire">
+
+</div>
+
+<div class="video-help-info">
+
+<h3>
+🎮 ວິທີຍ້າຍບັນຊີເກມ
+</h3>
+
+<p>
+ກົດປຸ່ມດ້ານລຸ່ມ
+ເພື່ອເບິ່ງວິທີຍ້າຍບັນຊີເກມ
+</p>
+
+<button
+class="video-help-button"
+onclick="openVideo('game')">
+
+▶ ເບິ່ງວິທີຍ້າຍບັນຊີ
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FREE FIRE -->
 
 <div class="section-title">
 
@@ -1161,13 +1357,16 @@ onclick="showPage('shop')">
 
 </div>
 
+
 <div class="category-card">
 
 <div class="category-top">
 
 <div class="category-icon">
 
-<img src="https://downloadr2.apkmirror.com/wp-content/uploads/2026/06/99/6a3b53fd56c93_com.dts.freefireth.png">
+<img
+src="https://downloadr2.apkmirror.com/wp-content/uploads/2026/06/99/6a3b53fd56c93_com.dts.freefireth.png"
+alt="Free Fire">
 
 </div>
 
@@ -1191,13 +1390,15 @@ onclick="showPage('shop')">
 
 </div>
 
+
 <!-- STOCK -->
 
 <div class="stock-summary">
 
 <div class="stock-box">
 
-<div id="availableCount"
+<div
+id="availableCount"
 class="stock-number">
 0
 </div>
@@ -1210,7 +1411,8 @@ class="stock-number">
 
 <div class="stock-box">
 
-<div id="stockQtyCount"
+<div
+id="stockQtyCount"
 class="stock-number">
 0
 </div>
@@ -1223,7 +1425,8 @@ class="stock-number">
 
 <div class="stock-box">
 
-<div id="soldCount"
+<div
+id="soldCount"
 class="stock-number">
 0
 </div>
@@ -1236,114 +1439,8 @@ class="stock-number">
 
 </div>
 
-<!-- WARNING
-     ຍ້າຍມາຢູ່ລຸ່ມ STOCK ຕາມທີ່ຂໍ
--->
 
-<div class="warning-box">
-
-<div class="warning-title">
-⚠️ ຄຳເຕືອນສຳຄັນ — ກະລຸນາອ່ານໃຫ້ຄົບ
-</div>
-
-<div class="warning-list">
-
-<div class="warning-item">
-<b>1.</b>
-ຫຼັງຈາກໄດ້ຮັບສິນຄ້າ ລົບກວນໃຫ້ປ່ຽນຂໍ້ມູນເມວທັນທີ.
-</div>
-
-<div class="warning-item">
-<b>2.</b>
-ຫຼັງຈາກປ່ຽນຂໍ້ມູນແລ້ວ ໃຫ້ແຈ້ງແອັດມິນວ່າ “ປ່ຽນແລ້ວ” ເພື່ອໃຫ້ແອັດມິນລົບເມວ.
-</div>
-
-<div class="warning-item">
-<b>3.</b>
-ຫຼັງຈາກແອັດມິນລົບເມວແລ້ວ ທາງຮ້ານບໍ່ຮັບປະກັນຫຼັງການຂາຍ.
-</div>
-
-<div class="warning-item">
-<b>4.</b>
-ໄລຍະເວລາເມວຢູ່ກັບຮ້ານພຽງ <b>1–3 ວັນ</b>.
-ກາຍຈາກນີ້ ຖ້າມີບັນຫາເລື່ອງເມວ ທາງແອັດມິນບໍ່ຮັບຜິດຊອບ.
-</div>
-
-<div class="warning-item">
-⚠️ <b>
-ກະລຸນາອ່ານໃຫ້ຄົບຖ້ວນ
-ແລະເຮັດຕາມຄຳເຕືອນຂ້າງເທິງ.
-</b>
-</div>
-
-</div>
-</div>
-
-<!-- VIDEO HELP -->
-
-<div class="video-help">
-
-<div class="video-help-card">
-
-<div class="video-help-logo">
-
-<img
-src="https://cdn.simpleicons.org/gmail"
-alt="Email">
-
-</div>
-
-<div class="video-help-info">
-
-<h3>✉️ ວິທີປ່ຽນຂໍ້ມູນເມວ</h3>
-
-<p>
-ກົດປຸ່ມດ້ານລຸ່ມເພື່ອເບິ່ງວິທີປ່ຽນຂໍ້ມູນເມວ
-</p>
-
-<button
-class="video-help-button"
-onclick="openVideo('email')">
-
-▶ ເບິ່ງວິທີປ່ຽນເມວ
-
-</button>
-
-</div>
-
-</div>
-
-<div class="video-help-card">
-
-<div class="video-help-logo">
-
-<img
-src="https://downloadr2.apkmirror.com/wp-content/uploads/2026/06/99/6a3b53fd56c93_com.dts.freefireth.png"
-alt="Free Fire">
-
-</div>
-
-<div class="video-help-info">
-
-<h3>🎮 ວິທີຍ້າຍບັນຊີເກມ</h3>
-
-<p>
-ກົດປຸ່ມດ້ານລຸ່ມເພື່ອເບິ່ງວິທີຍ້າຍບັນຊີເກມ
-</p>
-
-<button
-class="video-help-button"
-onclick="openVideo('game')">
-
-▶ ເບິ່ງວິທີຍ້າຍບັນຊີ
-
-</button>
-
-</div>
-
-</div>
-
-</div>
+<!-- PRODUCTS -->
 
 <div class="section-title">
 
@@ -1355,22 +1452,36 @@ LAO GAMING PRO X3D — Free Fire Game ID
 
 </div>
 
-<div id="homeProducts"
+<div
+id="homeProducts"
 class="products">
 </div>
 
 </div>
+
 </section>
 
-<!-- SHOP -->
 
-<section id="shop" class="page">
+<!-- =========================
+     SHOP
+========================= -->
+
+<section
+id="shop"
+class="page">
 
 <div class="shop-page">
 
 <button
 class="back-button"
-style="border:1px solid #d8efff;background:#fff;color:#087cff;padding:11px 16px;border-radius:11px;font-weight:900;cursor:pointer"
+style="
+border:1px solid #d8efff;
+background:#fff;
+color:#087cff;
+padding:11px 16px;
+border-radius:11px;
+font-weight:900;
+cursor:pointer"
 onclick="showPage('home')">
 
 ← ກັບໜ້າຫຼັກ
@@ -1381,13 +1492,16 @@ onclick="showPage('home')">
 
 <h2>🔥 Free Fire</h2>
 
-<p>ເລືອກສິນຄ້າທີ່ຕ້ອງການ</p>
+<p>Game ID &amp; Game Code — ເລືອກສິນຄ້າທີ່ຕ້ອງການ</p>
 
 </div>
 
+
 <div class="search-box">
 
-<div class="search-icon">⌕</div>
+<div class="search-icon">
+⌕
+</div>
 
 <input
 id="search"
@@ -1405,6 +1519,7 @@ onclick="clearSearch()">
 
 </div>
 
+
 <div
 id="shopProducts"
 class="products"
@@ -1412,7 +1527,9 @@ style="margin-top:25px">
 </div>
 
 </div>
+
 </section>
+
 
 <!-- DETAIL MODAL -->
 
@@ -1425,7 +1542,9 @@ onclick="closeOutside(event)">
 
 <div class="modal-header">
 
-<h3>📦 ລາຍລະອຽດສິນຄ້າ</h3>
+<h3>
+📦 ລາຍລະອຽດສິນຄ້າ
+</h3>
 
 <button
 class="close-modal"
@@ -1443,7 +1562,9 @@ class="modal-body">
 </div>
 
 </div>
+
 </div>
+
 
 <!-- PAYMENT MODAL -->
 
@@ -1456,7 +1577,9 @@ onclick="closePaymentOutside(event)">
 
 <div class="modal-header">
 
-<h3>💳 ຊຳລະເງິນ</h3>
+<h3>
+💳 ຊຳລະເງິນ
+</h3>
 
 <button
 class="close-modal"
@@ -1474,7 +1597,9 @@ class="modal-body">
 </div>
 
 </div>
+
 </div>
+
 
 <!-- VIDEO MODAL -->
 
@@ -1518,7 +1643,9 @@ allowfullscreen>
 </div>
 
 </div>
+
 </div>
+
 
 <!-- CONTACT -->
 
@@ -1531,7 +1658,9 @@ target="_blank"
 rel="noopener noreferrer">
 
 <img
-src="https://cdn.simpleicons.org/whatsapp/ffffff">
+src="https://cdn.simpleicons.org/whatsapp/ffffff"
+alt="WhatsApp">
+
 </a>
 
 <a
@@ -1541,7 +1670,9 @@ target="_blank"
 rel="noopener noreferrer">
 
 <img
-src="https://cdn.simpleicons.org/facebook/ffffff">
+src="https://cdn.simpleicons.org/facebook/ffffff"
+alt="Facebook">
+
 </a>
 
 <a
@@ -1553,6 +1684,7 @@ href="mailto:laogamingprox3d.support@gmail.com">
 </a>
 
 </div>
+
 
 <footer>
 
@@ -1570,6 +1702,7 @@ href="mailto:laogamingprox3d.support@gmail.com">
 
 </footer>
 
+
 <script>
 
 /* SETTINGS */
@@ -1583,7 +1716,8 @@ const WHATSAPP =
 const CONTACT_EMAIL =
 "laogamingprox3d.support@gmail.com";
 
-/* VIDEO SETTINGS */
+
+/* VIDEO */
 
 const VIDEO_EMAIL =
 "https://www.youtube.com/embed/2zS-88r4AxU";
@@ -1591,7 +1725,6 @@ const VIDEO_EMAIL =
 const VIDEO_GAME =
 "https://www.youtube.com/embed/3KObkRoKfcQ";
 
-/* VIDEO MODAL */
 
 function openVideo(type){
 
@@ -1611,7 +1744,6 @@ function openVideo(type){
 
         frame.src =
             VIDEO_EMAIL + "?autoplay=1";
-
     }
 
     if(type==="game"){
@@ -1621,34 +1753,31 @@ function openVideo(type){
 
         frame.src =
             VIDEO_GAME + "?autoplay=1";
-
     }
 
     modal.classList.add("show");
 }
 
+
 function closeVideo(){
 
-    const modal =
-        document.getElementById("videoModal");
+    document.getElementById(
+        "videoFrame"
+    ).src="";
 
-    const frame =
-        document.getElementById("videoFrame");
-
-    frame.src="";
-
-    modal.classList.remove("show");
+    document.getElementById(
+        "videoModal"
+    ).classList.remove("show");
 }
+
 
 function closeVideoOutside(event){
 
     if(event.target.id==="videoModal"){
-
         closeVideo();
-
     }
-
 }
+
 
 /* PRODUCTS */
 
@@ -1820,6 +1949,7 @@ description:[
 {
 id:9,
 name:"𝐄𝐏 #𝟎𝟎𝟗",
+price:null,
 stock:false,
 stockQty:0,
 image:"https://i.ibb.co/Fkr932jL/ec85427a-f467-458f-b156-76226644b528.jpg"
@@ -1828,6 +1958,7 @@ image:"https://i.ibb.co/Fkr932jL/ec85427a-f467-458f-b156-76226644b528.jpg"
 {
 id:11,
 name:"𝐄𝐏 #𝟎𝟎𝟏𝟏",
+price:null,
 stock:false,
 stockQty:0,
 image:"https://i.ibb.co/DPHsJ7Jk/64a1a15d-99bf-4ffe-8da3-a293271f70db.jpg"
@@ -1836,6 +1967,7 @@ image:"https://i.ibb.co/DPHsJ7Jk/64a1a15d-99bf-4ffe-8da3-a293271f70db.jpg"
 {
 id:14,
 name:"𝐄𝐏 #𝟎𝟎𝟏𝟒",
+price:null,
 stock:false,
 stockQty:0,
 image:"https://i.ibb.co/TDB7B5Hv/ddcb0c96-3c32-4767-b573-c4a7d37b83f2.jpg"
@@ -1844,6 +1976,7 @@ image:"https://i.ibb.co/TDB7B5Hv/ddcb0c96-3c32-4767-b573-c4a7d37b83f2.jpg"
 {
 id:8,
 name:"𝐄𝐏 #𝟎𝟎𝟖",
+price:null,
 stock:false,
 stockQty:0,
 image:"https://i.ibb.co/5X9RkQvx/89a1d754-b67a-43cc-b078-a59f4d824a81.jpg"
@@ -1852,6 +1985,7 @@ image:"https://i.ibb.co/5X9RkQvx/89a1d754-b67a-43cc-b078-a59f4d824a81.jpg"
 {
 id:5,
 name:"𝐄𝐏 #𝟎𝟎𝟓",
+price:null,
 stock:false,
 stockQty:0,
 image:"https://i.ibb.co/KxrRcSBD/278aa62a-5fb0-4ea2-9500-33b3306e0f40.jpg"
@@ -1860,6 +1994,7 @@ image:"https://i.ibb.co/KxrRcSBD/278aa62a-5fb0-4ea2-9500-33b3306e0f40.jpg"
 {
 id:4,
 name:"𝐄𝐏 #𝟎𝟎𝟒",
+price:null,
 stock:false,
 stockQty:0,
 image:"https://i.ibb.co/LDqfpwbc/62f20a8a-90c8-4fcf-aa84-0bb32e234dd3.jpg"
@@ -1868,6 +2003,7 @@ image:"https://i.ibb.co/LDqfpwbc/62f20a8a-90c8-4fcf-aa84-0bb32e234dd3.jpg"
 {
 id:3,
 name:"𝐄𝐏 #𝟎𝟎𝟑",
+price:null,
 stock:false,
 stockQty:0,
 image:"https://i.ibb.co/KcpGw4zP/8369e615-5537-485d-a04a-2c80072f4754.jpg"
@@ -1876,12 +2012,14 @@ image:"https://i.ibb.co/KcpGw4zP/8369e615-5537-485d-a04a-2c80072f4754.jpg"
 {
 id:7,
 name:"𝐄𝐏 #𝟎𝟎𝟕",
+price:null,
 stock:false,
 stockQty:0,
 image:"https://i.ibb.co/ynCDzBXN/b9054ee9-53b0-4dde-a0cd-a29d02f8c8d7.jpg"
 }
 
 ];
+
 
 /* PRICE */
 
@@ -1898,6 +2036,7 @@ function formatPrice(price){
     return new Intl.NumberFormat("lo-LA")
         .format(price)+" ກີບ";
 }
+
 
 /* CARD */
 
@@ -1961,6 +2100,7 @@ function createCard(product){
             </div>
 
         </div>
+
         `;
 
     }else{
@@ -2018,11 +2158,13 @@ function createCard(product){
             </div>
 
         </div>
+
         `;
     }
 
     return card;
 }
+
 
 /* SUMMARY */
 
@@ -2062,6 +2204,7 @@ function updateStockSummary(){
     ).textContent=sold;
 }
 
+
 /* RENDER */
 
 function renderProducts(){
@@ -2100,6 +2243,7 @@ function renderProducts(){
     updateStockSummary();
 }
 
+
 /* PAGE */
 
 function showPage(page){
@@ -2122,9 +2266,7 @@ function showPage(page){
         document.getElementById(page);
 
     if(target){
-
         target.classList.add("active");
-
     }
 
     if(page==="home"){
@@ -2149,14 +2291,16 @@ function showPage(page){
     });
 }
 
+
 /* SEARCH */
 
 function searchProducts(){
 
+    const input =
+        document.getElementById("search");
+
     const keyword =
-        document
-        .getElementById("search")
-        .value
+        input.value
         .toLowerCase()
         .trim();
 
@@ -2183,34 +2327,16 @@ function searchProducts(){
     });
 }
 
+
 function clearSearch(){
 
     document.getElementById(
         "search"
     ).value="";
 
-    const shop =
-        document.getElementById(
-            "shopProducts"
-        );
-
-    shop.innerHTML="";
-
-    const sorted =
-        [...products].sort(
-            (a,b)=>
-            Number(b.stock)-Number(a.stock)
-        );
-
-    sorted.forEach(product=>{
-
-        shop.appendChild(
-            createCard(product)
-        );
-
-    });
-
+    searchProducts();
 }
+
 
 /* DETAIL */
 
@@ -2230,7 +2356,8 @@ function openDetail(id){
 
     let galleryHTML="";
 
-    (product.gallery||[]).forEach(
+    (product.gallery||[])
+    .forEach(
         (img,index)=>{
 
             galleryHTML+=`
@@ -2348,6 +2475,7 @@ function openDetail(id){
     ).classList.add("show");
 }
 
+
 function changeMainImage(url){
 
     const img =
@@ -2360,6 +2488,7 @@ function changeMainImage(url){
     }
 }
 
+
 function closeDetail(){
 
     document.getElementById(
@@ -2367,12 +2496,14 @@ function closeDetail(){
     ).classList.remove("show");
 }
 
+
 function closeOutside(event){
 
     if(event.target.id==="detailModal"){
         closeDetail();
     }
 }
+
 
 /* PAYMENT */
 
@@ -2443,6 +2574,7 @@ function openPayment(id){
     ).classList.add("show");
 }
 
+
 function sendWhatsApp(id){
 
     const product =
@@ -2477,6 +2609,7 @@ function sendWhatsApp(id){
     );
 }
 
+
 function closePayment(){
 
     document.getElementById(
@@ -2484,12 +2617,14 @@ function closePayment(){
     ).classList.remove("show");
 }
 
+
 function closePaymentOutside(event){
 
     if(event.target.id==="paymentModal"){
         closePayment();
     }
 }
+
 
 /* SNOW */
 
@@ -2509,6 +2644,7 @@ let snowWidth =
 let snowHeight =
     window.innerHeight;
 
+
 function resizeSnow(){
 
     snowWidth =
@@ -2524,12 +2660,14 @@ function resizeSnow(){
         snowHeight;
 }
 
+
 resizeSnow();
 
 window.addEventListener(
     "resize",
     resizeSnow
 );
+
 
 function createSnowflake(){
 
@@ -2562,6 +2700,7 @@ function createSnowflake(){
     };
 }
 
+
 function initSnow(){
 
     snowflakes=[];
@@ -2584,7 +2723,9 @@ function initSnow(){
     }
 }
 
+
 initSnow();
+
 
 function drawSnow(){
 
@@ -2653,9 +2794,10 @@ function drawSnow(){
     );
 }
 
-drawSnow();
 
 /* START */
+
+drawSnow();
 
 renderProducts();
 
