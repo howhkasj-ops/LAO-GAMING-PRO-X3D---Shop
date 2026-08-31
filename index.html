@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="lo">
 <head>
@@ -45,10 +44,6 @@ body{
     overflow-x:hidden;
 }
 
-/* =========================
-   SNOW
-========================= */
-
 #snowCanvas{
     position:fixed;
     inset:0;
@@ -58,9 +53,7 @@ body{
     pointer-events:none;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 .header{
     position:sticky;
@@ -144,10 +137,6 @@ body{
     border-color:#cfeaff;
 }
 
-/* =========================
-   PAGE
-========================= */
-
 .page{
     display:none;
 }
@@ -156,9 +145,7 @@ body{
     display:block;
 }
 
-/* =========================
-   HOME
-========================= */
+/* HOME */
 
 .home,
 .shop-page{
@@ -190,9 +177,7 @@ body{
     transform:scale(1.015);
 }
 
-/* =========================
-   ANNOUNCEMENT
-========================= */
+/* ANNOUNCEMENT */
 
 .announcement{
     width:100%;
@@ -225,9 +210,7 @@ body{
     to{transform:translateX(-50%)}
 }
 
-/* =========================
-   WARNING
-========================= */
+/* WARNING */
 
 .warning-box{
     margin-top:16px;
@@ -265,8 +248,103 @@ body{
 }
 
 /* =========================
-   SECTION
+   VIDEO HELP
 ========================= */
+
+.video-help{
+    margin-top:16px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+}
+
+.video-help-card{
+    padding:17px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:17px;
+    box-shadow:var(--shadow);
+}
+
+.video-help-logo{
+    width:58px;
+    height:58px;
+    flex:0 0 58px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    border-radius:15px;
+    background:#eff9ff;
+    border:1px solid #d8efff;
+}
+
+.video-help-logo img{
+    width:38px;
+    height:38px;
+    object-fit:contain;
+}
+
+.video-help-info{
+    flex:1;
+}
+
+.video-help-info h3{
+    font-size:15px;
+    font-weight:950;
+}
+
+.video-help-info p{
+    margin-top:4px;
+    color:var(--muted);
+    font-size:11px;
+    line-height:1.5;
+}
+
+.video-help-button{
+    margin-top:9px;
+    padding:10px 13px;
+    border:0;
+    border-radius:10px;
+    background:linear-gradient(135deg,#087cff,#20a9ff);
+    color:#fff;
+    font-family:inherit;
+    font-size:12px;
+    font-weight:950;
+    cursor:pointer;
+}
+
+.video-help-button:hover{
+    opacity:.9;
+    transform:translateY(-1px);
+}
+
+/* VIDEO MODAL */
+
+.video-modal-box{
+    width:100%;
+    max-width:850px;
+}
+
+.video-container{
+    width:100%;
+    aspect-ratio:16/9;
+    overflow:hidden;
+    border-radius:14px;
+    background:#000;
+}
+
+.video-container iframe{
+    width:100%;
+    height:100%;
+    border:0;
+    display:block;
+}
+
+/* SECTION */
 
 .section-title{
     margin-top:36px;
@@ -284,9 +362,7 @@ body{
     font-size:13px;
 }
 
-/* =========================
-   CATEGORY
-========================= */
+/* CATEGORY */
 
 .category-card{
     background:rgba(255,255,255,.97);
@@ -345,140 +421,7 @@ body{
     cursor:pointer;
 }
 
-/* =========================
-   EMAIL GUIDE
-========================= */
-
-.email-guide{
-    margin-top:22px;
-}
-
-.email-guide-card{
-    background:rgba(255,255,255,.98);
-    border:1px solid var(--border);
-    border-radius:20px;
-    padding:20px;
-    box-shadow:var(--shadow);
-}
-
-.email-guide-top{
-    display:flex;
-    align-items:center;
-    gap:15px;
-}
-
-.email-guide-icon{
-    width:75px;
-    height:75px;
-    padding:15px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:17px;
-    background:#fff4f4;
-    border:1px solid #ffdada;
-    overflow:hidden;
-}
-
-.email-guide-icon img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-}
-
-.email-guide-info{
-    flex:1;
-}
-
-.email-guide-info h3{
-    font-size:19px;
-    font-weight:950;
-}
-
-.email-guide-info p{
-    margin-top:5px;
-    color:var(--muted);
-    font-size:12px;
-    line-height:1.6;
-}
-
-.email-guide-button{
-    width:100%;
-    margin-top:18px;
-    padding:14px;
-    border:0;
-    border-radius:12px;
-    background:linear-gradient(135deg,#087cff,#22aaff);
-    color:#fff;
-    font-family:inherit;
-    font-size:14px;
-    font-weight:950;
-    cursor:pointer;
-    transition:.2s;
-}
-
-.email-guide-button:hover{
-    transform:translateY(-2px);
-}
-
-/* =========================
-   VIDEO GUIDE
-========================= */
-
-.video-guide{
-    margin-top:18px;
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
-}
-
-.video-card{
-    overflow:hidden;
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:18px;
-    box-shadow:var(--shadow);
-}
-
-.video-title{
-    padding:14px 15px;
-    font-size:14px;
-    font-weight:950;
-}
-
-.video-title span{
-    display:block;
-    margin-top:4px;
-    color:var(--muted);
-    font-size:11px;
-    font-weight:700;
-}
-
-.video-frame{
-    width:100%;
-    aspect-ratio:9/16;
-    background:#000;
-    overflow:hidden;
-}
-
-.video-frame iframe{
-    width:100%;
-    height:100%;
-    border:0;
-    display:block;
-}
-
-.video-note{
-    padding:11px 14px;
-    color:#64748b;
-    font-size:11px;
-    line-height:1.6;
-    background:#f7fcff;
-}
-
-/* =========================
-   STOCK SUMMARY
-========================= */
+/* STOCK */
 
 .stock-summary{
     margin-top:20px;
@@ -509,9 +452,7 @@ body{
     font-weight:800;
 }
 
-/* =========================
-   PRODUCTS
-========================= */
+/* PRODUCTS */
 
 .products{
     display:grid;
@@ -650,9 +591,7 @@ body{
     cursor:not-allowed;
 }
 
-/* =========================
-   SEARCH
-========================= */
+/* SEARCH */
 
 .search-box{
     width:100%;
@@ -697,9 +636,7 @@ body{
     cursor:pointer;
 }
 
-/* =========================
-   MODAL
-========================= */
+/* MODAL */
 
 .modal{
     position:fixed;
@@ -759,61 +696,7 @@ body{
     padding:20px;
 }
 
-/* =========================
-   GUIDE MODAL
-========================= */
-
-.guide-modal-box{
-    max-width:900px;
-}
-
-.guide-intro{
-    padding:14px;
-    border-radius:12px;
-    background:#eff9ff;
-    border:1px solid #d7efff;
-    color:#52708c;
-    font-size:12px;
-    line-height:1.7;
-    margin-bottom:18px;
-}
-
-.guide-video-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:16px;
-}
-
-.guide-video{
-    overflow:hidden;
-    border:1px solid var(--border);
-    border-radius:16px;
-    background:#fff;
-}
-
-.guide-video h4{
-    padding:14px;
-    font-size:14px;
-    font-weight:950;
-}
-
-.guide-video p{
-    padding:0 14px 12px;
-    color:var(--muted);
-    font-size:11px;
-}
-
-.guide-video iframe{
-    width:100%;
-    aspect-ratio:9/16;
-    border:0;
-    display:block;
-    background:#000;
-}
-
-/* =========================
-   DETAIL
-========================= */
+/* DETAIL */
 
 .detail-main-image{
     width:100%;
@@ -914,9 +797,7 @@ body{
     cursor:not-allowed;
 }
 
-/* =========================
-   PAYMENT
-========================= */
+/* PAYMENT */
 
 .payment-box{
     text-align:center;
@@ -979,9 +860,7 @@ body{
     cursor:pointer;
 }
 
-/* =========================
-   CONTACT
-========================= */
+/* CONTACT */
 
 .contact-float{
     position:fixed;
@@ -1024,9 +903,7 @@ body{
     font-weight:900;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer{
     padding:30px 20px;
@@ -1052,9 +929,7 @@ footer{
     border:1px solid #d7efff;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* RESPONSIVE */
 
 @media(max-width:1000px){
     .products{
@@ -1063,9 +938,14 @@ footer{
 }
 
 @media(max-width:700px){
+
     .products{
         grid-template-columns:repeat(2,1fr);
         gap:10px;
+    }
+
+    .video-help{
+        grid-template-columns:1fr;
     }
 
     .banner{
@@ -1079,14 +959,10 @@ footer{
     .stock-summary{
         grid-template-columns:1fr 1fr 1fr;
     }
-
-    .video-guide,
-    .guide-video-grid{
-        grid-template-columns:1fr;
-    }
 }
 
 @media(max-width:500px){
+
     .header-inner{
         height:65px;
         padding:0 12px;
@@ -1183,19 +1059,14 @@ footer{
         height:27px;
     }
 
-    .email-guide-icon{
-        width:62px;
-        height:62px;
-        padding:12px;
+    .video-help-card{
+        padding:14px;
     }
 
-    .email-guide-info h3{
-        font-size:16px;
-    }
-
-    .video-frame,
-    .guide-video iframe{
-        aspect-ratio:9/16;
+    .video-help-logo{
+        width:52px;
+        height:52px;
+        flex-basis:52px;
     }
 }
 </style>
@@ -1209,23 +1080,33 @@ footer{
 <div class="header-inner">
 
 <div class="logo" onclick="showPage('home')">
+
 <img src="https://i.ibb.co/0VsFgJV2/dd921ff9-89fd-4b47-a48e-e60383c2c987.jpg">
+
 <div>
 <h1>LAO GAMING PRO X3D</h1>
 <span>ONLINE GAME SHOP</span>
 </div>
+
 </div>
 
 <nav class="nav">
 
-<button id="homeNav" class="active" onclick="showPage('home')">
+<button id="homeNav"
+class="active"
+onclick="showPage('home')">
+
 <span>🏠</span>
 <span>ໜ້າຫຼັກ</span>
+
 </button>
 
-<button id="shopNav" onclick="showPage('shop')">
+<button id="shopNav"
+onclick="showPage('shop')">
+
 <span>🔥</span>
 <span>Free Fire</span>
+
 </button>
 
 </nav>
@@ -1233,16 +1114,16 @@ footer{
 </div>
 </header>
 
-<!-- =========================
-     HOME
-========================= -->
+<!-- HOME -->
 
 <section id="home" class="page active">
 
 <div class="home">
 
 <div class="banner">
+
 <img src="https://i.ibb.co/F4kxqytw/e0832eb5-d70f-46a1-b369-7a8051b63911.jpg">
+
 </div>
 
 <div class="announcement">
@@ -1299,7 +1180,8 @@ footer{
 
 <div class="warning-item">
 <b>4.</b>
-ໄລຍະເວລາເມວຢູ່ກັບຮ້ານພຽງ <b>1–3 ວັນ</b>. ກາຍຈາກນີ້ ຖ້າມີບັນຫາເລື່ອງເມວ ທາງແອັດມິນບໍ່ຮັບຜິດຊອບ.
+ໄລຍະເວລາເມວຢູ່ກັບຮ້ານພຽງ <b>1–3 ວັນ</b>.
+ກາຍຈາກນີ້ ຖ້າມີບັນຫາເລື່ອງເມວ ທາງແອັດມິນບໍ່ຮັບຜິດຊອບ.
 </div>
 
 <div class="warning-item">
@@ -1309,9 +1191,85 @@ footer{
 </div>
 </div>
 
+<!-- =========================
+     VIDEO HELP
+     ຢູ່ລຸ່ມ WARNING ຕາມທີ່ບອກ
+========================= -->
+
+<div class="video-help">
+
+<!-- EMAIL VIDEO -->
+
+<div class="video-help-card">
+
+<div class="video-help-logo">
+
+<img
+src="https://cdn.simpleicons.org/gmail"
+alt="Email">
+
+</div>
+
+<div class="video-help-info">
+
+<h3>✉️ ວິທີປ່ຽນຂໍ້ມູນເມວ</h3>
+
+<p>
+ກົດປຸ່ມດ້ານລຸ່ມເພື່ອເບິ່ງວິທີປ່ຽນຂໍ້ມູນເມວ
+</p>
+
+<button
+class="video-help-button"
+onclick="openVideo('email')">
+
+▶ ເບິ່ງວິທີປ່ຽນເມວ
+
+</button>
+
+</div>
+
+</div>
+
+<!-- GAME ACCOUNT VIDEO -->
+
+<div class="video-help-card">
+
+<div class="video-help-logo">
+
+<img
+src="https://downloadr2.apkmirror.com/wp-content/uploads/2026/06/99/6a3b53fd56c93_com.dts.freefireth.png"
+alt="Free Fire">
+
+</div>
+
+<div class="video-help-info">
+
+<h3>🎮 ວິທີຍ້າຍບັນຊີເກມ</h3>
+
+<p>
+ກົດປຸ່ມດ້ານລຸ່ມເພື່ອເບິ່ງວິທີຍ້າຍບັນຊີເກມ
+</p>
+
+<button
+class="video-help-button"
+onclick="openVideo('game')">
+
+▶ ເບິ່ງວິທີຍ້າຍບັນຊີ
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
 <div class="section-title">
+
 <h2>🔥 Free Fire</h2>
+
 <p>Game ID &amp; Game Code</p>
+
 </div>
 
 <div class="category-card">
@@ -1319,171 +1277,112 @@ footer{
 <div class="category-top">
 
 <div class="category-icon">
+
 <img src="https://downloadr2.apkmirror.com/wp-content/uploads/2026/06/99/6a3b53fd56c93_com.dts.freefireth.png">
+
 </div>
 
 <div class="category-info">
+
 <h3>🔥 Free Fire</h3>
+
 <p>Game ID &amp; Game Code</p>
-</div>
-
-</div>
-
-<button class="view-category" onclick="showPage('shop')">
-ເບິ່ງສິນຄ້າ
-</button>
-
-</div>
-
-<!-- =========================
-     EMAIL GUIDE
-========================= -->
-
-<div class="section-title">
-<h2>📧 ວິທີປ່ຽນຂໍ້ມູນເມວ</h2>
-<p>ວິທີປ່ຽນ Gmail ແລະ ວິທີຍ້າຍບັນຊີເກມ</p>
-</div>
-
-<div class="email-guide">
-
-<div class="email-guide-card">
-
-<div class="email-guide-top">
-
-<div class="email-guide-icon">
-
-<img
-src="https://cdn.simpleicons.org/gmail"
-alt="Gmail">
-
-</div>
-
-<div class="email-guide-info">
-
-<h3>📧 ວິທີປ່ຽນຂໍ້ມູນເມວ</h3>
-
-<p>
-ຫຼັງຈາກໄດ້ຮັບສິນຄ້າ
-ກະລຸນາປ່ຽນຂໍ້ມູນເມວທັນທີ
-ແລະເຮັດຕາມວິດີໂອຄູ່ມືດ້ານລຸ່ມ.
-</p>
 
 </div>
 
 </div>
 
 <button
-class="email-guide-button"
-onclick="openGuide()">
+class="view-category"
+onclick="showPage('shop')">
 
-📧 ເບິ່ງວິທີປ່ຽນເມວ + ວິທີຍ້າຍບັນຊີເກມ
+ເບິ່ງສິນຄ້າ
 
 </button>
-
-</div>
-
-</div>
-
-<!-- VIDEO PREVIEW -->
-
-<div class="video-guide">
-
-<div class="video-card">
-
-<div class="video-title">
-📧 ວິທີປ່ຽນຂໍ້ມູນເມວ
-<span>ກົດ Play ເພື່ອເບິ່ງວິທີ</span>
-</div>
-
-<div class="video-frame">
-
-<iframe
-src="https://www.youtube.com/embed/2zS-88r4AxU"
-title="ວິທີປ່ຽນຂໍ້ມູນເມວ"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen>
-</iframe>
-
-</div>
-
-<div class="video-note">
-📌 ກະລຸນາເບິ່ງວີດີໂອໃຫ້ຈົບ ແລ້ວຈຶ່ງປ່ຽນຂໍ້ມູນເມວ.
-</div>
-
-</div>
-
-<div class="video-card">
-
-<div class="video-title">
-🎮 ວິທີຍ້າຍບັນຊີເກມ
-<span>ວິທີຍ້າຍບັນຊີເກມໄປຍັງເມວຂອງຕົນເອງ</span>
-</div>
-
-<div class="video-frame">
-
-<iframe
-src="https://www.youtube.com/embed/3KObkRoKfcQ"
-title="ວິທີຍ້າຍບັນຊີເກມ"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen>
-</iframe>
-
-</div>
-
-<div class="video-note">
-📌 ຫຼັງຈາກປ່ຽນເມວແລ້ວ ກະລຸນາກວດສອບວ່າບັນຊີເກມຢູ່ກັບເມວໃໝ່ແລ້ວ.
-</div>
-
-</div>
 
 </div>
 
 <div class="stock-summary">
 
 <div class="stock-box">
-<div id="availableCount" class="stock-number">0</div>
-<div class="stock-label">ສິນຄ້າຍັງມີ</div>
+
+<div id="availableCount"
+class="stock-number">
+0
+</div>
+
+<div class="stock-label">
+ສິນຄ້າຍັງມີ
+</div>
+
 </div>
 
 <div class="stock-box">
-<div id="stockQtyCount" class="stock-number">0</div>
-<div class="stock-label">ຈຳນວນໂຕທີ່ເຫຼືອ</div>
+
+<div id="stockQtyCount"
+class="stock-number">
+0
+</div>
+
+<div class="stock-label">
+ຈຳນວນໂຕທີ່ເຫຼືອ
+</div>
+
 </div>
 
 <div class="stock-box">
-<div id="soldCount" class="stock-number">0</div>
-<div class="stock-label">ຂາຍແລ້ວ</div>
+
+<div id="soldCount"
+class="stock-number">
+0
+</div>
+
+<div class="stock-label">
+ຂາຍແລ້ວ
+</div>
+
 </div>
 
 </div>
 
 <div class="section-title">
+
 <h2>🛒 ສິນຄ້າທັງໝົດ</h2>
-<p>LAO GAMING PRO X3D — Free Fire Game ID</p>
+
+<p>
+LAO GAMING PRO X3D — Free Fire Game ID
+</p>
+
 </div>
 
-<div id="homeProducts" class="products"></div>
+<div id="homeProducts"
+class="products">
+</div>
 
 </div>
 </section>
 
-<!-- =========================
-     SHOP
-========================= -->
+<!-- SHOP -->
 
 <section id="shop" class="page">
 
 <div class="shop-page">
 
-<button class="back-button"
+<button
+class="back-button"
 style="border:1px solid #d8efff;background:#fff;color:#087cff;padding:11px 16px;border-radius:11px;font-weight:900;cursor:pointer"
 onclick="showPage('home')">
+
 ← ກັບໜ້າຫຼັກ
+
 </button>
 
 <div class="section-title">
+
 <h2>🔥 Free Fire</h2>
+
 <p>ເລືອກສິນຄ້າທີ່ຕ້ອງການ</p>
+
 </div>
 
 <div class="search-box">
@@ -1496,13 +1395,18 @@ type="text"
 placeholder="ຄົ້ນຫາສິນຄ້າ..."
 oninput="searchProducts">
 
-<button class="clear-search" onclick="clearSearch()">
+<button
+class="clear-search"
+onclick="clearSearch()">
+
 ×
+
 </button>
 
 </div>
 
-<div id="shopProducts"
+<div
+id="shopProducts"
 class="products"
 style="margin-top:25px">
 </div>
@@ -1510,11 +1414,10 @@ style="margin-top:25px">
 </div>
 </section>
 
-<!-- =========================
-     DETAIL MODAL
-========================= -->
+<!-- DETAIL MODAL -->
 
-<div id="detailModal"
+<div
+id="detailModal"
 class="modal"
 onclick="closeOutside(event)">
 
@@ -1524,23 +1427,28 @@ onclick="closeOutside(event)">
 
 <h3>📦 ລາຍລະອຽດສິນຄ້າ</h3>
 
-<button class="close-modal"
+<button
+class="close-modal"
 onclick="closeDetail()">
+
 ×
+
 </button>
 
 </div>
 
-<div id="detailContent" class="modal-body"></div>
+<div
+id="detailContent"
+class="modal-body">
+</div>
 
 </div>
 </div>
 
-<!-- =========================
-     PAYMENT MODAL
-========================= -->
+<!-- PAYMENT MODAL -->
 
-<div id="paymentModal"
+<div
+id="paymentModal"
 class="modal"
 onclick="closePaymentOutside(event)">
 
@@ -1550,83 +1458,57 @@ onclick="closePaymentOutside(event)">
 
 <h3>💳 ຊຳລະເງິນ</h3>
 
-<button class="close-modal"
+<button
+class="close-modal"
 onclick="closePayment()">
+
 ×
+
 </button>
 
 </div>
 
-<div id="paymentContent" class="modal-body"></div>
+<div
+id="paymentContent"
+class="modal-body">
+</div>
 
 </div>
 </div>
 
-<!-- =========================
-     GUIDE MODAL
-========================= -->
+<!-- VIDEO MODAL -->
 
-<div id="guideModal"
+<div
+id="videoModal"
 class="modal"
-onclick="closeGuideOutside(event)">
+onclick="closeVideoOutside(event)">
 
-<div class="modal-box guide-modal-box">
+<div class="modal-box video-modal-box">
 
 <div class="modal-header">
 
-<h3>📧 ຄູ່ມືປ່ຽນເມວ & ຍ້າຍບັນຊີ</h3>
+<h3 id="videoTitle">
+🎬 ວິທີໃຊ້ງານ
+</h3>
 
 <button
 class="close-modal"
-onclick="closeGuide()">
+onclick="closeVideo()">
+
 ×
+
 </button>
 
 </div>
 
 <div class="modal-body">
 
-<div class="guide-intro">
-
-⚠️ <b>ສຳຄັນ:</b>
-ຫຼັງຈາກໄດ້ຮັບສິນຄ້າ
-ກະລຸນາປ່ຽນຂໍ້ມູນເມວທັນທີ.
-ເມື່ອປ່ຽນສຳເລັດແລ້ວ
-ໃຫ້ແຈ້ງແອັດມິນວ່າ
-<b>“ປ່ຽນແລ້ວ”</b>
-ເພື່ອໃຫ້ແອັດມິນລົບເມວ.
-</div>
-
-<div class="guide-video-grid">
-
-<div class="guide-video">
-
-<h4>📧 ຄລິບ 1 — ວິທີປ່ຽນຂໍ້ມູນເມວ</h4>
-
-<p>
-ວິທີປ່ຽນຂໍ້ມູນເມວຕາມວີດີໂອ
-</p>
+<div class="video-container">
 
 <iframe
-src="https://www.youtube.com/embed/2zS-88r4AxU"
-title="ວິທີປ່ຽນຂໍ້ມູນເມວ"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen>
-</iframe>
-
-</div>
-
-<div class="guide-video">
-
-<h4>🎮 ຄລິບ 2 — ວິທີຍ້າຍບັນຊີເກມ</h4>
-
-<p>
-ວິທີຍ້າຍບັນຊີເກມໄປເມວໃໝ່
-</p>
-
-<iframe
-src="https://www.youtube.com/embed/3KObkRoKfcQ"
-title="ວິທີຍ້າຍບັນຊີເກມ"
+id="videoFrame"
+src=""
+title="Tutorial Video"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 allowfullscreen>
 </iframe>
@@ -1636,9 +1518,6 @@ allowfullscreen>
 </div>
 
 </div>
-
-</div>
-
 </div>
 
 <!-- CONTACT -->
@@ -1651,7 +1530,8 @@ href="https://wa.me/8562092978004"
 target="_blank"
 rel="noopener noreferrer">
 
-<img src="https://cdn.simpleicons.org/whatsapp/ffffff">
+<img
+src="https://cdn.simpleicons.org/whatsapp/ffffff">
 </a>
 
 <a
@@ -1660,7 +1540,8 @@ href="https://www.facebook.com/share/18x82jMTpz/"
 target="_blank"
 rel="noopener noreferrer">
 
-<img src="https://cdn.simpleicons.org/facebook/ffffff">
+<img
+src="https://cdn.simpleicons.org/facebook/ffffff">
 </a>
 
 <a
@@ -1691,9 +1572,7 @@ href="mailto:laogamingprox3d.support@gmail.com">
 
 <script>
 
-/* =========================
-   SETTINGS
-========================= */
+/* SETTINGS */
 
 const QR_IMAGE =
 "https://i.ibb.co/zhrYP1Qt/ad537117-f92d-4326-8ec3-cbf38e008e42.jpg";
@@ -1705,8 +1584,76 @@ const CONTACT_EMAIL =
 "laogamingprox3d.support@gmail.com";
 
 /* =========================
+   VIDEO SETTINGS
+========================= */
+
+const VIDEO_EMAIL =
+"https://www.youtube.com/embed/2zS-88r4AxU";
+
+const VIDEO_GAME =
+"https://www.youtube.com/embed/3KObkRoKfcQ";
+
+/* VIDEO MODAL */
+
+function openVideo(type){
+
+    const modal =
+        document.getElementById("videoModal");
+
+    const frame =
+        document.getElementById("videoFrame");
+
+    const title =
+        document.getElementById("videoTitle");
+
+    if(type==="email"){
+
+        title.textContent =
+            "✉️ ວິທີປ່ຽນຂໍ້ມູນເມວ";
+
+        frame.src =
+            VIDEO_EMAIL + "?autoplay=1";
+
+    }
+
+    if(type==="game"){
+
+        title.textContent =
+            "🎮 ວິທີຍ້າຍບັນຊີເກມ";
+
+        frame.src =
+            VIDEO_GAME + "?autoplay=1";
+
+    }
+
+    modal.classList.add("show");
+}
+
+function closeVideo(){
+
+    const modal =
+        document.getElementById("videoModal");
+
+    const frame =
+        document.getElementById("videoFrame");
+
+    frame.src="";
+
+    modal.classList.remove("show");
+}
+
+function closeVideoOutside(event){
+
+    if(event.target.id==="videoModal"){
+
+        closeVideo();
+
+    }
+
+}
+
+/* =========================
    PRODUCTS
-   stockQty = ຈຳນວນໂຕທີ່ເຫຼືອ
 ========================= */
 
 const products = [
@@ -1940,13 +1887,15 @@ image:"https://i.ibb.co/ynCDzBXN/b9054ee9-53b0-4dde-a0cd-a29d02f8c8d7.jpg"
 
 ];
 
-/* =========================
-   PRICE
-========================= */
+/* PRICE */
 
 function formatPrice(price){
 
-    if(price===null || price===undefined || price===""){
+    if(
+        price===null ||
+        price===undefined ||
+        price===""
+    ){
         return "ສອບຖາມລາຄາ";
     }
 
@@ -1954,26 +1903,29 @@ function formatPrice(price){
         .format(price)+" ກີບ";
 }
 
-/* =========================
-   CARD
-========================= */
+/* CARD */
 
 function createCard(product){
 
-    const card=document.createElement("div");
+    const card =
+        document.createElement("div");
+
     card.className="product";
 
-    const qty=Number(product.stockQty || 0);
+    const qty =
+        Number(product.stockQty || 0);
 
     if(product.stock && qty>0){
 
-        const stockClass=qty<=1 ? "low-stock" : "";
+        const stockClass =
+            qty<=1 ? "low-stock" : "";
 
         card.innerHTML=`
 
         <div class="product-image">
 
-            <img src="${product.image}"
+            <img
+            src="${product.image}"
             alt="${product.name}">
 
             <div class="available-badge">
@@ -2013,7 +1965,6 @@ function createCard(product){
             </div>
 
         </div>
-
         `;
 
     }else{
@@ -2022,7 +1973,8 @@ function createCard(product){
 
         <div class="product-image">
 
-            <img src="${product.image}"
+            <img
+            src="${product.image}"
             alt="${product.name}">
 
             <div class="sold-overlay">
@@ -2041,7 +1993,8 @@ function createCard(product){
                 ${product.name}
             </div>
 
-            <div class="product-price"
+            <div
+            class="product-price"
             style="color:#ef4444">
 
                 ${
@@ -2069,28 +2022,28 @@ function createCard(product){
             </div>
 
         </div>
-
         `;
-
     }
 
     return card;
 }
 
-/* =========================
-   SUMMARY
-========================= */
+/* SUMMARY */
 
 function updateStockSummary(){
 
     const available =
         products.filter(
-            p=>p.stock && Number(p.stockQty||0)>0
+            p=>
+            p.stock &&
+            Number(p.stockQty||0)>0
         ).length;
 
     const sold =
         products.filter(
-            p=>!p.stock || Number(p.stockQty||0)<=0
+            p=>
+            !p.stock ||
+            Number(p.stockQty||0)<=0
         ).length;
 
     const totalQty =
@@ -2113,27 +2066,28 @@ function updateStockSummary(){
     ).textContent=sold;
 }
 
-/* =========================
-   RENDER
-========================= */
+/* RENDER */
 
 function renderProducts(){
 
-    const home=document.getElementById(
-        "homeProducts"
-    );
+    const home =
+        document.getElementById(
+            "homeProducts"
+        );
 
-    const shop=document.getElementById(
-        "shopProducts"
-    );
+    const shop =
+        document.getElementById(
+            "shopProducts"
+        );
 
     home.innerHTML="";
     shop.innerHTML="";
 
-    const sorted=[...products].sort(
-        (a,b)=>
-        Number(b.stock)-Number(a.stock)
-    );
+    const sorted =
+        [...products].sort(
+            (a,b)=>
+            Number(b.stock)-Number(a.stock)
+        );
 
     sorted.forEach(product=>{
 
@@ -2150,41 +2104,47 @@ function renderProducts(){
     updateStockSummary();
 }
 
-/* =========================
-   PAGE
-========================= */
+/* PAGE */
 
 function showPage(page){
 
     document
     .querySelectorAll(".page")
     .forEach(
-        p=>p.classList.remove("active")
+        p=>
+        p.classList.remove("active")
     );
 
     document
     .querySelectorAll(".nav button")
     .forEach(
-        b=>b.classList.remove("active")
+        b=>
+        b.classList.remove("active")
     );
 
-    const target=
-    document.getElementById(page);
+    const target =
+        document.getElementById(page);
 
     if(target){
+
         target.classList.add("active");
+
     }
 
     if(page==="home"){
+
         document
         .getElementById("homeNav")
         .classList.add("active");
+
     }
 
     if(page==="shop"){
+
         document
         .getElementById("shopNav")
         .classList.add("active");
+
     }
 
     window.scrollTo({
@@ -2193,20 +2153,18 @@ function showPage(page){
     });
 }
 
-/* =========================
-   SEARCH
-========================= */
+/* SEARCH */
 
 function searchProducts(){
 
-    const keyword=
+    const keyword =
         document
         .getElementById("search")
         .value
         .toLowerCase()
         .trim();
 
-    const shop=
+    const shop =
         document.getElementById(
             "shopProducts"
         );
@@ -2214,17 +2172,19 @@ function searchProducts(){
     shop.innerHTML="";
 
     products
-    .filter(product=>
+    .filter(
+        product=>
         product.name
         .toLowerCase()
         .includes(keyword)
     )
     .forEach(product=>{
+
         shop.appendChild(
             createCard(product)
         );
-    });
 
+    });
 }
 
 function clearSearch(){
@@ -2233,33 +2193,33 @@ function clearSearch(){
         "search"
     ).value="";
 
-    const shop=
+    const shop =
         document.getElementById(
             "shopProducts"
         );
 
     shop.innerHTML="";
 
-    const sorted=[...products].sort(
-        (a,b)=>
-        Number(b.stock)-Number(a.stock)
-    );
+    const sorted =
+        [...products].sort(
+            (a,b)=>
+            Number(b.stock)-Number(a.stock)
+        );
 
     sorted.forEach(product=>{
+
         shop.appendChild(
             createCard(product)
         );
-    });
 
+    });
 }
 
-/* =========================
-   DETAIL
-========================= */
+/* DETAIL */
 
 function openDetail(id){
 
-    const product=
+    const product =
         products.find(
             p=>p.id===id
         );
@@ -2268,7 +2228,7 @@ function openDetail(id){
         return;
     }
 
-    const qty=
+    const qty =
         Number(product.stockQty||0);
 
     let galleryHTML="";
@@ -2288,7 +2248,7 @@ function openDetail(id){
         }
     );
 
-    const available=
+    const available =
         product.stock && qty>0;
 
     document.getElementById(
@@ -2306,8 +2266,12 @@ function openDetail(id){
 
         ${
             galleryHTML
-            ? `<div class="gallery">${galleryHTML}</div>`
-            : ""
+            ?
+            `<div class="gallery">
+                ${galleryHTML}
+             </div>`
+            :
+            ""
         }
 
         <div class="detail-info">
@@ -2317,19 +2281,26 @@ function openDetail(id){
             </div>
 
             <div class="detail-price">
+
                 ${
                     product.price!=null
-                    ? formatPrice(product.price)
-                    : "ສອບຖາມລາຄາ"
+                    ?
+                    formatPrice(product.price)
+                    :
+                    "ສອບຖາມລາຄາ"
                 }
+
             </div>
 
-            <div class="detail-stock ${available?"":"sold"}">
+            <div
+            class="detail-stock ${available?"":"sold"}">
 
                 ${
                     available
-                    ? `📦 ສິນຄ້າເຫຼືອ ${qty} ໂຕ`
-                    : `🔴 ສິນຄ້າຂາຍແລ້ວ`
+                    ?
+                    `📦 ສິນຄ້າເຫຼືອ ${qty} ໂຕ`
+                    :
+                    `🔴 ສິນຄ້າຂາຍແລ້ວ`
                 }
 
             </div>
@@ -2338,13 +2309,14 @@ function openDetail(id){
 
                 ${
                     (product.description||[])
-                    .map(item=>`
-
-                    <div class="detail-item">
-                        ✓ ${item}
-                    </div>
-
-                    `)
+                    .map(
+                        item=>
+                        `
+                        <div class="detail-item">
+                            ✓ ${item}
+                        </div>
+                        `
+                    )
                     .join("")
                 }
 
@@ -2352,22 +2324,26 @@ function openDetail(id){
 
             <button
             class="buy-button ${available?"":"disabled"}"
+
             ${
                 available
-                ? `onclick="openPayment(${product.id})"`
-                : "disabled"
+                ?
+                `onclick="openPayment(${product.id})"`
+                :
+                "disabled"
             }>
 
                 ${
                     available
-                    ? "🛒 ສັ່ງຊື້ສິນຄ້າ"
-                    : "ຂາຍແລ້ວ"
+                    ?
+                    "🛒 ສັ່ງຊື້ສິນຄ້າ"
+                    :
+                    "ຂາຍແລ້ວ"
                 }
 
             </button>
 
         </div>
-
     `;
 
     document.getElementById(
@@ -2377,7 +2353,7 @@ function openDetail(id){
 
 function changeMainImage(url){
 
-    const img=
+    const img =
         document.getElementById(
             "detailMainImage"
         );
@@ -2401,13 +2377,11 @@ function closeOutside(event){
     }
 }
 
-/* =========================
-   PAYMENT
-========================= */
+/* PAYMENT */
 
 function openPayment(id){
 
-    const product=
+    const product =
         products.find(
             p=>p.id===id
         );
@@ -2463,7 +2437,6 @@ function openPayment(id){
             </button>
 
         </div>
-
     `;
 
     closeDetail();
@@ -2475,7 +2448,7 @@ function openPayment(id){
 
 function sendWhatsApp(id){
 
-    const product=
+    const product =
         products.find(
             p=>p.id===id
         );
@@ -2484,7 +2457,7 @@ function sendWhatsApp(id){
         return;
     }
 
-    const message=
+    const message =
 `ສະບາຍດີ LAO GAMING PRO X3D
 ຂ້ອຍສົນໃຈສິນຄ້າ:
 
@@ -2495,11 +2468,11 @@ function sendWhatsApp(id){
 ຂ້ອຍໄດ້ໂອນເງິນແລ້ວ
 ກຳລັງສົ່ງສະລິບໃຫ້ກວດສອບ.`;
 
-    const url=
+    const url =
         "https://wa.me/"
-        +WHATSAPP
-        +"?text="
-        +encodeURIComponent(message);
+        + WHATSAPP
+        + "?text="
+        + encodeURIComponent(message);
 
     window.open(
         url,
@@ -2521,66 +2494,36 @@ function closePaymentOutside(event){
     }
 }
 
-/* =========================
-   EMAIL / GAME GUIDE
-========================= */
+/* SNOW */
 
-function openGuide(){
-
-    document.getElementById(
-        "guideModal"
-    ).classList.add("show");
-
-}
-
-function closeGuide(){
-
-    document.getElementById(
-        "guideModal"
-    ).classList.remove("show");
-
-}
-
-function closeGuideOutside(event){
-
-    if(event.target.id==="guideModal"){
-        closeGuide();
-    }
-
-}
-
-/* =========================
-   SNOW
-========================= */
-
-const snowCanvas=
+const snowCanvas =
     document.getElementById(
         "snowCanvas"
     );
 
-const snowCtx=
+const snowCtx =
     snowCanvas.getContext("2d");
 
 let snowflakes=[];
 
-let snowWidth=
+let snowWidth =
     window.innerWidth;
 
-let snowHeight=
+let snowHeight =
     window.innerHeight;
 
 function resizeSnow(){
 
-    snowWidth=
+    snowWidth =
         window.innerWidth;
 
-    snowHeight=
+    snowHeight =
         window.innerHeight;
 
-    snowCanvas.width=
+    snowCanvas.width =
         snowWidth;
 
-    snowCanvas.height=
+    snowCanvas.height =
         snowHeight;
 }
 
@@ -2595,21 +2538,29 @@ function createSnowflake(){
 
     return {
 
-        x:Math.random()*snowWidth,
+        x:
+            Math.random()*snowWidth,
 
-        y:Math.random()*snowHeight-snowHeight,
+        y:
+            Math.random()*snowHeight-snowHeight,
 
-        radius:Math.random()*3+1,
+        radius:
+            Math.random()*3+1,
 
-        speed:Math.random()*1.2+.5,
+        speed:
+            Math.random()*1.2+.5,
 
-        wind:Math.random()*.8-.4,
+        wind:
+            Math.random()*.8-.4,
 
-        opacity:Math.random()*.65+.25,
+        opacity:
+            Math.random()*.65+.25,
 
-        swing:Math.random()*Math.PI*2,
+        swing:
+            Math.random()*Math.PI*2,
 
-        swingSpeed:Math.random()*.02+.005
+        swingSpeed:
+            Math.random()*.02+.005
 
     };
 }
@@ -2618,7 +2569,7 @@ function initSnow(){
 
     snowflakes=[];
 
-    const amount=
+    const amount =
         window.innerWidth<600
         ?70
         :120;
@@ -2650,14 +2601,14 @@ function drawSnow(){
     snowflakes.forEach(
     snow=>{
 
-        snow.swing+=
+        snow.swing +=
             snow.swingSpeed;
 
-        snow.x+=
+        snow.x +=
             snow.wind+
             Math.sin(snow.swing)*.25;
 
-        snow.y+=
+        snow.y +=
             snow.speed;
 
         if(
@@ -2707,15 +2658,13 @@ function drawSnow(){
 
 drawSnow();
 
-/* =========================
-   START
-========================= */
+/* START */
 
 renderProducts();
+
 showPage("home");
 
 </script>
 
 </body>
 </html>
-```
