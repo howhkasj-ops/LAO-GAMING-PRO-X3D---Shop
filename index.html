@@ -247,9 +247,7 @@ body{
     line-height:1.65;
 }
 
-/* =========================
-   VIDEO HELP
-========================= */
+/* VIDEO HELP */
 
 .video-help{
     margin-top:16px;
@@ -321,8 +319,6 @@ body{
     opacity:.9;
     transform:translateY(-1px);
 }
-
-/* VIDEO MODAL */
 
 .video-modal-box{
     width:100%;
@@ -1153,49 +1149,6 @@ onclick="showPage('shop')">
 </div>
 </div>
 
-<!-- WARNING -->
-
-<div class="warning-box">
-
-<div class="warning-title">
-⚠️ ຄຳເຕືອນສຳຄັນ — ກະລຸນາອ່ານໃຫ້ຄົບ
-</div>
-
-<div class="warning-list">
-
-<div class="warning-item">
-<b>1.</b>
-ຫຼັງຈາກໄດ້ຮັບສິນຄ້າ ລົບກວນໃຫ້ປ່ຽນຂໍ້ມູນເມວທັນທີ.
-</div>
-
-<div class="warning-item">
-<b>2.</b>
-ຫຼັງຈາກປ່ຽນຂໍ້ມູນແລ້ວ ໃຫ້ແຈ້ງແອັດມິນວ່າ “ປ່ຽນແລ້ວ” ເພື່ອໃຫ້ແອັດມິນລົບເມວ.
-</div>
-
-<div class="warning-item">
-<b>3.</b>
-ຫຼັງຈາກແອັດມິນລົບເມວແລ້ວ ທາງຮ້ານບໍ່ຮັບປະກັນຫຼັງການຂາຍ.
-</div>
-
-<div class="warning-item">
-<b>4.</b>
-ໄລຍະເວລາເມວຢູ່ກັບຮ້ານພຽງ <b>1–3 ວັນ</b>.
-ກາຍຈາກນີ້ ຖ້າມີບັນຫາເລື່ອງເມວ ທາງແອັດມິນບໍ່ຮັບຜິດຊອບ.
-</div>
-
-<div class="warning-item">
-⚠️ <b>ກະລຸນາອ່ານໃຫ້ຄົບຖ້ວນ ແລະເຮັດຕາມຄຳເຕືອນຂ້າງເທິງ.</b>
-</div>
-
-</div>
-</div>
-
-<!-- =========================
-     VIDEO HELP
-     ຢູ່ລຸ່ມ WARNING ຕາມທີ່ບອກ
-========================= -->
-
 <div class="video-help">
 
 <!-- EMAIL VIDEO -->
@@ -1302,6 +1255,8 @@ onclick="showPage('shop')">
 
 </div>
 
+<!-- STOCK SUMMARY -->
+
 <div class="stock-summary">
 
 <div class="stock-box">
@@ -1343,6 +1298,44 @@ class="stock-number">
 
 </div>
 
+</div>
+
+<!-- WARNING ຍ້າຍມາຢູ່ລຸ່ມ STOCK -->
+
+<div class="warning-box">
+
+<div class="warning-title">
+⚠️ ຄຳເຕືອນສຳຄັນ — ກະລຸນາອ່ານໃຫ້ຄົບ
+</div>
+
+<div class="warning-list">
+
+<div class="warning-item">
+<b>1.</b>
+ຫຼັງຈາກໄດ້ຮັບສິນຄ້າ ລົບກວນໃຫ້ປ່ຽນຂໍ້ມູນເມວທັນທີ.
+</div>
+
+<div class="warning-item">
+<b>2.</b>
+ຫຼັງຈາກປ່ຽນຂໍ້ມູນແລ້ວ ໃຫ້ແຈ້ງແອັດມິນວ່າ “ປ່ຽນແລ້ວ” ເພື່ອໃຫ້ແອັດມິນລົບເມວ.
+</div>
+
+<div class="warning-item">
+<b>3.</b>
+ຫຼັງຈາກແອັດມິນລົບເມວແລ້ວ ທາງຮ້ານບໍ່ຮັບປະກັນຫຼັງການຂາຍ.
+</div>
+
+<div class="warning-item">
+<b>4.</b>
+ໄລຍະເວລາເມວຢູ່ກັບຮ້ານພຽງ <b>1–3 ວັນ</b>.
+ກາຍຈາກນີ້ ຖ້າມີບັນຫາເລື່ອງເມວ ທາງແອັດມິນບໍ່ຮັບຜິດຊອບ.
+</div>
+
+<div class="warning-item">
+⚠️ <b>ກະລຸນາອ່ານໃຫ້ຄົບຖ້ວນ ແລະເຮັດຕາມຄຳເຕືອນຂ້າງເທິງ.</b>
+</div>
+
+</div>
 </div>
 
 <div class="section-title">
@@ -1393,7 +1386,7 @@ onclick="showPage('home')">
 id="search"
 type="text"
 placeholder="ຄົ້ນຫາສິນຄ້າ..."
-oninput="searchProducts">
+oninput="searchProducts()">
 
 <button
 class="clear-search"
@@ -1583,9 +1576,7 @@ const WHATSAPP =
 const CONTACT_EMAIL =
 "laogamingprox3d.support@gmail.com";
 
-/* =========================
-   VIDEO SETTINGS
-========================= */
+/* VIDEO SETTINGS */
 
 const VIDEO_EMAIL =
 "https://www.youtube.com/embed/2zS-88r4AxU";
@@ -1652,9 +1643,7 @@ function closeVideoOutside(event){
 
 }
 
-/* =========================
-   PRODUCTS
-========================= */
+/* PRODUCTS */
 
 const products = [
 
@@ -2213,6 +2202,7 @@ function clearSearch(){
         );
 
     });
+
 }
 
 /* DETAIL */
@@ -2668,3 +2658,4 @@ showPage("home");
 
 </body>
 </html>
+```
