@@ -643,20 +643,25 @@ body{
     background:#fff;
     border:1px solid var(--border);
     border-radius:15px;
-    padding:0 12px;
+    padding:0 8px 0 12px;
     box-shadow:0 8px 25px rgba(0,126,255,.06);
 }
 
 .search-icon{
     width:40px;
-    text-align:center;
+    min-width:40px;
+    height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     color:var(--blue);
-    font-size:24px;
+    font-size:23px;
 }
 
 .search-box input{
     flex:1;
     height:100%;
+    min-width:0;
     border:0;
     outline:0;
     background:transparent;
@@ -665,15 +670,50 @@ body{
     font-size:14px;
 }
 
+.search-button{
+    width:42px;
+    height:42px;
+    border:0;
+    border-radius:10px;
+    background:linear-gradient(135deg,#087cff,#20a9ff);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:19px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.search-button:hover{
+    transform:scale(1.04);
+    box-shadow:0 6px 16px rgba(8,124,255,.22);
+}
+
 .clear-search{
     width:34px;
     height:34px;
+    margin-left:6px;
     border:0;
     border-radius:9px;
     background:#edf8ff;
     color:var(--blue);
     font-size:18px;
     cursor:pointer;
+}
+
+/* SEARCH EMPTY */
+
+.search-empty{
+    grid-column:1/-1;
+    padding:35px 20px;
+    text-align:center;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:16px;
+    color:var(--muted);
+    font-size:14px;
+    font-weight:800;
 }
 
 /* MODAL */
@@ -969,7 +1009,6 @@ footer{
     border:1px solid #d7efff;
 }
 
-
 /* RESPONSIVE */
 
 @media(max-width:1000px){
@@ -1133,6 +1172,15 @@ footer{
     .category-info p{
         font-size:11px;
     }
+
+    .search-box{
+        height:52px;
+    }
+
+    .search-button{
+        width:38px;
+        height:38px;
+    }
 }
 </style>
 </head>
@@ -1201,7 +1249,6 @@ onclick="showPage('shop')">
 
 </button>
 
-
 </nav>
 
 </div>
@@ -1209,9 +1256,7 @@ onclick="showPage('shop')">
 </header>
 
 
-<!-- =========================
-     HOME
-========================= -->
+<!-- HOME -->
 
 <section
 id="home"
@@ -1276,49 +1321,39 @@ alt="Banner">
 <div class="warning-list">
 
 <div class="warning-item">
-
 <b>1.</b>
 ຫຼັງຈາກໄດ້ຮັບສິນຄ້າ
 ລົບກວນໃຫ້ປ່ຽນຂໍ້ມູນເມວທັນທີ.
-
 </div>
 
 <div class="warning-item">
-
 <b>2.</b>
 ຫຼັງຈາກປ່ຽນຂໍ້ມູນແລ້ວ
 ໃຫ້ແຈ້ງແອັດມິນວ່າ
 “ປ່ຽນແລ້ວ”
 ເພື່ອໃຫ້ແອັດມິນລົບເມວ.
-
 </div>
 
 <div class="warning-item">
-
 <b>3.</b>
 ຫຼັງຈາກແອັດມິນລົບເມວແລ້ວ
 ທາງຮ້ານບໍ່ຮັບປະກັນຫຼັງການຂາຍ.
-
 </div>
 
 <div class="warning-item">
-
 <b>4.</b>
 ໄລຍະເວລາເມວຢູ່ກັບຮ້ານພຽງ
 <b>1–3 ວັນ</b>.
 ກາຍຈາກນີ້ ຖ້າມີບັນຫາເລື່ອງເມວ
 ທາງແອັດມິນບໍ່ຮັບຜິດຊອບ.
-
 </div>
 
 <div class="warning-item">
-
 ⚠️
 <b>
 ກະລຸນາອ່ານໃຫ້ຄົບຖ້ວນ
 ແລະເຮັດຕາມຄຳເຕືອນຂ້າງເທິງ.
 </b>
-
 </div>
 
 </div>
@@ -1329,8 +1364,6 @@ alt="Banner">
 <!-- VIDEO HELP -->
 
 <div class="video-help">
-
-<!-- EMAIL -->
 
 <div class="video-help-card">
 
@@ -1365,8 +1398,6 @@ onclick="openVideo('email')">
 
 </div>
 
-
-<!-- GAME ACCOUNT -->
 
 <div class="video-help-card">
 
@@ -1497,8 +1528,6 @@ class="stock-number">
 </div>
 
 
-<!-- PRODUCTS -->
-
 <div class="section-title">
 
 <h2>🛒 ສິນຄ້າທັງໝົດ</h2>
@@ -1519,9 +1548,7 @@ class="products">
 </section>
 
 
-<!-- =========================
-     SHOP
-========================= -->
+<!-- SHOP -->
 
 <section
 id="shop"
@@ -1554,6 +1581,8 @@ onclick="showPage('home')">
 </div>
 
 
+<!-- SEARCH -->
+
 <div class="search-box">
 
 <div class="search-icon">
@@ -1564,11 +1593,21 @@ onclick="showPage('home')">
 id="search"
 type="text"
 placeholder="ຄົ້ນຫາສິນຄ້າ..."
-oninput="searchProducts()">
+onkeydown="handleSearchKey(event)">
+
+<button
+class="search-button"
+onclick="searchProducts()"
+title="ຄົ້ນຫາ">
+
+🔍
+
+</button>
 
 <button
 class="clear-search"
-onclick="clearSearch()">
+onclick="clearSearch()"
+title="ລ້າງ">
 
 ×
 
@@ -1734,7 +1773,8 @@ alt="Facebook">
 
 <a
 class="float-email"
-href="mailto:laogamingprox3d.support@gmail.com">
+href="mailto:laogamingprox3d.support@gmail.com"
+title="ສົ່ງອີເມວ">
 
 <span>✉</span>
 
@@ -1840,13 +1880,18 @@ function closeVideoOutside(event){
 
 const products = [
 
+/*
+========================================
+EP #0024 — ປິດ / ຂາຍແລ້ວ
+========================================
+*/
 
 {
 id:24,
 name:"𝐄𝐏 #𝟎𝟎𝟐𝟒",
 price:450000,
-stock:true,
-stockQty:1,
+stock:false,
+stockQty:0,
 image:"https://i.ibb.co/7dFtZxdM/55afaa6c-d415-4905-a49e-1db0249d498c.jpg",
 gallery:[
 "https://i.ibb.co/HLWqpvww/85ef0581-1fdf-4d01-a1ee-fa97a94d2628.jpg",
@@ -1879,12 +1924,18 @@ description:[
 ]
 },
 
+/*
+========================================
+EP #0017 — ປິດ / ຂາຍແລ້ວ
+========================================
+*/
+
 {
 id:17,
 name:"𝐄𝐏 #𝟎𝟎𝟏𝟕",
 price:490000,
-stock:true,
-stockQty:1,
+stock:false,
+stockQty:0,
 image:"https://i.ibb.co/NdZd4h8P/2ccc99c9-98d8-4991-8241-f95ff11a8346.jpg",
 gallery:[
 "https://i.ibb.co/5g88MbZN/4477a58d-6e6c-40d0-8056-c295a79a61d3.jpg",
@@ -2003,8 +2054,6 @@ description:[
 "ຍົກໃຫ້ທັງ Google ກູ້ ແລະ ເກມພ້ອມຍ້າຍ"
 ]
 },
-
-/* EP #0010 — ປ່ຽນເປັນຂາຍແລ້ວ */
 
 {
 id:10,
@@ -2378,6 +2427,10 @@ function searchProducts(){
     const input =
         document.getElementById("search");
 
+    if(!input){
+        return;
+    }
+
     const keyword =
         input.value
         .toLowerCase()
@@ -2390,14 +2443,34 @@ function searchProducts(){
 
     shop.innerHTML="";
 
-    products
-    .filter(
-        product=>
-        product.name
-        .toLowerCase()
-        .includes(keyword)
-    )
-    .forEach(product=>{
+    const results =
+        products.filter(
+            product=>
+            product.name
+            .toLowerCase()
+            .includes(keyword)
+        );
+
+    if(results.length===0){
+
+        shop.innerHTML=`
+
+            <div class="search-empty">
+
+                🔍 ບໍ່ພົບສິນຄ້າ
+                <br>
+                <small>
+                    ລອງຄົ້ນຫາ EP ເຊັ່ນ EP 0024
+                </small>
+
+            </div>
+
+        `;
+
+        return;
+    }
+
+    results.forEach(product=>{
 
         shop.appendChild(
             createCard(product)
@@ -2407,13 +2480,37 @@ function searchProducts(){
 }
 
 
+/* SEARCH WITH ENTER */
+
+function handleSearchKey(event){
+
+    if(event.key==="Enter"){
+
+        event.preventDefault();
+
+        searchProducts();
+
+    }
+
+}
+
+
+/* CLEAR SEARCH */
+
 function clearSearch(){
 
-    document.getElementById(
-        "search"
-    ).value="";
+    const input =
+        document.getElementById("search");
 
-    searchProducts();
+    if(input){
+
+        input.value="";
+
+        searchProducts();
+
+        input.focus();
+
+    }
 }
 
 
@@ -2886,4 +2983,3 @@ showPage("home");
 
 </body>
 </html>
-```
