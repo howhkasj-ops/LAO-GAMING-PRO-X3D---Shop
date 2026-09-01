@@ -10,6 +10,7 @@
 href="https://i.ibb.co/0VsFgJV2/dd921ff9-89fd-4b47-a48e-e60383c2c987.jpg">
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -138,8 +139,6 @@ body{
     border-color:#cfeaff;
 }
 
-/* HOME LOGO */
-
 .home-logo{
     width:28px;
     height:28px;
@@ -148,27 +147,16 @@ body{
     justify-content:center;
     border-radius:8px;
     color:#087cff;
-    background:linear-gradient(
-        135deg,
-        #eaf7ff,
-        #d8f0ff
-    );
+    background:linear-gradient(135deg,#eaf7ff,#d8f0ff);
     border:1px solid #cceaff;
-    box-shadow:
-        0 4px 12px rgba(8,124,255,.12);
+    box-shadow:0 4px 12px rgba(8,124,255,.12);
 }
 
 .nav button:hover .home-logo,
 .nav button.active .home-logo{
     color:#fff;
-    background:linear-gradient(
-        135deg,
-        #087cff,
-        #20a9ff
-    );
+    background:linear-gradient(135deg,#087cff,#20a9ff);
     border-color:#087cff;
-    box-shadow:
-        0 5px 15px rgba(8,124,255,.22);
 }
 
 .page{
@@ -240,8 +228,13 @@ body{
 }
 
 @keyframes announcementMove{
-    from{transform:translateX(0)}
-    to{transform:translateX(-50%)}
+    from{
+        transform:translateX(0)
+    }
+
+    to{
+        transform:translateX(-50%)
+    }
 }
 
 /* WARNING */
@@ -281,7 +274,7 @@ body{
     line-height:1.65;
 }
 
-/* VIDEO HELP */
+/* VIDEO */
 
 .video-help{
     margin-top:16px;
@@ -354,8 +347,6 @@ body{
     opacity:.9;
     transform:translateY(-1px);
 }
-
-/* VIDEO MODAL */
 
 .video-modal-box{
     width:100%;
@@ -641,10 +632,16 @@ body{
     display:flex;
     align-items:center;
     background:#fff;
-    border:1px solid var(--border);
+    border:2px solid var(--border);
     border-radius:15px;
     padding:0 12px;
     box-shadow:0 8px 25px rgba(0,126,255,.06);
+    transition:.2s;
+}
+
+.search-box:focus-within{
+    border-color:#087cff;
+    box-shadow:0 10px 30px rgba(8,124,255,.14);
 }
 
 .search-icon{
@@ -656,6 +653,7 @@ body{
 
 .search-box input{
     flex:1;
+    width:100%;
     height:100%;
     border:0;
     outline:0;
@@ -674,6 +672,31 @@ body{
     color:var(--blue);
     font-size:18px;
     cursor:pointer;
+}
+
+.no-results{
+    grid-column:1/-1;
+    padding:45px 20px;
+    text-align:center;
+    background:#fff;
+    border:1px dashed #b9dff7;
+    border-radius:18px;
+    color:var(--muted);
+}
+
+.no-results-icon{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.no-results h3{
+    color:var(--text);
+    font-size:18px;
+    margin-bottom:6px;
+}
+
+.no-results p{
+    font-size:13px;
 }
 
 /* MODAL */
@@ -933,9 +956,17 @@ body{
     height:30px;
 }
 
-.float-whatsapp{background:#25D366}
-.float-facebook{background:#1877F2}
-.float-email{background:#087cff}
+.float-whatsapp{
+    background:#25D366;
+}
+
+.float-facebook{
+    background:#1877F2;
+}
+
+.float-email{
+    background:#087cff;
+}
 
 .float-email span{
     color:#fff;
@@ -976,6 +1007,7 @@ footer{
     .products{
         grid-template-columns:repeat(3,1fr);
     }
+
 }
 
 @media(max-width:700px){
@@ -1000,6 +1032,7 @@ footer{
     .stock-summary{
         grid-template-columns:repeat(3,1fr);
     }
+
 }
 
 @media(max-width:500px){
@@ -1132,7 +1165,9 @@ footer{
     .category-info p{
         font-size:11px;
     }
+
 }
+
 </style>
 </head>
 
@@ -1207,9 +1242,7 @@ onclick="showPage('shop')">
 </header>
 
 
-<!-- =========================
-     HOME
-========================= -->
+<!-- HOME -->
 
 <section
 id="home"
@@ -1225,8 +1258,6 @@ alt="Banner">
 
 </div>
 
-
-<!-- ANNOUNCEMENT -->
 
 <div class="announcement">
 
@@ -1261,8 +1292,6 @@ alt="Banner">
 </div>
 
 
-<!-- WARNING -->
-
 <div class="warning-box">
 
 <div class="warning-title">
@@ -1274,49 +1303,39 @@ alt="Banner">
 <div class="warning-list">
 
 <div class="warning-item">
-
 <b>1.</b>
 ຫຼັງຈາກໄດ້ຮັບສິນຄ້າ
 ລົບກວນໃຫ້ປ່ຽນຂໍ້ມູນເມວທັນທີ.
-
 </div>
 
 <div class="warning-item">
-
 <b>2.</b>
 ຫຼັງຈາກປ່ຽນຂໍ້ມູນແລ້ວ
 ໃຫ້ແຈ້ງແອັດມິນວ່າ
 “ປ່ຽນແລ້ວ”
 ເພື່ອໃຫ້ແອັດມິນລົບເມວ.
-
 </div>
 
 <div class="warning-item">
-
 <b>3.</b>
 ຫຼັງຈາກແອັດມິນລົບເມວແລ້ວ
 ທາງຮ້ານບໍ່ຮັບປະກັນຫຼັງການຂາຍ.
-
 </div>
 
 <div class="warning-item">
-
 <b>4.</b>
 ໄລຍະເວລາເມວຢູ່ກັບຮ້ານພຽງ
 <b>1–3 ວັນ</b>.
-ກາຍຈາກນີ້ ຖ້າມີບັນຫາເລື່ອງເມວ
+ກາຍຈາກນີ້ ຖ້າມີບັນຫາ
 ທາງແອັດມິນບໍ່ຮັບຜິດຊອບ.
-
 </div>
 
 <div class="warning-item">
-
 ⚠️
 <b>
 ກະລຸນາອ່ານໃຫ້ຄົບຖ້ວນ
 ແລະເຮັດຕາມຄຳເຕືອນຂ້າງເທິງ.
 </b>
-
 </div>
 
 </div>
@@ -1327,8 +1346,6 @@ alt="Banner">
 <!-- VIDEO HELP -->
 
 <div class="video-help">
-
-<!-- EMAIL -->
 
 <div class="video-help-card">
 
@@ -1363,8 +1380,6 @@ onclick="openVideo('email')">
 
 </div>
 
-
-<!-- GAME ACCOUNT -->
 
 <div class="video-help-card">
 
@@ -1401,8 +1416,6 @@ onclick="openVideo('game')">
 
 </div>
 
-
-<!-- FREE FIRE -->
 
 <div class="section-title">
 
@@ -1445,8 +1458,6 @@ onclick="showPage('shop')">
 
 </div>
 
-
-<!-- STOCK -->
 
 <div class="stock-summary">
 
@@ -1495,8 +1506,6 @@ class="stock-number">
 </div>
 
 
-<!-- PRODUCTS -->
-
 <div class="section-title">
 
 <h2>🛒 ສິນຄ້າທັງໝົດ</h2>
@@ -1517,9 +1526,7 @@ class="products">
 </section>
 
 
-<!-- =========================
-     SHOP
-========================= -->
+<!-- SHOP -->
 
 <section
 id="shop"
@@ -1547,10 +1554,15 @@ onclick="showPage('home')">
 
 <h2>🔥 Free Fire</h2>
 
-<p>Game ID &amp; Game Code — ເລືອກສິນຄ້າທີ່ຕ້ອງການ</p>
+<p>
+Game ID &amp; Game Code —
+ເລືອກສິນຄ້າທີ່ຕ້ອງການ
+</p>
 
 </div>
 
+
+<!-- SEARCH FIX -->
 
 <div class="search-box">
 
@@ -1562,9 +1574,11 @@ onclick="showPage('home')">
 id="search"
 type="text"
 placeholder="ຄົ້ນຫາສິນຄ້າ..."
-oninput="searchProducts">
+autocomplete="off"
+oninput="searchProducts()">
 
 <button
+type="button"
 class="clear-search"
 onclick="clearSearch()">
 
@@ -1831,13 +1845,13 @@ function closeVideoOutside(event){
     if(event.target.id==="videoModal"){
         closeVideo();
     }
+
 }
 
 
 /* PRODUCTS */
 
 const products = [
-
 
 {
 id:24,
@@ -2001,8 +2015,6 @@ description:[
 "ຍົກໃຫ້ທັງ Google ກູ້ ແລະ ເກມພ້ອມຍ້າຍ"
 ]
 },
-
-/* EP #0010 — ປ່ຽນເປັນຂາຍແລ້ວ */
 
 {
 id:10,
@@ -2360,6 +2372,9 @@ function showPage(page){
         .getElementById("shopNav")
         .classList.add("active");
 
+        /* ໃຫ້ກັບມາສະແດງສິນຄ້າທັງໝົດ */
+        searchProducts();
+
     }
 
     window.scrollTo({
@@ -2369,31 +2384,100 @@ function showPage(page){
 }
 
 
-/* SEARCH */
+/* =========================
+   SEARCH SYSTEM FIXED
+========================= */
+
+function normalizeSearch(text){
+
+    return String(text || "")
+        .toLowerCase()
+        .normalize("NFKC")
+        .trim();
+
+}
+
 
 function searchProducts(){
 
     const input =
         document.getElementById("search");
 
-    const keyword =
-        input.value
-        .toLowerCase()
-        .trim();
-
     const shop =
-        document.getElementById(
-            "shopProducts"
-        );
+        document.getElementById("shopProducts");
+
+    if(!input || !shop){
+        return;
+    }
+
+    const keyword =
+        normalizeSearch(input.value);
 
     shop.innerHTML="";
 
-    products
-    .filter(
-        product=>
-        product.name
-        .toLowerCase()
-        .includes(keyword)
+    /*
+       ຖ້າບໍ່ໄດ້ພິມຫຍັງ
+       ໃຫ້ສະແດງສິນຄ້າທັງໝົດ
+    */
+
+    const results =
+        products.filter(product=>{
+
+            const name =
+                normalizeSearch(product.name);
+
+            const id =
+                normalizeSearch(product.id);
+
+            const price =
+                product.price != null
+                ? normalizeSearch(product.price)
+                : "";
+
+            return (
+                name.includes(keyword) ||
+                id.includes(keyword) ||
+                price.includes(keyword)
+            );
+
+        });
+
+
+    if(results.length===0){
+
+        shop.innerHTML=`
+
+            <div class="no-results">
+
+                <div class="no-results-icon">
+                    🔍
+                </div>
+
+                <h3>
+                    ບໍ່ພົບສິນຄ້າ
+                </h3>
+
+                <p>
+                    ບໍ່ພົບສິນຄ້າທີ່ກົງກັບ
+                    "${input.value}"
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+    }
+
+
+    /*
+       ຈັດສິນຄ້າຍັງມີຂຶ້ນກ່ອນ
+    */
+
+    results
+    .sort(
+        (a,b)=>
+        Number(b.stock)-Number(a.stock)
     )
     .forEach(product=>{
 
@@ -2402,16 +2486,25 @@ function searchProducts(){
         );
 
     });
+
 }
 
 
 function clearSearch(){
 
-    document.getElementById(
-        "search"
-    ).value="";
+    const input =
+        document.getElementById("search");
+
+    if(!input){
+        return;
+    }
+
+    input.value="";
 
     searchProducts();
+
+    input.focus();
+
 }
 
 
@@ -2545,6 +2638,7 @@ function openDetail(id){
             </button>
 
         </div>
+
     `;
 
     document.getElementById(
@@ -2563,6 +2657,7 @@ function changeMainImage(url){
     if(img){
         img.src=url;
     }
+
 }
 
 
@@ -2579,6 +2674,7 @@ function closeOutside(event){
     if(event.target.id==="detailModal"){
         closeDetail();
     }
+
 }
 
 
@@ -2642,6 +2738,7 @@ function openPayment(id){
             </button>
 
         </div>
+
     `;
 
     closeDetail();
@@ -2649,6 +2746,7 @@ function openPayment(id){
     document.getElementById(
         "paymentModal"
     ).classList.add("show");
+
 }
 
 
@@ -2684,6 +2782,7 @@ function sendWhatsApp(id){
         url,
         "_blank"
     );
+
 }
 
 
@@ -2692,6 +2791,7 @@ function closePayment(){
     document.getElementById(
         "paymentModal"
     ).classList.remove("show");
+
 }
 
 
@@ -2700,6 +2800,7 @@ function closePaymentOutside(event){
     if(event.target.id==="paymentModal"){
         closePayment();
     }
+
 }
 
 
@@ -2735,6 +2836,7 @@ function resizeSnow(){
 
     snowCanvas.height =
         snowHeight;
+
 }
 
 
@@ -2775,6 +2877,7 @@ function createSnowflake(){
             Math.random()*.02+.005
 
     };
+
 }
 
 
@@ -2798,6 +2901,7 @@ function initSnow(){
         );
 
     }
+
 }
 
 
@@ -2869,6 +2973,7 @@ function drawSnow(){
     requestAnimationFrame(
         drawSnow
     );
+
 }
 
 
@@ -2884,4 +2989,3 @@ showPage("home");
 
 </body>
 </html>
-```
