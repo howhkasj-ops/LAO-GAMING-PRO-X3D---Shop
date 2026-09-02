@@ -107,7 +107,7 @@ body::after{
  pointer-events:none;
 }
 
-/* ICON */
+/* ================= ICON ================= */
 
 .icon{
  width:20px;
@@ -115,7 +115,6 @@ body::after{
  display:inline-flex;
  align-items:center;
  justify-content:center;
- vertical-align:middle;
  flex:0 0 auto;
 }
 
@@ -131,8 +130,8 @@ body::after{
 }
 
 .icon.md{
- width:18px;
- height:18px;
+ width:19px;
+ height:19px;
 }
 
 .icon.lg{
@@ -140,23 +139,24 @@ body::after{
  height:23px;
 }
 
-/* HEADER */
+
+/* ================= HEADER ================= */
 
 .header{
  position:sticky;
  top:0;
  z-index:1000;
- background:rgba(255,255,255,.82);
- backdrop-filter:blur(20px);
- -webkit-backdrop-filter:blur(20px);
- border-bottom:1px solid rgba(216,239,255,.9);
- box-shadow:0 8px 30px rgba(0,126,255,.08);
+ background:rgba(255,255,255,.88);
+ backdrop-filter:blur(22px);
+ -webkit-backdrop-filter:blur(22px);
+ border-bottom:1px solid rgba(216,239,255,.95);
+ box-shadow:0 8px 35px rgba(0,126,255,.09);
 }
 
 .header-inner{
  width:100%;
  max-width:1200px;
- height:74px;
+ height:78px;
  margin:auto;
  padding:0 20px;
  display:flex;
@@ -164,84 +164,152 @@ body::after{
  justify-content:space-between;
 }
 
+
+/* ================= LOGO ================= */
+
 .logo{
  display:flex;
  align-items:center;
- gap:11px;
+ gap:12px;
  cursor:pointer;
+ user-select:none;
+}
+
+.logo-img-wrap{
+ width:51px;
+ height:51px;
+ padding:2px;
+ border-radius:15px;
+ background:linear-gradient(135deg,#087cff,#20b5ff);
+ box-shadow:
+ 0 8px 25px rgba(8,124,255,.25),
+ 0 0 0 4px rgba(8,124,255,.06);
 }
 
 .logo img{
- width:48px;
- height:48px;
+ width:100%;
+ height:100%;
  object-fit:cover;
  border-radius:13px;
- box-shadow:0 6px 22px rgba(8,124,255,.25);
+ display:block;
 }
 
 .logo h1{
  font-size:16px;
  font-weight:950;
+ letter-spacing:.2px;
 }
 
 .logo span{
  display:block;
- margin-top:3px;
+ margin-top:4px;
  color:var(--blue);
  font-size:9px;
- font-weight:800;
- letter-spacing:1.5px;
+ font-weight:900;
+ letter-spacing:1.6px;
 }
+
+
+/* ================= NEW NAV ================= */
 
 .nav{
  display:flex;
  align-items:center;
- gap:8px;
+ gap:9px;
+ padding:6px;
+ border:1px solid #dcefff;
+ background:rgba(247,252,255,.88);
+ border-radius:17px;
+ box-shadow:
+ 0 8px 25px rgba(0,126,255,.07),
+ inset 0 1px 0 rgba(255,255,255,.9);
 }
 
 .nav button{
- height:43px;
- min-width:105px;
- padding:0 14px;
+ position:relative;
+ height:48px;
+ min-width:112px;
+ padding:0 15px;
  border:1px solid transparent;
- border-radius:12px;
- background:#fff;
- color:#506176;
+ border-radius:13px;
+ background:transparent;
+ color:#617187;
  display:flex;
  align-items:center;
  justify-content:center;
- gap:7px;
+ gap:8px;
  font-family:inherit;
  font-size:13px;
- font-weight:900;
+ font-weight:950;
  cursor:pointer;
+ transition:
+ .22s ease,
+ transform .22s ease;
+}
+
+.nav button:hover{
+ color:var(--blue);
+ background:#fff;
+ transform:translateY(-1px);
+}
+
+.nav button.active{
+ color:#fff;
+ background:linear-gradient(
+ 135deg,
+ #087cff 0%,
+ #1297ff 50%,
+ #20b5ff 100%);
+ border-color:#087cff;
+ box-shadow:
+ 0 8px 22px rgba(8,124,255,.24),
+ inset 0 1px 0 rgba(255,255,255,.25);
+}
+
+.nav button.active::after{
+ content:"";
+ position:absolute;
+ width:20px;
+ height:3px;
+ border-radius:20px;
+ bottom:-7px;
+ left:50%;
+ transform:translateX(-50%);
+ background:#087cff;
+ box-shadow:0 0 10px rgba(8,124,255,.45);
+}
+
+.nav-icon-box{
+ width:30px;
+ height:30px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ border-radius:9px;
+ background:#edf8ff;
+ color:var(--blue);
  transition:.22s;
 }
 
-.nav button:hover,
-.nav button.active{
- color:var(--blue);
- background:linear-gradient(135deg,#eff9ff,#e4f5ff);
- border-color:#cfeaff;
- box-shadow:0 6px 20px rgba(8,124,255,.08);
+.nav button:hover .nav-icon-box{
+ background:#e4f4ff;
+}
+
+.nav button.active .nav-icon-box{
+ background:rgba(255,255,255,.20);
+ color:#fff;
 }
 
 .nav-contact{
  color:#087cff!important;
 }
 
-.nav-contact-icon{
- width:28px;
- height:28px;
- display:flex;
- align-items:center;
- justify-content:center;
- border-radius:8px;
- background:#eaf7ff;
- border:1px solid #cceaff;
+.nav-contact.active{
+ color:#fff!important;
 }
 
-/* PAGE */
+
+/* ================= PAGE ================= */
 
 .page{
  display:none;
@@ -259,7 +327,8 @@ body::after{
  padding:24px 20px 80px;
 }
 
-/* BANNER */
+
+/* ================= BANNER ================= */
 
 .banner{
  width:100%;
@@ -272,6 +341,21 @@ body::after{
  position:relative;
 }
 
+.banner::after{
+ content:"";
+ position:absolute;
+ inset:0;
+ background:
+ linear-gradient(
+ 90deg,
+ rgba(8,124,255,.05),
+ transparent 35%,
+ transparent 65%,
+ rgba(8,124,255,.05)
+ );
+ pointer-events:none;
+}
+
 .banner img{
  width:100%;
  height:100%;
@@ -279,7 +363,8 @@ body::after{
  object-fit:cover;
 }
 
-/* ANNOUNCEMENT */
+
+/* ================= ANNOUNCEMENT ================= */
 
 .announcement{
  width:100%;
@@ -289,8 +374,14 @@ body::after{
  display:flex;
  align-items:center;
  border-radius:14px;
- background:linear-gradient(
- 90deg,#087cff,#19a8ff,#087cff,#19a8ff,#087cff);
+ background:
+ linear-gradient(
+ 90deg,
+ #087cff,
+ #19a8ff,
+ #087cff,
+ #19a8ff,
+ #087cff);
  background-size:250% 100%;
  animation:announcementGlow 7s linear infinite;
  box-shadow:0 10px 30px rgba(0,126,255,.20);
@@ -323,13 +414,16 @@ body::after{
  to{transform:translateX(-50%)}
 }
 
-/* WARNING */
+
+/* ================= WARNING ================= */
 
 .warning-box{
  margin-top:16px;
  padding:18px;
  border-radius:18px;
- background:linear-gradient(135deg,
+ background:
+ linear-gradient(
+ 135deg,
  rgba(255,248,232,.96),
  rgba(255,255,255,.94));
  border:1px solid #ffd98a;
@@ -362,7 +456,8 @@ body::after{
  line-height:1.65;
 }
 
-/* VIDEO */
+
+/* ================= VIDEO ================= */
 
 .video-help{
  margin-top:16px;
@@ -381,6 +476,12 @@ body::after{
  border:1px solid rgba(216,239,255,.95);
  border-radius:17px;
  box-shadow:0 12px 35px rgba(0,126,255,.09);
+ transition:.22s;
+}
+
+.video-help-card:hover{
+ transform:translateY(-3px);
+ box-shadow:0 18px 40px rgba(0,126,255,.13);
 }
 
 .video-help-logo{
@@ -436,9 +537,16 @@ body::after{
  display:inline-flex;
  align-items:center;
  gap:7px;
+ transition:.2s;
 }
 
-/* SECTION */
+.video-help-button:hover{
+ transform:translateY(-1px);
+ box-shadow:0 7px 18px rgba(8,124,255,.22);
+}
+
+
+/* ================= SECTION ================= */
 
 .section-title{
  margin-top:36px;
@@ -459,7 +567,8 @@ body::after{
  font-size:13px;
 }
 
-/* CATEGORY */
+
+/* ================= CATEGORY ================= */
 
 .category-card{
  background:rgba(255,255,255,.90);
@@ -468,6 +577,12 @@ body::after{
  border-radius:20px;
  padding:20px;
  box-shadow:0 14px 40px rgba(0,126,255,.10);
+ transition:.22s;
+}
+
+.category-card:hover{
+ transform:translateY(-2px);
+ box-shadow:0 20px 45px rgba(0,126,255,.13);
 }
 
 .category-top{
@@ -484,6 +599,7 @@ body::after{
  border-radius:17px;
  border:1px solid #d5edff;
  background:#eff9ff;
+ box-shadow:0 8px 20px rgba(0,126,255,.08);
 }
 
 .category-icon img{
@@ -521,9 +637,17 @@ body::after{
  font-size:14px;
  font-weight:950;
  cursor:pointer;
+ box-shadow:0 8px 20px rgba(8,124,255,.14);
+ transition:.2s;
 }
 
-/* STOCK */
+.view-category:hover{
+ transform:translateY(-2px);
+ box-shadow:0 12px 25px rgba(8,124,255,.20);
+}
+
+
+/* ================= STOCK ================= */
 
 .stock-summary{
  margin-top:20px;
@@ -555,7 +679,8 @@ body::after{
  font-weight:800;
 }
 
-/* PRODUCTS */
+
+/* ================= PRODUCTS ================= */
 
 .products{
  display:grid;
@@ -609,6 +734,7 @@ body::after{
  display:flex;
  align-items:center;
  gap:5px;
+ box-shadow:0 6px 15px rgba(22,163,74,.20);
 }
 
 .stock-count{
@@ -643,6 +769,7 @@ body::after{
  font-size:19px;
  font-weight:950;
  transform:rotate(-7deg);
+ box-shadow:0 8px 25px rgba(239,68,68,.28);
 }
 
 .product-content{
@@ -691,6 +818,12 @@ body::after{
  font-size:13px;
  font-weight:950;
  cursor:pointer;
+ transition:.2s;
+}
+
+.btn-detail:hover{
+ transform:translateY(-1px);
+ box-shadow:0 8px 20px rgba(8,124,255,.20);
 }
 
 .btn-detail.sold{
@@ -699,7 +832,39 @@ body::after{
  cursor:not-allowed;
 }
 
-/* SEARCH */
+
+/* ================= SHOP BACK BUTTON ================= */
+
+.back-button{
+ display:inline-flex;
+ align-items:center;
+ gap:8px;
+ padding:11px 16px;
+ border:1px solid #cfeaff;
+ border-radius:12px;
+ background:#fff;
+ color:var(--blue);
+ font-family:inherit;
+ font-size:13px;
+ font-weight:950;
+ cursor:pointer;
+ box-shadow:0 7px 20px rgba(0,126,255,.07);
+ transition:.2s;
+}
+
+.back-button::before{
+ content:"←";
+ font-size:18px;
+ line-height:1;
+}
+
+.back-button:hover{
+ background:#eff9ff;
+ transform:translateX(-2px);
+}
+
+
+/* ================= SEARCH ================= */
 
 .search-box{
  width:100%;
@@ -750,6 +915,11 @@ body::after{
  align-items:center;
  justify-content:center;
  cursor:pointer;
+ transition:.2s;
+}
+
+.search-button:hover{
+ transform:scale(1.04);
 }
 
 .clear-search{
@@ -777,6 +947,12 @@ body::after{
  font-weight:800;
 }
 
+.search-empty .icon{
+ display:flex;
+ margin:0 auto 8px;
+ color:var(--blue);
+}
+
 .search-empty small{
  display:block;
  margin-top:8px;
@@ -784,7 +960,8 @@ body::after{
  font-size:11px;
 }
 
-/* MODAL */
+
+/* ================= MODAL ================= */
 
 .modal{
  position:fixed;
@@ -841,13 +1018,20 @@ body::after{
  color:var(--blue);
  font-size:23px;
  cursor:pointer;
+ transition:.2s;
+}
+
+.close-modal:hover{
+ background:#dff2ff;
+ transform:rotate(3deg);
 }
 
 .modal-body{
  padding:20px;
 }
 
-/* CONTACT */
+
+/* ================= CONTACT ================= */
 
 .contact-modal-box{
  max-width:500px;
@@ -932,7 +1116,8 @@ body::after{
  font-size:11px;
 }
 
-/* DETAIL */
+
+/* ================= DETAIL ================= */
 
 .detail-main-image{
  width:100%;
@@ -963,6 +1148,12 @@ body::after{
  border-radius:12px;
  border:1px solid var(--border);
  cursor:pointer;
+ transition:.2s;
+}
+
+.gallery img:hover{
+ transform:scale(1.02);
+ border-color:#8bd1ff;
 }
 
 .detail-info{
@@ -1031,6 +1222,12 @@ body::after{
  font-size:15px;
  font-weight:950;
  cursor:pointer;
+ transition:.2s;
+}
+
+.buy-button:hover{
+ transform:translateY(-1px);
+ box-shadow:0 10px 25px rgba(8,124,255,.20);
 }
 
 .buy-button.disabled{
@@ -1039,7 +1236,8 @@ body::after{
  cursor:not-allowed;
 }
 
-/* PAYMENT */
+
+/* ================= PAYMENT ================= */
 
 .payment-box{
  text-align:center;
@@ -1101,9 +1299,16 @@ body::after{
  font-size:14px;
  font-weight:950;
  cursor:pointer;
+ transition:.2s;
 }
 
-/* VIDEO */
+.whatsapp-button:hover{
+ transform:translateY(-1px);
+ box-shadow:0 10px 25px rgba(37,211,102,.20);
+}
+
+
+/* ================= VIDEO ================= */
 
 .video-modal-box{
  width:100%;
@@ -1125,7 +1330,8 @@ body::after{
  display:block;
 }
 
-/* FOOTER */
+
+/* ================= FOOTER ================= */
 
 footer{
  padding:30px 20px;
@@ -1136,7 +1342,8 @@ footer{
  font-size:12px;
 }
 
-/* MOBILE */
+
+/* ================= TABLET ================= */
 
 @media(max-width:1000px){
 
@@ -1146,7 +1353,61 @@ footer{
 
 }
 
+
+/* ================= MOBILE ================= */
+
 @media(max-width:700px){
+
+ .header-inner{
+  height:70px;
+  padding:0 12px;
+ }
+
+ .logo{
+  gap:8px;
+ }
+
+ .logo-img-wrap{
+  width:43px;
+  height:43px;
+  border-radius:12px;
+ }
+
+ .logo h1{
+  font-size:12px;
+ }
+
+ .logo span{
+  font-size:7px;
+  letter-spacing:1px;
+ }
+
+ .nav{
+  gap:3px;
+  padding:4px;
+  border-radius:14px;
+ }
+
+ .nav button{
+  min-width:auto;
+  width:43px;
+  height:43px;
+  padding:0;
+  border-radius:11px;
+ }
+
+ .nav button span:last-child{
+  display:none;
+ }
+
+ .nav-icon-box{
+  width:31px;
+  height:31px;
+ }
+
+ .nav button.active::after{
+  bottom:-5px;
+ }
 
  .products{
   grid-template-columns:repeat(2,1fr);
@@ -1167,49 +1428,72 @@ footer{
 
 }
 
+
+/* ================= SMALL PHONE ================= */
+
 @media(max-width:500px){
 
  .header-inner{
   height:65px;
-  padding:0 10px;
+  padding:0 9px;
  }
 
- .logo img{
-  width:42px;
-  height:42px;
+ .logo-img-wrap{
+  width:40px;
+  height:40px;
  }
 
  .logo h1{
-  font-size:11px;
+  font-size:10px;
  }
 
  .logo span{
-  font-size:7px;
+  font-size:6.5px;
  }
 
  .nav{
-  gap:4px;
+  padding:3px;
+  gap:2px;
  }
 
  .nav button{
-  min-width:auto;
-  width:42px;
-  height:40px;
-  padding:0;
+  width:39px;
+  height:39px;
  }
 
- .nav button span:last-child{
-  display:none;
- }
-
- .nav-contact-icon{
+ .nav-icon-box{
   width:28px;
   height:28px;
+ }
+
+ .home,
+ .shop-page{
+  padding:16px 10px 60px;
  }
 
  .banner{
   height:190px;
   border-radius:16px;
+ }
+
+ .announcement{
+  height:46px;
+ }
+
+ .announcement-text{
+  font-size:12px;
+ }
+
+ .warning-box{
+  padding:14px;
+ }
+
+ .warning-title{
+  font-size:14px;
+ }
+
+ .warning-item{
+  font-size:11px;
  }
 
  .product-image{
@@ -1228,6 +1512,50 @@ footer{
   font-size:15px;
  }
 
+ .product-status{
+  font-size:10px;
+ }
+
+ .btn-detail{
+  padding:10px 7px;
+  font-size:11px;
+ }
+
+ .available-badge{
+  top:8px;
+  left:8px;
+  padding:6px 8px;
+  font-size:9px;
+ }
+
+ .stock-count{
+  right:8px;
+  bottom:8px;
+  padding:6px 8px;
+  font-size:9px;
+ }
+
+ .sold-badge{
+  padding:8px 14px;
+  font-size:15px;
+ }
+
+ .stock-summary{
+  gap:7px;
+ }
+
+ .stock-box{
+  padding:13px 5px;
+ }
+
+ .stock-number{
+  font-size:21px;
+ }
+
+ .stock-label{
+  font-size:9px;
+ }
+
  .detail-main-image{
   height:280px;
  }
@@ -1241,6 +1569,46 @@ footer{
   height:220px;
  }
 
+ .modal{
+  padding:10px;
+ }
+
+ .modal-box{
+  border-radius:17px;
+  max-height:94vh;
+ }
+
+ .modal-body{
+  padding:14px;
+ }
+
+}
+
+
+/* ================= VERY SMALL ================= */
+
+@media(max-width:370px){
+
+ .logo h1{
+  font-size:9px;
+ }
+
+ .logo span{
+  display:none;
+ }
+
+ .nav button{
+  width:36px;
+ }
+
+ .products{
+  gap:7px;
+ }
+
+ .product-image{
+  height:130px;
+ }
+
 }
 
 </style>
@@ -1250,45 +1618,56 @@ footer{
 
 <canvas id="snowCanvas"></canvas>
 
+
+<!-- ================= HEADER ================= -->
+
 <header class="header">
 
 <div class="header-inner">
 
 <div class="logo" onclick="showPage('home')">
 
+<div class="logo-img-wrap">
+
 <img
 src="https://i.ibb.co/0VsFgJV2/dd921ff9-89fd-4b47-a48e-e60383c2c987.jpg"
 alt="LAO GAMING PRO X3D">
 
+</div>
+
 <div>
 
 <h1>LAO GAMING PRO X3D</h1>
+
 <span>ONLINE GAME SHOP</span>
 
 </div>
 
 </div>
 
+
 <nav class="nav">
 
-<!-- ໜ້າຫຼັກ -->
+
+<!-- HOME -->
 
 <button
 id="homeNav"
 class="active"
 onclick="showPage('home')">
 
-<span class="home-logo icon">
+<span class="nav-icon-box">
 
-<svg viewBox="0 0 24 24" fill="none"
+<svg viewBox="0 0 24 24"
+fill="none"
 stroke="currentColor"
-stroke-width="2.2"
+stroke-width="2"
 stroke-linecap="round"
 stroke-linejoin="round">
 
-<path d="M3 10.5L12 3l9 7.5"></path>
-<path d="M5.5 9.5V21h13V9.5"></path>
-<path d="M9.5 21v-6h5v6"></path>
+<path d="M3 10.5L12 3l9 7.5"/>
+<path d="M5.5 9.5V21h13V9.5"/>
+<path d="M9.5 21v-6h5v6"/>
 
 </svg>
 
@@ -1299,13 +1678,13 @@ stroke-linejoin="round">
 </button>
 
 
-<!-- ຕິດຕໍ່ເຮົາ -->
+<!-- CONTACT -->
 
 <button
 class="nav-contact"
 onclick="openContact()">
 
-<span class="nav-contact-icon icon">
+<span class="nav-icon-box">
 
 <svg viewBox="0 0 24 24"
 fill="none"
@@ -1339,7 +1718,7 @@ a8.5 8.5 0 0 1 9 8.5Z"/>
 id="shopNav"
 onclick="showPage('shop')">
 
-<span class="icon">
+<span class="nav-icon-box">
 
 <svg viewBox="0 0 24 24"
 fill="none"
@@ -1687,15 +2066,20 @@ onclick="showPage('shop')">
 <div class="section-title">
 
 <h2>
+
 <span class="icon">
+
 <svg viewBox="0 0 24 24"
 fill="none"
 stroke="currentColor"
 stroke-width="2">
+
 <circle cx="9" cy="20" r="1"/>
 <circle cx="18" cy="20" r="1"/>
 <path d="M3 4h2l2.5 11h11L21 7H6"/>
+
 </svg>
+
 </span>
 
 ສິນຄ້າທັງໝົດ
@@ -1729,7 +2113,26 @@ onclick="showPage('home')">
 
 <div class="section-title">
 
-<h2>Free Fire</h2>
+<h2>
+
+<span class="icon">
+
+<svg viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="2">
+
+<path d="M7 8h10a5 5 0 0 1 4.8 6.4l-1 3.3a2 2 0 0 1-3.6.6l-1.6-2.3H8.4l-1.6 2.3a2 2 0 0 1-3.6-.6l-1-3.3A5 5 0 0 1 7 8Z"/>
+<path d="M7 11v4M5 13h4"/>
+<path d="M16.5 12.5h.01M19 14h.01"/>
+
+</svg>
+
+</span>
+
+Free Fire
+
+</h2>
 
 <p>
 Game ID &amp; Game Code —
@@ -1825,7 +2228,30 @@ onclick="closeContactOutside(event)">
 <div class="modal-header">
 
 <h3>
+
+<span class="icon">
+
+<svg viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="2">
+
+<path d="M21 11.5a8.4 8.4 0 0 1-9 8.5
+8.8 8.8 0 0 1-4.1-1
+L3 20l1.1-4.5A8.2 8.2 0 0 1 3
+11.5 8.5 8.5 0 0 1 12 3
+a8.5 8.5 0 0 1 9 8.5Z"/>
+
+<path d="M8 12h.01"/>
+<path d="M12 12h.01"/>
+<path d="M16 12h.01"/>
+
+</svg>
+
+</span>
+
 ຕິດຕໍ່ເຮົາ
+
 </h3>
 
 <button
@@ -1927,7 +2353,24 @@ onclick="closeOutside(event)">
 <div class="modal-header">
 
 <h3>
+
+<span class="icon">
+
+<svg viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="2">
+
+<circle cx="12" cy="12" r="9"/>
+<path d="M12 10v6"/>
+<path d="M12 7h.01"/>
+
+</svg>
+
+</span>
+
 ລາຍລະອຽດສິນຄ້າ
+
 </h3>
 
 <button
@@ -1961,7 +2404,26 @@ onclick="closePaymentOutside(event)">
 
 <div class="modal-header">
 
-<h3>ຊໍາລະຍອດທັງໝົດ</h3>
+<h3>
+
+<span class="icon">
+
+<svg viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="2">
+
+<rect x="3" y="5" width="18" height="14" rx="2"/>
+<path d="M7 10h10"/>
+<path d="M7 14h5"/>
+
+</svg>
+
+</span>
+
+ຊຳລະຍອດທັງໝົດ
+
+</h3>
 
 <button
 class="close-modal"
@@ -2040,7 +2502,7 @@ allowfullscreen>
 
 <script>
 
-/* CONFIG */
+/* ================= CONFIG ================= */
 
 const QR_IMAGE =
 "https://i.ibb.co/zhrYP1Qt/ad537117-f92d-4326-8ec3-cbf38e008e42.jpg";
@@ -2055,7 +2517,7 @@ const VIDEO_GAME =
 "https://www.youtube.com/embed/3KObkRoKfcQ";
 
 
-/* PRODUCTS */
+/* ================= PRODUCTS ================= */
 
 const products=[
 
@@ -2280,7 +2742,7 @@ const products=[
 ];
 
 
-/* PRICE */
+/* ================= PRICE ================= */
 
 function formatPrice(price){
 
@@ -2294,7 +2756,7 @@ function formatPrice(price){
 }
 
 
-/* ICON */
+/* ================= ICON SYSTEM ================= */
 
 const ICONS={
 
@@ -2337,7 +2799,7 @@ function icon(name,size="md"){
 }
 
 
-/* CARD */
+/* ================= CARD ================= */
 
 function createCard(product){
 
@@ -2468,7 +2930,7 @@ function createCard(product){
 }
 
 
-/* STOCK */
+/* ================= STOCK ================= */
 
 function updateStockSummary(){
 
@@ -2494,7 +2956,7 @@ function updateStockSummary(){
 }
 
 
-/* RENDER */
+/* ================= RENDER ================= */
 
 function renderProducts(){
 
@@ -2520,7 +2982,7 @@ function renderProducts(){
 }
 
 
-/* PAGE */
+/* ================= PAGE ================= */
 
 function showPage(page){
 
@@ -2561,7 +3023,6 @@ function openContact(){
 
 }
 
-
 function closeContact(){
 
  document
@@ -2569,7 +3030,6 @@ function closeContact(){
  .classList.remove("show");
 
 }
-
 
 function closeContactOutside(event){
 
@@ -2591,7 +3051,6 @@ function normalizeSearch(value){
  .replace(/\s+/g,"");
 
 }
-
 
 function searchProducts(){
 
@@ -2615,6 +3074,7 @@ function searchProducts(){
   });
 
   return;
+
  }
 
  const results=products.filter(product=>{
@@ -2672,7 +3132,6 @@ function searchProducts(){
 
 }
 
-
 function handleSearchKey(event){
 
  if(event.key==="Enter"){
@@ -2684,7 +3143,6 @@ function handleSearchKey(event){
  }
 
 }
-
 
 function clearSearch(){
 
@@ -2810,7 +3268,6 @@ function openDetail(id){
 
 }
 
-
 function changeMainImage(url){
 
  const img=document.getElementById("detailMainImage");
@@ -2821,7 +3278,6 @@ function changeMainImage(url){
 
 }
 
-
 function closeDetail(){
 
  document
@@ -2829,7 +3285,6 @@ function closeDetail(){
  .classList.remove("show");
 
 }
-
 
 function closeOutside(event){
 
@@ -2907,7 +3362,6 @@ function openPayment(id){
 
 }
 
-
 function sendWhatsApp(id){
 
  const product=products.find(p=>p.id===id);
@@ -2934,7 +3388,6 @@ function sendWhatsApp(id){
 
 }
 
-
 function closePayment(){
 
  document
@@ -2942,7 +3395,6 @@ function closePayment(){
  .classList.remove("show");
 
 }
-
 
 function closePaymentOutside(event){
 
@@ -2985,7 +3437,6 @@ function openVideo(type){
 
 }
 
-
 function closeVideo(){
 
  document.getElementById("videoFrame").src="";
@@ -2995,7 +3446,6 @@ function closeVideo(){
  .classList.remove("show");
 
 }
-
 
 function closeVideoOutside(event){
 
@@ -3133,7 +3583,7 @@ function drawSnow(){
 }
 
 
-/* START */
+/* ================= START ================= */
 
 resizeSnow();
 
