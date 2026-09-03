@@ -601,11 +601,6 @@ body::after{
  box-shadow:0 12px 25px rgba(8,124,255,.20);
 }
 
-
-/* =========================================
-   STOCK SUMMARY — PREMIUM
-========================================= */
-
 .stock-summary{
  margin-top:22px;
  display:grid;
@@ -712,44 +707,6 @@ body::after{
  color:#ef4444;
 }
 
-.stock-box:nth-child(1)::after{
- background:linear-gradient(
- 90deg,
- transparent,
- #16a34a,
- #4ade80,
- #16a34a,
- transparent
- );
-}
-
-.stock-box:nth-child(2)::after{
- background:linear-gradient(
- 90deg,
- transparent,
- #087cff,
- #20b5ff,
- #087cff,
- transparent
- );
-}
-
-.stock-box:nth-child(3)::after{
- background:linear-gradient(
- 90deg,
- transparent,
- #ef4444,
- #fb7185,
- #ef4444,
- transparent
- );
-}
-
-
-/* =========================================
-   PRODUCTS
-========================================= */
-
 .products{
  display:grid;
  grid-template-columns:repeat(4,1fr);
@@ -820,11 +777,6 @@ body::after{
  gap:5px;
 }
 
-
-/* =========================================
-   SOLD OUT — NEW STYLE
-========================================= */
-
 .sold-overlay{
  position:absolute;
  inset:0;
@@ -858,7 +810,6 @@ body::after{
  box-shadow:
  0 10px 28px rgba(255,65,108,.32),
  inset 0 1px 0 rgba(255,255,255,.35);
- transform:none;
 }
 
 .sold-badge::before{
@@ -1340,6 +1291,11 @@ body::after{
  cursor:not-allowed;
 }
 
+
+/* =========================================
+   PAYMENT SYSTEM
+========================================= */
+
 .payment-box{
  text-align:center;
 }
@@ -1362,10 +1318,184 @@ body::after{
  font-weight:950;
 }
 
+.payment-method-title{
+ margin-top:20px;
+ margin-bottom:11px;
+ text-align:left;
+ font-size:13px;
+ font-weight:950;
+ color:#53657a;
+}
+
+.payment-methods{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:12px;
+}
+
+.payment-method{
+ position:relative;
+ width:100%;
+ min-height:82px;
+ padding:10px;
+ border:2px solid #e1f1fb;
+ border-radius:16px;
+ background:#f9fdff;
+ display:flex;
+ align-items:center;
+ gap:11px;
+ text-align:left;
+ cursor:pointer;
+ transition:.22s ease;
+ font-family:inherit;
+}
+
+.payment-method:hover{
+ transform:translateY(-2px);
+ border-color:#a8dcff;
+ background:#f3fbff;
+}
+
+.payment-method.active{
+ border-color:#087cff;
+ background:
+ linear-gradient(
+ 135deg,
+ rgba(8,124,255,.08),
+ rgba(25,168,255,.04)
+ );
+ box-shadow:
+ 0 8px 22px rgba(8,124,255,.12),
+ inset 0 0 0 1px rgba(8,124,255,.05);
+}
+
+.payment-method.bcel.active{
+ border-color:#d71920;
+ background:
+ linear-gradient(
+ 135deg,
+ rgba(215,25,32,.07),
+ rgba(255,255,255,.96)
+ );
+ box-shadow:
+ 0 8px 22px rgba(215,25,32,.12);
+}
+
+
+/* =========================================
+   REAL BANK ICON
+========================================= */
+
+.bank-icon{
+ width:58px;
+ height:58px;
+ flex:0 0 58px;
+ border-radius:14px;
+ overflow:hidden;
+ background:#fff;
+ border:1px solid #dcefff;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ box-shadow:0 5px 15px rgba(0,0,0,.06);
+}
+
+.bank-icon img{
+ width:100%;
+ height:100%;
+ object-fit:contain;
+ padding:5px;
+ display:block;
+ background:#fff;
+}
+
+.bank-icon.bcel-logo{
+ border-color:#ffd8da;
+ background:#fff;
+}
+
+.bank-info{
+ flex:1;
+ min-width:0;
+}
+
+.bank-info strong{
+ display:block;
+ font-size:13px;
+ font-weight:950;
+ color:#172b43;
+}
+
+.bank-info span{
+ display:block;
+ margin-top:4px;
+ color:#7a8b9f;
+ font-size:10px;
+ line-height:1.4;
+}
+
+.bank-selected{
+ display:none;
+ position:absolute;
+ top:7px;
+ right:7px;
+ width:21px;
+ height:21px;
+ border-radius:50%;
+ background:#087cff;
+ color:#fff;
+ align-items:center;
+ justify-content:center;
+ font-size:12px;
+ font-weight:950;
+ box-shadow:0 4px 10px rgba(8,124,255,.25);
+}
+
+.payment-method.active .bank-selected{
+ display:flex;
+}
+
+.payment-method.bcel.active .bank-selected{
+ background:#d71920;
+ box-shadow:0 4px 10px rgba(215,25,32,.22);
+}
+
+.bank-name{
+ margin-top:16px;
+ padding:12px 14px;
+ border-radius:12px;
+ background:#eef8ff;
+ border:1px solid #d7edff;
+ text-align:left;
+ font-size:12px;
+ color:#5b7087;
+}
+
+.bank-name b{
+ color:#087cff;
+ font-size:13px;
+}
+
+.bank-name.bcel{
+ background:#fff3f3;
+ border-color:#ffd6d8;
+}
+
+.bank-name.bcel b{
+ color:#d71920;
+}
+
+.qr-label{
+ margin-top:16px;
+ color:#70849a;
+ font-size:11px;
+ font-weight:900;
+}
+
 .qr-box{
  width:260px;
  height:260px;
- margin:22px auto;
+ margin:13px auto 20px;
  padding:10px;
  background:#fff;
  border:1px solid var(--border);
@@ -1542,6 +1672,14 @@ footer{
   font-size:14px;
  }
 
+ .payment-methods{
+  grid-template-columns:1fr;
+ }
+
+ .payment-method{
+  min-height:76px;
+ }
+
 }
 
 @media(max-width:500px){
@@ -1705,6 +1843,24 @@ footer{
 
  .modal-body{
   padding:14px;
+ }
+
+ .payment-title{
+  font-size:19px;
+ }
+
+ .payment-price{
+  font-size:24px;
+ }
+
+ .bank-icon{
+  width:48px;
+  height:48px;
+  flex-basis:48px;
+ }
+
+ .bank-icon img{
+  padding:4px;
  }
 
 }
@@ -2204,7 +2360,6 @@ stroke-width="2">
 
 </section>
 
-
 <section id="shop" class="page">
 
 <div class="shop-page">
@@ -2361,7 +2516,6 @@ class="close-modal"
 onclick="closeContact()">
 
 ×
-
 </button>
 
 </div>
@@ -2474,7 +2628,6 @@ class="close-modal"
 onclick="closeDetail()">
 
 ×
-
 </button>
 
 </div>
@@ -2524,7 +2677,6 @@ class="close-modal"
 onclick="closePayment()">
 
 ×
-
 </button>
 
 </div>
@@ -2557,7 +2709,6 @@ class="close-modal"
 onclick="closeVideo()">
 
 ×
-
 </button>
 
 </div>
@@ -2594,11 +2745,42 @@ allowfullscreen>
 
 <script>
 
-const QR_IMAGE =
-"https://i.ibb.co/zhrYP1Qt/ad537117-f92d-4326-8ec3-cbf38e008e42.jpg";
+/* =========================================
+   PAYMENT CONFIG
+========================================= */
+
+const PAYMENT_QR = {
+
+ IBCOOL:
+ "https://i.ibb.co/zhrYP1Qt/ad537117-f92d-4326-8ec3-cbf38e008e42.jpg",
+
+ BCELONE:
+ "https://i.ibb.co/r2nJ8sQ5/1b059ba2-ba9a-4eea-95b0-9b1fc1b08b8b.jpg"
+
+};
+
+
+/* =========================================
+   REAL PAYMENT ICONS
+========================================= */
+
+const PAYMENT_ICON = {
+
+ IBCOOL:
+ "https://i.ibb.co/RXFzRyg/f2d469ac-d381-4058-817c-5bc94d2c34f2.jpg",
+
+ BCELONE:
+ "https://i.ibb.co/0RLj9Www/1e6dc366-2c8f-4fbd-b538-89c7b8d3232c.jpg"
+
+};
+
+
+let selectedPayment="IBCOOL";
+
 
 const WHATSAPP =
 "8562092978004";
+
 
 const VIDEO_EMAIL =
 "https://www.youtube.com/embed/2zS-88r4AxU";
@@ -2606,6 +2788,10 @@ const VIDEO_EMAIL =
 const VIDEO_GAME =
 "https://www.youtube.com/embed/3KObkRoKfcQ";
 
+
+/* =========================================
+   PRODUCTS
+========================================= */
 
 const products=[
 
@@ -2628,7 +2814,6 @@ const products=[
  ]
 },
 
-/* EP #0028 — ຂາຍແລ້ວ */
 {
  id:28,
  name:"𝐄𝐏 #𝟎𝟎𝟐𝟖",
@@ -2648,7 +2833,6 @@ const products=[
  ]
 },
 
-/* EP #0027 — ຂາຍແລ້ວ */
 {
  id:27,
  name:"𝐄𝐏 #𝟎𝟎𝟐𝟕",
@@ -2889,6 +3073,10 @@ const products=[
 ];
 
 
+/* =========================================
+   HELPERS
+========================================= */
+
 function formatPrice(price){
 
  if(price===null || price===undefined || price===""){
@@ -2942,6 +3130,10 @@ function icon(name,size="md"){
  return `<span class="icon ${size}">${ICONS[name]||""}</span>`;
 }
 
+
+/* =========================================
+   PRODUCT CARD
+========================================= */
 
 function createCard(product){
 
@@ -3056,6 +3248,10 @@ function createCard(product){
 }
 
 
+/* =========================================
+   STOCK
+========================================= */
+
 function updateStockSummary(){
 
  const available=
@@ -3081,6 +3277,10 @@ function updateStockSummary(){
 
 }
 
+
+/* =========================================
+   RENDER PRODUCTS
+========================================= */
 
 function renderProducts(){
 
@@ -3125,6 +3325,10 @@ function renderProducts(){
 }
 
 
+/* =========================================
+   PAGE
+========================================= */
+
 function showPage(page){
 
  document.querySelectorAll(".page")
@@ -3154,6 +3358,10 @@ function showPage(page){
 }
 
 
+/* =========================================
+   CONTACT
+========================================= */
+
 function openContact(){
 
  document
@@ -3161,7 +3369,6 @@ function openContact(){
  .classList.add("show");
 
 }
-
 
 function closeContact(){
 
@@ -3171,7 +3378,6 @@ function closeContact(){
 
 }
 
-
 function closeContactOutside(event){
 
  if(event.target.id==="contactModal"){
@@ -3180,6 +3386,10 @@ function closeContactOutside(event){
 
 }
 
+
+/* =========================================
+   SEARCH
+========================================= */
 
 function normalizeSearch(value){
 
@@ -3311,6 +3521,10 @@ function clearSearch(){
 
 }
 
+
+/* =========================================
+   DETAIL
+========================================= */
 
 function openDetail(id){
 
@@ -3452,17 +3666,42 @@ function closeOutside(event){
 }
 
 
-function openPayment(id){
+/* =========================================
+   PAYMENT
+========================================= */
+
+function selectPayment(type,id){
+
+ selectedPayment=type;
+
+ renderPayment(id);
+
+}
+
+
+function renderPayment(id){
 
  const product=products.find(p=>p.id===id);
 
- if(
- !product ||
- product.stock!==true ||
- Number(product.stockQty||0)<=0
- ){
-  return;
- }
+ if(!product)return;
+
+ const isBCEL=
+  selectedPayment==="BCELONE";
+
+ const bankName=
+  isBCEL
+  ?"BCEL ONE"
+  :"IB COOL";
+
+ const bankFullName=
+  isBCEL
+  ?"ທະນາຄານ BCEL"
+  :"Indochina Bank";
+
+ const qr=
+  isBCEL
+  ?PAYMENT_QR.BCELONE
+  :PAYMENT_QR.IBCOOL;
 
  document.getElementById("paymentContent")
  .innerHTML=`
@@ -3481,17 +3720,114 @@ function openPayment(id){
    ${formatPrice(product.price)}
   </div>
 
+  <div class="payment-method-title">
+   ເລືອກທະນາຄານສຳລັບຊຳລະເງິນ
+  </div>
+
+  <div class="payment-methods">
+
+   <button
+   type="button"
+   class="payment-method ${selectedPayment==="IBCOOL"?"active":""}"
+   onclick="selectPayment('IBCOOL',${product.id})">
+
+    <div class="bank-icon">
+
+     <img
+     src="${PAYMENT_ICON.IBCOOL}"
+     alt="IB COOL"
+     onerror="this.style.display='none'">
+
+    </div>
+
+    <div class="bank-info">
+
+     <strong>
+      IB COOL
+     </strong>
+
+     <span>
+      Indochina Bank
+     </span>
+
+    </div>
+
+    <div class="bank-selected">
+     ✓
+    </div>
+
+   </button>
+
+
+   <button
+   type="button"
+   class="payment-method bcel ${selectedPayment==="BCELONE"?"active":""}"
+   onclick="selectPayment('BCELONE',${product.id})">
+
+    <div class="bank-icon bcel-logo">
+
+     <img
+     src="${PAYMENT_ICON.BCELONE}"
+     alt="BCEL ONE"
+     onerror="this.style.display='none'">
+
+    </div>
+
+    <div class="bank-info">
+
+     <strong>
+      BCEL ONE
+     </strong>
+
+     <span>
+      ທະນາຄານ BCEL
+     </span>
+
+    </div>
+
+    <div class="bank-selected">
+     ✓
+    </div>
+
+   </button>
+
+  </div>
+
+  <div class="bank-name ${isBCEL?"bcel":""}">
+
+   ທະນາຄານທີ່ເລືອກ:
+   <b>${bankName}</b>
+
+   <br>
+
+   <span>
+    ${bankFullName}
+   </span>
+
+  </div>
+
+  <div class="qr-label">
+   ສະແກນ QR ຂອງ ${bankName}
+  </div>
+
   <div class="qr-box">
 
    <img
-   src="${QR_IMAGE}"
-   alt="QR Payment">
+   src="${qr}"
+   alt="QR ${bankName}">
 
   </div>
 
   <div class="payment-note">
 
-   ກະລຸນາໂອນເງິນຕາມຍອດທີ່ສະແດງ
+   ກະລຸນາໂອນເງິນຕາມຍອດ
+   <b>${formatPrice(product.price)}</b>
+
+   <br>
+
+   ຜ່ານ
+   <b>${bankName}</b>
+
    ແລ້ວກົດ
    <b>ສົ່ງສະລິບຫາແອັດມິນ</b>
 
@@ -3509,6 +3845,25 @@ function openPayment(id){
 
  `;
 
+}
+
+
+function openPayment(id){
+
+ const product=products.find(p=>p.id===id);
+
+ if(
+ !product ||
+ product.stock!==true ||
+ Number(product.stockQty||0)<=0
+ ){
+  return;
+ }
+
+ selectedPayment="IBCOOL";
+
+ renderPayment(id);
+
  closeDetail();
 
  document
@@ -3524,12 +3879,25 @@ function sendWhatsApp(id){
 
  if(!product)return;
 
+ const bankName=
+ selectedPayment==="BCELONE"
+ ? "BCEL ONE"
+ : "IB COOL";
+
+ const bankFullName=
+ selectedPayment==="BCELONE"
+ ? "ທະນາຄານ BCEL"
+ : "Indochina Bank";
+
  const message=`ສະບາຍດີ LAO GAMING PRO X3D
 
 ຂ້ອຍສົນໃຈສິນຄ້າ:
 
 ສິນຄ້າ: ${product.name}
 ລາຄາ: ${formatPrice(product.price)}
+
+ທະນາຄານທີ່ເລືອກ: ${bankName}
+${bankFullName}
 
 ຂ້ອຍໄດ້ໂອນເງິນແລ້ວ
 ກຳລັງສົ່ງສະລິບໃຫ້ກວດສອບ.`;
@@ -3562,6 +3930,10 @@ function closePaymentOutside(event){
 
 }
 
+
+/* =========================================
+   VIDEO
+========================================= */
 
 function openVideo(type){
 
@@ -3614,7 +3986,9 @@ function closeVideoOutside(event){
 }
 
 
-/* SNOW */
+/* =========================================
+   SNOW
+========================================= */
 
 const snowCanvas=
  document.getElementById("snowCanvas");
@@ -3682,10 +4056,10 @@ function initSnow(){
 function drawSnow(){
 
  snowCtx.clearRect(
-  0,
-  0,
-  snowCanvas.width,
-  snowCanvas.height
+ 0,
+ 0,
+ snowCanvas.width,
+ snowCanvas.height
  );
 
  snowflakes.forEach(snow=>{
@@ -3739,6 +4113,10 @@ function drawSnow(){
 
 }
 
+
+/* =========================================
+   START
+========================================= */
 
 resizeSnow();
 
