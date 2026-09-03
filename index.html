@@ -11,8 +11,6 @@ href="https://i.ibb.co/0VsFgJV2/dd921ff9-89fd-4b47-a48e-e60383c2c987.jpg">
 
 <style>
 
-/* ໂຄ້ດ CSS ທັງໝົດຄືເກົ່າ */
-
 *{
  margin:0;
  padding:0;
@@ -33,7 +31,9 @@ href="https://i.ibb.co/0VsFgJV2/dd921ff9-89fd-4b47-a48e-e60383c2c987.jpg">
  --shadow:0 12px 35px rgba(0,126,255,.10);
 }
 
-html{scroll-behavior:smooth}
+html{
+ scroll-behavior:smooth;
+}
 
 body{
  font-family:Arial,"Noto Sans Lao",sans-serif;
@@ -267,18 +267,30 @@ body::after{
  transition:.22s;
 }
 
-.nav button:hover .nav-icon-box{background:#e4f4ff}
+.nav button:hover .nav-icon-box{
+ background:#e4f4ff;
+}
 
 .nav button.active .nav-icon-box{
  background:rgba(255,255,255,.20);
  color:#fff;
 }
 
-.nav-contact{color:#087cff!important}
-.nav-contact.active{color:#fff!important}
+.nav-contact{
+ color:#087cff!important;
+}
 
-.page{display:none}
-.page.active{display:block}
+.nav-contact.active{
+ color:#fff!important;
+}
+
+.page{
+ display:none;
+}
+
+.page.active{
+ display:block;
+}
 
 .home,
 .shop-page{
@@ -589,35 +601,154 @@ body::after{
  box-shadow:0 12px 25px rgba(8,124,255,.20);
 }
 
+
+/* =========================================
+   STOCK SUMMARY — PREMIUM
+========================================= */
+
 .stock-summary{
- margin-top:20px;
+ margin-top:22px;
  display:grid;
  grid-template-columns:repeat(3,1fr);
- gap:12px;
+ gap:16px;
 }
 
 .stock-box{
- padding:16px;
- background:rgba(255,255,255,.90);
- backdrop-filter:blur(12px);
- border:1px solid var(--border);
- border-radius:15px;
+ position:relative;
+ overflow:hidden;
+ padding:22px 15px 20px;
+ background:rgba(255,255,255,.88);
+ backdrop-filter:blur(18px);
+ -webkit-backdrop-filter:blur(18px);
+ border:1px solid rgba(255,255,255,.95);
+ border-radius:20px;
  text-align:center;
- box-shadow:var(--shadow);
+ box-shadow:
+ 0 12px 35px rgba(0,126,255,.10),
+ inset 0 1px 0 rgba(255,255,255,.9);
+ transition:.28s ease;
+}
+
+.stock-box::before{
+ content:"";
+ position:absolute;
+ width:110px;
+ height:110px;
+ top:-55px;
+ right:-45px;
+ border-radius:50%;
+ background:rgba(25,168,255,.12);
+ filter:blur(2px);
+}
+
+.stock-box::after{
+ content:"";
+ position:absolute;
+ left:18px;
+ right:18px;
+ bottom:0;
+ height:3px;
+ border-radius:20px 20px 0 0;
+ background:linear-gradient(
+ 90deg,
+ transparent,
+ #087cff,
+ #20b5ff,
+ #087cff,
+ transparent
+ );
+ opacity:.65;
+}
+
+.stock-box:hover{
+ transform:translateY(-5px);
+ box-shadow:
+ 0 20px 45px rgba(0,126,255,.17),
+ 0 0 0 1px rgba(8,124,255,.08);
 }
 
 .stock-number{
- font-size:25px;
- font-weight:950;
- color:var(--blue);
+ position:relative;
+ z-index:1;
+ font-size:34px;
+ line-height:1;
+ font-weight:1000;
+ letter-spacing:-1px;
+ color:#087cff;
+ text-shadow:
+ 0 5px 18px rgba(8,124,255,.16);
 }
 
 .stock-label{
- margin-top:4px;
- color:var(--muted);
- font-size:11px;
- font-weight:800;
+ position:relative;
+ z-index:1;
+ margin-top:10px;
+ color:#5f7188;
+ font-size:12px;
+ font-weight:900;
 }
+
+.stock-box:nth-child(1)::before{
+ background:rgba(22,163,74,.13);
+}
+
+.stock-box:nth-child(1) .stock-number{
+ color:#16a34a;
+}
+
+.stock-box:nth-child(2)::before{
+ background:rgba(8,124,255,.13);
+}
+
+.stock-box:nth-child(2) .stock-number{
+ color:#087cff;
+}
+
+.stock-box:nth-child(3)::before{
+ background:rgba(239,68,68,.13);
+}
+
+.stock-box:nth-child(3) .stock-number{
+ color:#ef4444;
+}
+
+.stock-box:nth-child(1)::after{
+ background:linear-gradient(
+ 90deg,
+ transparent,
+ #16a34a,
+ #4ade80,
+ #16a34a,
+ transparent
+ );
+}
+
+.stock-box:nth-child(2)::after{
+ background:linear-gradient(
+ 90deg,
+ transparent,
+ #087cff,
+ #20b5ff,
+ #087cff,
+ transparent
+ );
+}
+
+.stock-box:nth-child(3)::after{
+ background:linear-gradient(
+ 90deg,
+ transparent,
+ #ef4444,
+ #fb7185,
+ #ef4444,
+ transparent
+ );
+}
+
+
+/* =========================================
+   PRODUCTS
+========================================= */
 
 .products{
  display:grid;
@@ -689,24 +820,69 @@ body::after{
  gap:5px;
 }
 
+
+/* =========================================
+   SOLD OUT — NEW STYLE
+========================================= */
+
 .sold-overlay{
  position:absolute;
  inset:0;
  display:flex;
  align-items:center;
  justify-content:center;
- background:rgba(0,0,0,.46);
+ background:
+ linear-gradient(
+ 135deg,
+ rgba(8,20,38,.16),
+ rgba(8,20,38,.58)
+ );
+ backdrop-filter:blur(2px);
+ -webkit-backdrop-filter:blur(2px);
 }
 
 .sold-badge{
- padding:10px 22px;
- border-radius:10px;
- background:var(--red);
+ position:relative;
+ padding:11px 24px;
+ border-radius:50px;
+ background:linear-gradient(
+ 135deg,
+ #ff416c,
+ #ff4b2b
+ );
  color:#fff;
- font-size:19px;
+ font-size:17px;
  font-weight:950;
- transform:rotate(-7deg);
- box-shadow:0 8px 25px rgba(239,68,68,.28);
+ letter-spacing:.3px;
+ border:1px solid rgba(255,255,255,.45);
+ box-shadow:
+ 0 10px 28px rgba(255,65,108,.32),
+ inset 0 1px 0 rgba(255,255,255,.35);
+ transform:none;
+}
+
+.sold-badge::before{
+ content:"✓";
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ width:23px;
+ height:23px;
+ margin-right:7px;
+ border-radius:50%;
+ background:rgba(255,255,255,.20);
+ border:1px solid rgba(255,255,255,.35);
+ font-size:13px;
+ vertical-align:-2px;
+}
+
+.sold-badge::after{
+ content:"";
+ position:absolute;
+ inset:-5px;
+ border-radius:55px;
+ border:1px solid rgba(255,255,255,.18);
+ pointer-events:none;
 }
 
 .product-content{
@@ -726,6 +902,12 @@ body::after{
  font-weight:950;
 }
 
+.product-price.sold-price{
+ color:#ff416c!important;
+ font-size:15px;
+ font-weight:950;
+}
+
 .product-status{
  margin-top:7px;
  color:var(--green);
@@ -736,9 +918,13 @@ body::after{
  gap:5px;
 }
 
-.product-status.sold{color:var(--red)}
+.product-status.sold{
+ color:var(--red);
+}
 
-.product-buttons{margin-top:15px}
+.product-buttons{
+ margin-top:15px;
+}
 
 .btn-detail{
  width:100%;
@@ -845,7 +1031,9 @@ body::after{
  transition:.2s;
 }
 
-.search-button:hover{transform:scale(1.04)}
+.search-button:hover{
+ transform:scale(1.04);
+}
 
 .clear-search{
  width:34px;
@@ -897,7 +1085,9 @@ body::after{
  backdrop-filter:blur(9px);
 }
 
-.modal.show{display:flex}
+.modal.show{
+ display:flex;
+}
 
 .modal-box{
  width:100%;
@@ -946,9 +1136,13 @@ body::after{
  transform:rotate(3deg);
 }
 
-.modal-body{padding:20px}
+.modal-body{
+ padding:20px;
+}
 
-.contact-modal-box{max-width:500px}
+.contact-modal-box{
+ max-width:500px;
+}
 
 .contact-title{
  text-align:center;
@@ -1004,10 +1198,17 @@ body::after{
  height:30px;
 }
 
-.contact-facebook{background:#eaf2ff}
-.contact-whatsapp{background:#eafaf0}
+.contact-facebook{
+ background:#eaf2ff;
+}
 
-.contact-option-text{flex:1}
+.contact-whatsapp{
+ background:#eafaf0;
+}
+
+.contact-option-text{
+ flex:1;
+}
 
 .contact-option-text strong{
  display:block;
@@ -1059,7 +1260,9 @@ body::after{
  border-color:#8bd1ff;
 }
 
-.detail-info{margin-top:20px}
+.detail-info{
+ margin-top:20px;
+}
 
 .detail-name{
  font-size:24px;
@@ -1137,7 +1340,9 @@ body::after{
  cursor:not-allowed;
 }
 
-.payment-box{text-align:center}
+.payment-box{
+ text-align:center;
+}
 
 .payment-title{
  font-size:22px;
@@ -1232,8 +1437,15 @@ footer{
  font-size:12px;
 }
 
+
+/* MOBILE */
+
 @media(max-width:1000px){
- .products{grid-template-columns:repeat(3,1fr)}
+
+ .products{
+  grid-template-columns:repeat(3,1fr);
+ }
+
 }
 
 @media(max-width:700px){
@@ -1243,7 +1455,9 @@ footer{
   padding:0 12px;
  }
 
- .logo{gap:8px}
+ .logo{
+  gap:8px;
+ }
 
  .logo-img-wrap{
   width:43px;
@@ -1251,7 +1465,9 @@ footer{
   border-radius:12px;
  }
 
- .logo h1{font-size:12px}
+ .logo h1{
+  font-size:12px;
+ }
 
  .logo span{
   font-size:7px;
@@ -1272,23 +1488,60 @@ footer{
   border-radius:11px;
  }
 
- .nav button span:last-child{display:none}
+ .nav button span:last-child{
+  display:none;
+ }
 
  .nav-icon-box{
   width:31px;
   height:31px;
  }
 
- .nav button.active::after{bottom:-5px}
+ .nav button.active::after{
+  bottom:-5px;
+ }
 
  .products{
   grid-template-columns:repeat(2,1fr);
   gap:10px;
  }
 
- .video-help{grid-template-columns:1fr}
- .banner{height:230px}
- .product-image{height:180px}
+ .video-help{
+  grid-template-columns:1fr;
+ }
+
+ .banner{
+  height:230px;
+ }
+
+ .product-image{
+  height:180px;
+ }
+
+ .stock-summary{
+  gap:9px;
+ }
+
+ .stock-box{
+  padding:18px 8px 17px;
+  border-radius:16px;
+ }
+
+ .stock-number{
+  font-size:27px;
+ }
+
+ .stock-label{
+  margin-top:8px;
+  font-size:10px;
+  line-height:1.4;
+ }
+
+ .sold-badge{
+  padding:9px 17px;
+  font-size:14px;
+ }
+
 }
 
 @media(max-width:500px){
@@ -1303,8 +1556,13 @@ footer{
   height:40px;
  }
 
- .logo h1{font-size:10px}
- .logo span{font-size:6.5px}
+ .logo h1{
+  font-size:10px;
+ }
+
+ .logo span{
+  font-size:6.5px;
+ }
 
  .nav{
   padding:3px;
@@ -1331,16 +1589,49 @@ footer{
   border-radius:16px;
  }
 
- .announcement{height:46px}
- .announcement-text{font-size:12px}
- .warning-box{padding:14px}
- .warning-title{font-size:14px}
- .warning-item{font-size:11px}
- .product-image{height:145px}
- .product-content{padding:12px}
- .product-title{font-size:13px}
- .product-price{font-size:15px}
- .product-status{font-size:10px}
+ .announcement{
+  height:46px;
+ }
+
+ .announcement-text{
+  font-size:12px;
+ }
+
+ .warning-box{
+  padding:14px;
+ }
+
+ .warning-title{
+  font-size:14px;
+ }
+
+ .warning-item{
+  font-size:11px;
+ }
+
+ .product-image{
+  height:145px;
+ }
+
+ .product-content{
+  padding:12px;
+ }
+
+ .product-title{
+  font-size:13px;
+ }
+
+ .product-price{
+  font-size:15px;
+ }
+
+ .product-price.sold-price{
+  font-size:13px;
+ }
+
+ .product-status{
+  font-size:10px;
+ }
 
  .btn-detail{
   padding:10px 7px;
@@ -1363,40 +1654,91 @@ footer{
 
  .sold-badge{
   padding:8px 14px;
-  font-size:15px;
+  font-size:12px;
  }
 
- .stock-summary{gap:7px}
+ .sold-badge::before{
+  width:20px;
+  height:20px;
+  margin-right:5px;
+  font-size:11px;
+ }
 
- .stock-box{padding:13px 5px}
- .stock-number{font-size:21px}
- .stock-label{font-size:9px}
+ .stock-summary{
+  gap:7px;
+ }
 
- .detail-main-image{height:280px}
- .gallery img{height:95px}
+ .stock-box{
+  padding:17px 5px 16px;
+  border-radius:15px;
+ }
+
+ .stock-number{
+  font-size:24px;
+ }
+
+ .stock-label{
+  font-size:9px;
+ }
+
+ .detail-main-image{
+  height:280px;
+ }
+
+ .gallery img{
+  height:95px;
+ }
 
  .qr-box{
   width:220px;
   height:220px;
  }
 
- .modal{padding:10px}
+ .modal{
+  padding:10px;
+ }
 
  .modal-box{
   border-radius:17px;
   max-height:94vh;
  }
 
- .modal-body{padding:14px}
+ .modal-body{
+  padding:14px;
+ }
+
 }
 
 @media(max-width:370px){
 
- .logo h1{font-size:9px}
- .logo span{display:none}
- .nav button{width:36px}
- .products{gap:7px}
- .product-image{height:130px}
+ .logo h1{
+  font-size:9px;
+ }
+
+ .logo span{
+  display:none;
+ }
+
+ .nav button{
+  width:36px;
+ }
+
+ .products{
+  gap:7px;
+ }
+
+ .product-image{
+  height:130px;
+ }
+
+ .stock-number{
+  font-size:22px;
+ }
+
+ .stock-label{
+  font-size:8px;
+ }
+
 }
 
 </style>
@@ -1553,9 +1895,11 @@ stroke-linecap="round">
 
 </span>
 
-ປະກາດຈາກຮ້ານ
+ຮັບຊື້ໄອດີເກມ
 &nbsp; • &nbsp;
-ຮັບຊື້ໄອດີຕະຫຼອດ
+ສິນຄ້າສັ່ງແລ້ວໄດ້ຈີງ
+&nbsp; • &nbsp;
+ປອດໄພ ປະກັນຈາກຮ້ານ 3 ວັນ
 &nbsp; • &nbsp;
 ເປີດຮ້ານ 10:30 - 23:30
 &nbsp; • &nbsp;
@@ -1565,9 +1909,11 @@ stroke-linecap="round">
 
 <div class="announcement-text">
 
-ປະກາດຈາກຮ້ານ
+ຮັບຊື້ໄອດີເກມ
 &nbsp; • &nbsp;
-ຮັບຊື້ໄອດີຕະຫຼອດ
+ສິນຄ້າສັ່ງແລ້ວໄດ້ຈີງ
+&nbsp; • &nbsp;
+ປອດໄພ ປະກັນຈາກຮ້ານ 3 ວັນ
 &nbsp; • &nbsp;
 ເປີດຮ້ານ 10:30 - 23:30
 &nbsp; • &nbsp;
@@ -1858,6 +2204,7 @@ stroke-width="2">
 
 </section>
 
+
 <section id="shop" class="page">
 
 <div class="shop-page">
@@ -1954,7 +2301,7 @@ stroke-linecap="round">
 <button
 type="button"
 class="clear-search"
-onclick="clearSearch">
+onclick="clearSearch()">
 
 ×
 
@@ -1971,6 +2318,7 @@ style="margin-top:25px">
 </div>
 
 </section>
+
 
 <div
 id="contactModal"
@@ -2090,6 +2438,7 @@ alt="WhatsApp">
 
 </div>
 
+
 <div
 id="detailModal"
 class="modal"
@@ -2138,6 +2487,7 @@ class="modal-body">
 </div>
 
 </div>
+
 
 <div
 id="paymentModal"
@@ -2188,6 +2538,7 @@ class="modal-body">
 
 </div>
 
+
 <div
 id="videoModal"
 class="modal"
@@ -2231,6 +2582,7 @@ allowfullscreen>
 
 </div>
 
+
 <footer>
 
 <div>
@@ -2238,6 +2590,7 @@ allowfullscreen>
 </div>
 
 </footer>
+
 
 <script>
 
@@ -2533,6 +2886,7 @@ const products=[
 
 ];
 
+
 function formatPrice(price){
 
  if(price===null || price===undefined || price===""){
@@ -2543,6 +2897,7 @@ function formatPrice(price){
  .format(price)+" ກີບ";
 
 }
+
 
 const ICONS={
 
@@ -2580,9 +2935,11 @@ stroke-linecap="round">
 
 };
 
+
 function icon(name,size="md"){
  return `<span class="icon ${size}">${ICONS[name]||""}</span>`;
 }
+
 
 function createCard(product){
 
@@ -2591,7 +2948,7 @@ function createCard(product){
 
  const qty=Number(product.stockQty||0);
 
- if(product.stock && qty>0){
+ if(product.stock===true && qty>0){
 
   card.innerHTML=`
 
@@ -2666,16 +3023,8 @@ function createCard(product){
     ${product.name}
    </div>
 
-   <div
-   class="product-price"
-   style="color:#ef4444">
-
-   ${
-    product.price!=null
-    ?formatPrice(product.price)
-    :"ຂາຍແລ້ວ"
-   }
-
+   <div class="product-price sold-price">
+    ຂາຍແລ້ວ
    </div>
 
    <div class="product-status sold">
@@ -2704,16 +3053,19 @@ function createCard(product){
 
 }
 
+
 function updateStockSummary(){
 
  const available=
  products.filter(
- p=>p.stock && Number(p.stockQty||0)>0
+ p=>p.stock===true &&
+ Number(p.stockQty||0)>0
  ).length;
 
  const sold=
  products.filter(
- p=>!p.stock || Number(p.stockQty||0)<=0
+ p=>p.stock!==true ||
+ Number(p.stockQty||0)<=0
  ).length;
 
  const totalQty=
@@ -2727,6 +3079,7 @@ function updateStockSummary(){
 
 }
 
+
 function renderProducts(){
 
  const home=document.getElementById("homeProducts");
@@ -2735,18 +3088,40 @@ function renderProducts(){
  home.innerHTML="";
  shop.innerHTML="";
 
- const sorted=[...products].sort(
- (a,b)=>Number(b.stock)-Number(a.stock)
+ const availableProducts=products.filter(product=>
+  product.stock===true &&
+  Number(product.stockQty||0)>0
  );
 
- sorted.forEach(product=>{
+ availableProducts.forEach(product=>{
   home.appendChild(createCard(product));
+ });
+
+ const allProducts=[...products].sort((a,b)=>{
+
+  const aAvailable=
+   a.stock===true &&
+   Number(a.stockQty||0)>0;
+
+  const bAvailable=
+   b.stock===true &&
+   Number(b.stockQty||0)>0;
+
+  if(aAvailable && !bAvailable)return -1;
+  if(!aAvailable && bAvailable)return 1;
+
+  return 0;
+
+ });
+
+ allProducts.forEach(product=>{
   shop.appendChild(createCard(product));
  });
 
  updateStockSummary();
 
 }
+
 
 function showPage(page){
 
@@ -2776,6 +3151,7 @@ function showPage(page){
 
 }
 
+
 function openContact(){
 
  document
@@ -2783,6 +3159,7 @@ function openContact(){
  .classList.add("show");
 
 }
+
 
 function closeContact(){
 
@@ -2792,6 +3169,7 @@ function closeContact(){
 
 }
 
+
 function closeContactOutside(event){
 
  if(event.target.id==="contactModal"){
@@ -2799,6 +3177,7 @@ function closeContactOutside(event){
  }
 
 }
+
 
 function normalizeSearch(value){
 
@@ -2809,6 +3188,7 @@ function normalizeSearch(value){
  .replace(/\s+/g,"");
 
 }
+
 
 function searchProducts(){
 
@@ -2823,9 +3203,22 @@ function searchProducts(){
 
  if(keyword===""){
 
-  const sorted=[...products].sort(
-   (a,b)=>Number(b.stock)-Number(a.stock)
-  );
+  const sorted=[...products].sort((a,b)=>{
+
+   const aAvailable=
+    a.stock===true &&
+    Number(a.stockQty||0)>0;
+
+   const bAvailable=
+    b.stock===true &&
+    Number(b.stockQty||0)>0;
+
+   if(aAvailable && !bAvailable)return -1;
+   if(!aAvailable && bAvailable)return 1;
+
+   return 0;
+
+  });
 
   sorted.forEach(product=>{
    shop.appendChild(createCard(product));
@@ -2844,6 +3237,7 @@ function searchProducts(){
   const keywordNumbers=keyword.replace(/\D/g,"");
 
   if(name.includes(keyword))return true;
+
   if(id===keyword)return true;
 
   if(
@@ -2888,6 +3282,7 @@ function searchProducts(){
 
 }
 
+
 function handleSearchKey(event){
 
  if(event.key==="Enter"){
@@ -2899,6 +3294,7 @@ function handleSearchKey(event){
 
 }
 
+
 function clearSearch(){
 
  const input=document.getElementById("search");
@@ -2906,10 +3302,13 @@ function clearSearch(){
  if(!input)return;
 
  input.value="";
+
  searchProducts();
+
  input.focus();
 
 }
+
 
 function openDetail(id){
 
@@ -2918,7 +3317,10 @@ function openDetail(id){
  if(!product)return;
 
  const qty=Number(product.stockQty||0);
- const available=product.stock && qty>0;
+
+ const available=
+  product.stock===true &&
+  qty>0;
 
  let galleryHTML="";
 
@@ -3018,6 +3420,7 @@ function openDetail(id){
 
 }
 
+
 function changeMainImage(url){
 
  const img=document.getElementById("detailMainImage");
@@ -3028,6 +3431,7 @@ function changeMainImage(url){
 
 }
 
+
 function closeDetail(){
 
  document
@@ -3035,6 +3439,7 @@ function closeDetail(){
  .classList.remove("show");
 
 }
+
 
 function closeOutside(event){
 
@@ -3044,13 +3449,14 @@ function closeOutside(event){
 
 }
 
+
 function openPayment(id){
 
  const product=products.find(p=>p.id===id);
 
  if(
  !product ||
- !product.stock ||
+ product.stock!==true ||
  Number(product.stockQty||0)<=0
  ){
   return;
@@ -3109,6 +3515,7 @@ function openPayment(id){
 
 }
 
+
 function sendWhatsApp(id){
 
  const product=products.find(p=>p.id===id);
@@ -3135,6 +3542,7 @@ function sendWhatsApp(id){
 
 }
 
+
 function closePayment(){
 
  document
@@ -3143,6 +3551,7 @@ function closePayment(){
 
 }
 
+
 function closePaymentOutside(event){
 
  if(event.target.id==="paymentModal"){
@@ -3150,6 +3559,7 @@ function closePaymentOutside(event){
  }
 
 }
+
 
 function openVideo(type){
 
@@ -3181,6 +3591,7 @@ function openVideo(type){
 
 }
 
+
 function closeVideo(){
 
  document.getElementById("videoFrame").src="";
@@ -3191,6 +3602,7 @@ function closeVideo(){
 
 }
 
+
 function closeVideoOutside(event){
 
  if(event.target.id==="videoModal"){
@@ -3199,8 +3611,14 @@ function closeVideoOutside(event){
 
 }
 
-const snowCanvas=document.getElementById("snowCanvas");
-const snowCtx=snowCanvas.getContext("2d");
+
+/* SNOW */
+
+const snowCanvas=
+ document.getElementById("snowCanvas");
+
+const snowCtx=
+ snowCanvas.getContext("2d");
 
 let snowflakes=[];
 
@@ -3319,6 +3737,7 @@ function drawSnow(){
 
 }
 
+
 resizeSnow();
 
 window.addEventListener(
@@ -3338,4 +3757,3 @@ showPage("home");
 
 </body>
 </html>
-```
