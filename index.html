@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="lo">
 <head>
@@ -10,6 +11,8 @@
 href="https://i.ibb.co/0VsFgJV2/dd921ff9-89fd-4b47-a48e-e60383c2c987.jpg">
 
 <style>
+
+/* ໂຄ້ດ CSS ທັງໝົດຄືເກົ່າ */
 
 *{
  margin:0;
@@ -31,9 +34,7 @@ href="https://i.ibb.co/0VsFgJV2/dd921ff9-89fd-4b47-a48e-e60383c2c987.jpg">
  --shadow:0 12px 35px rgba(0,126,255,.10);
 }
 
-html{
- scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
  font-family:Arial,"Noto Sans Lao",sans-serif;
@@ -107,8 +108,6 @@ body::after{
  pointer-events:none;
 }
 
-/* ================= ICON ================= */
-
 .icon{
  width:20px;
  height:20px;
@@ -124,23 +123,9 @@ body::after{
  display:block;
 }
 
-.icon.sm{
- width:15px;
- height:15px;
-}
-
-.icon.md{
- width:19px;
- height:19px;
-}
-
-.icon.lg{
- width:23px;
- height:23px;
-}
-
-
-/* ================= HEADER ================= */
+.icon.sm{width:15px;height:15px}
+.icon.md{width:19px;height:19px}
+.icon.lg{width:23px;height:23px}
 
 .header{
  position:sticky;
@@ -163,9 +148,6 @@ body::after{
  align-items:center;
  justify-content:space-between;
 }
-
-
-/* ================= LOGO ================= */
 
 .logo{
  display:flex;
@@ -209,9 +191,6 @@ body::after{
  letter-spacing:1.6px;
 }
 
-
-/* ================= NEW NAV ================= */
-
 .nav{
  display:flex;
  align-items:center;
@@ -242,9 +221,7 @@ body::after{
  font-size:13px;
  font-weight:950;
  cursor:pointer;
- transition:
- .22s ease,
- transform .22s ease;
+ transition:.22s ease,transform .22s ease;
 }
 
 .nav button:hover{
@@ -291,33 +268,18 @@ body::after{
  transition:.22s;
 }
 
-.nav button:hover .nav-icon-box{
- background:#e4f4ff;
-}
+.nav button:hover .nav-icon-box{background:#e4f4ff}
 
 .nav button.active .nav-icon-box{
  background:rgba(255,255,255,.20);
  color:#fff;
 }
 
-.nav-contact{
- color:#087cff!important;
-}
+.nav-contact{color:#087cff!important}
+.nav-contact.active{color:#fff!important}
 
-.nav-contact.active{
- color:#fff!important;
-}
-
-
-/* ================= PAGE ================= */
-
-.page{
- display:none;
-}
-
-.page.active{
- display:block;
-}
+.page{display:none}
+.page.active{display:block}
 
 .home,
 .shop-page{
@@ -326,9 +288,6 @@ body::after{
  margin:auto;
  padding:24px 20px 80px;
 }
-
-
-/* ================= BANNER ================= */
 
 .banner{
  width:100%;
@@ -362,9 +321,6 @@ body::after{
  display:block;
  object-fit:cover;
 }
-
-
-/* ================= ANNOUNCEMENT ================= */
 
 .announcement{
  width:100%;
@@ -414,9 +370,6 @@ body::after{
  to{transform:translateX(-50%)}
 }
 
-
-/* ================= WARNING ================= */
-
 .warning-box{
  margin-top:16px;
  padding:18px;
@@ -455,9 +408,6 @@ body::after{
  font-weight:800;
  line-height:1.65;
 }
-
-
-/* ================= VIDEO ================= */
 
 .video-help{
  margin-top:16px;
@@ -545,9 +495,6 @@ body::after{
  box-shadow:0 7px 18px rgba(8,124,255,.22);
 }
 
-
-/* ================= SECTION ================= */
-
 .section-title{
  margin-top:36px;
  margin-bottom:18px;
@@ -566,9 +513,6 @@ body::after{
  color:var(--muted);
  font-size:13px;
 }
-
-
-/* ================= CATEGORY ================= */
 
 .category-card{
  background:rgba(255,255,255,.90);
@@ -646,9 +590,6 @@ body::after{
  box-shadow:0 12px 25px rgba(8,124,255,.20);
 }
 
-
-/* ================= STOCK ================= */
-
 .stock-summary{
  margin-top:20px;
  display:grid;
@@ -678,9 +619,6 @@ body::after{
  font-size:11px;
  font-weight:800;
 }
-
-
-/* ================= PRODUCTS ================= */
 
 .products{
  display:grid;
@@ -799,13 +737,9 @@ body::after{
  gap:5px;
 }
 
-.product-status.sold{
- color:var(--red);
-}
+.product-status.sold{color:var(--red)}
 
-.product-buttons{
- margin-top:15px;
-}
+.product-buttons{margin-top:15px}
 
 .btn-detail{
  width:100%;
@@ -831,9 +765,6 @@ body::after{
  color:#999;
  cursor:not-allowed;
 }
-
-
-/* ================= SHOP BACK BUTTON ================= */
 
 .back-button{
  display:inline-flex;
@@ -862,9 +793,6 @@ body::after{
  background:#eff9ff;
  transform:translateX(-2px);
 }
-
-
-/* ================= SEARCH ================= */
 
 .search-box{
  width:100%;
@@ -918,9 +846,7 @@ body::after{
  transition:.2s;
 }
 
-.search-button:hover{
- transform:scale(1.04);
-}
+.search-button:hover{transform:scale(1.04)}
 
 .clear-search{
  width:34px;
@@ -960,9 +886,6 @@ body::after{
  font-size:11px;
 }
 
-
-/* ================= MODAL ================= */
-
 .modal{
  position:fixed;
  inset:0;
@@ -975,9 +898,7 @@ body::after{
  backdrop-filter:blur(9px);
 }
 
-.modal.show{
- display:flex;
-}
+.modal.show{display:flex}
 
 .modal-box{
  width:100%;
@@ -1026,16 +947,9 @@ body::after{
  transform:rotate(3deg);
 }
 
-.modal-body{
- padding:20px;
-}
+.modal-body{padding:20px}
 
-
-/* ================= CONTACT ================= */
-
-.contact-modal-box{
- max-width:500px;
-}
+.contact-modal-box{max-width:500px}
 
 .contact-title{
  text-align:center;
@@ -1091,17 +1005,10 @@ body::after{
  height:30px;
 }
 
-.contact-facebook{
- background:#eaf2ff;
-}
+.contact-facebook{background:#eaf2ff}
+.contact-whatsapp{background:#eafaf0}
 
-.contact-whatsapp{
- background:#eafaf0;
-}
-
-.contact-option-text{
- flex:1;
-}
+.contact-option-text{flex:1}
 
 .contact-option-text strong{
  display:block;
@@ -1115,9 +1022,6 @@ body::after{
  color:var(--muted);
  font-size:11px;
 }
-
-
-/* ================= DETAIL ================= */
 
 .detail-main-image{
  width:100%;
@@ -1156,9 +1060,7 @@ body::after{
  border-color:#8bd1ff;
 }
 
-.detail-info{
- margin-top:20px;
-}
+.detail-info{margin-top:20px}
 
 .detail-name{
  font-size:24px;
@@ -1236,12 +1138,7 @@ body::after{
  cursor:not-allowed;
 }
 
-
-/* ================= PAYMENT ================= */
-
-.payment-box{
- text-align:center;
-}
+.payment-box{text-align:center}
 
 .payment-title{
  font-size:22px;
@@ -1307,9 +1204,6 @@ body::after{
  box-shadow:0 10px 25px rgba(37,211,102,.20);
 }
 
-
-/* ================= VIDEO ================= */
-
 .video-modal-box{
  width:100%;
  max-width:850px;
@@ -1330,9 +1224,6 @@ body::after{
  display:block;
 }
 
-
-/* ================= FOOTER ================= */
-
 footer{
  padding:30px 20px;
  text-align:center;
@@ -1342,19 +1233,9 @@ footer{
  font-size:12px;
 }
 
-
-/* ================= TABLET ================= */
-
 @media(max-width:1000px){
-
- .products{
-  grid-template-columns:repeat(3,1fr);
- }
-
+ .products{grid-template-columns:repeat(3,1fr)}
 }
-
-
-/* ================= MOBILE ================= */
 
 @media(max-width:700px){
 
@@ -1363,9 +1244,7 @@ footer{
   padding:0 12px;
  }
 
- .logo{
-  gap:8px;
- }
+ .logo{gap:8px}
 
  .logo-img-wrap{
   width:43px;
@@ -1373,9 +1252,7 @@ footer{
   border-radius:12px;
  }
 
- .logo h1{
-  font-size:12px;
- }
+ .logo h1{font-size:12px}
 
  .logo span{
   font-size:7px;
@@ -1396,40 +1273,24 @@ footer{
   border-radius:11px;
  }
 
- .nav button span:last-child{
-  display:none;
- }
+ .nav button span:last-child{display:none}
 
  .nav-icon-box{
   width:31px;
   height:31px;
  }
 
- .nav button.active::after{
-  bottom:-5px;
- }
+ .nav button.active::after{bottom:-5px}
 
  .products{
   grid-template-columns:repeat(2,1fr);
   gap:10px;
  }
 
- .video-help{
-  grid-template-columns:1fr;
- }
-
- .banner{
-  height:230px;
- }
-
- .product-image{
-  height:180px;
- }
-
+ .video-help{grid-template-columns:1fr}
+ .banner{height:230px}
+ .product-image{height:180px}
 }
-
-
-/* ================= SMALL PHONE ================= */
 
 @media(max-width:500px){
 
@@ -1443,13 +1304,8 @@ footer{
   height:40px;
  }
 
- .logo h1{
-  font-size:10px;
- }
-
- .logo span{
-  font-size:6.5px;
- }
+ .logo h1{font-size:10px}
+ .logo span{font-size:6.5px}
 
  .nav{
   padding:3px;
@@ -1476,45 +1332,16 @@ footer{
   border-radius:16px;
  }
 
- .announcement{
-  height:46px;
- }
-
- .announcement-text{
-  font-size:12px;
- }
-
- .warning-box{
-  padding:14px;
- }
-
- .warning-title{
-  font-size:14px;
- }
-
- .warning-item{
-  font-size:11px;
- }
-
- .product-image{
-  height:145px;
- }
-
- .product-content{
-  padding:12px;
- }
-
- .product-title{
-  font-size:13px;
- }
-
- .product-price{
-  font-size:15px;
- }
-
- .product-status{
-  font-size:10px;
- }
+ .announcement{height:46px}
+ .announcement-text{font-size:12px}
+ .warning-box{padding:14px}
+ .warning-title{font-size:14px}
+ .warning-item{font-size:11px}
+ .product-image{height:145px}
+ .product-content{padding:12px}
+ .product-title{font-size:13px}
+ .product-price{font-size:15px}
+ .product-status{font-size:10px}
 
  .btn-detail{
   padding:10px 7px;
@@ -1540,75 +1367,37 @@ footer{
   font-size:15px;
  }
 
- .stock-summary{
-  gap:7px;
- }
+ .stock-summary{gap:7px}
 
- .stock-box{
-  padding:13px 5px;
- }
+ .stock-box{padding:13px 5px}
+ .stock-number{font-size:21px}
+ .stock-label{font-size:9px}
 
- .stock-number{
-  font-size:21px;
- }
-
- .stock-label{
-  font-size:9px;
- }
-
- .detail-main-image{
-  height:280px;
- }
-
- .gallery img{
-  height:95px;
- }
+ .detail-main-image{height:280px}
+ .gallery img{height:95px}
 
  .qr-box{
   width:220px;
   height:220px;
  }
 
- .modal{
-  padding:10px;
- }
+ .modal{padding:10px}
 
  .modal-box{
   border-radius:17px;
   max-height:94vh;
  }
 
- .modal-body{
-  padding:14px;
- }
-
+ .modal-body{padding:14px}
 }
-
-
-/* ================= VERY SMALL ================= */
 
 @media(max-width:370px){
 
- .logo h1{
-  font-size:9px;
- }
-
- .logo span{
-  display:none;
- }
-
- .nav button{
-  width:36px;
- }
-
- .products{
-  gap:7px;
- }
-
- .product-image{
-  height:130px;
- }
-
+ .logo h1{font-size:9px}
+ .logo span{display:none}
+ .nav button{width:36px}
+ .products{gap:7px}
+ .product-image{height:130px}
 }
 
 </style>
@@ -1617,9 +1406,6 @@ footer{
 <body>
 
 <canvas id="snowCanvas"></canvas>
-
-
-<!-- ================= HEADER ================= -->
 
 <header class="header">
 
@@ -1638,18 +1424,13 @@ alt="LAO GAMING PRO X3D">
 <div>
 
 <h1>LAO GAMING PRO X3D</h1>
-
 <span>ONLINE GAME SHOP</span>
 
 </div>
 
 </div>
 
-
 <nav class="nav">
-
-
-<!-- HOME -->
 
 <button
 id="homeNav"
@@ -1676,9 +1457,6 @@ stroke-linejoin="round">
 <span>ໜ້າຫຼັກ</span>
 
 </button>
-
-
-<!-- CONTACT -->
 
 <button
 class="nav-contact"
@@ -1711,9 +1489,6 @@ a8.5 8.5 0 0 1 9 8.5Z"/>
 
 </button>
 
-
-<!-- FREE FIRE -->
-
 <button
 id="shopNav"
 onclick="showPage('shop')">
@@ -1730,7 +1505,6 @@ stroke-linejoin="round">
 <path d="M7 8h10a5 5 0 0 1 4.8 6.4l-1 3.3a2 2 0 0 1-3.6.6l-1.6-2.3H8.4l-1.6 2.3a2 2 0 0 1-3.6-.6l-1-3.3A5 5 0 0 1 7 8Z"/>
 
 <path d="M7 11v4M5 13h4"/>
-
 <path d="M16.5 12.5h.01M19 14h.01"/>
 
 </svg>
@@ -1747,9 +1521,6 @@ stroke-linejoin="round">
 
 </header>
 
-
-<!-- ================= HOME ================= -->
-
 <section id="home" class="page active">
 
 <div class="home">
@@ -1761,7 +1532,6 @@ src="https://i.ibb.co/F4kxqytw/e0832eb5-d70f-46a1-b369-7a8051b63911.jpg"
 alt="Banner">
 
 </div>
-
 
 <div class="announcement">
 
@@ -1809,7 +1579,6 @@ stroke-linecap="round">
 </div>
 
 </div>
-
 
 <div class="warning-box">
 
@@ -1863,7 +1632,6 @@ stroke-linecap="round">
 </div>
 
 </div>
-
 
 <div class="video-help">
 
@@ -1921,7 +1689,6 @@ onclick="openVideo('email')">
 </div>
 
 </div>
-
 
 <div class="video-help-card">
 
@@ -1981,7 +1748,6 @@ onclick="openVideo('game')">
 
 </div>
 
-
 <div class="section-title">
 
 <h2>
@@ -2008,7 +1774,6 @@ Free Fire
 <p>Game ID &amp; Game Code</p>
 
 </div>
-
 
 <div class="category-card">
 
@@ -2042,7 +1807,6 @@ onclick="showPage('shop')">
 
 </div>
 
-
 <div class="stock-summary">
 
 <div class="stock-box">
@@ -2061,7 +1825,6 @@ onclick="showPage('shop')">
 </div>
 
 </div>
-
 
 <div class="section-title">
 
@@ -2095,9 +1858,6 @@ stroke-width="2">
 </div>
 
 </section>
-
-
-<!-- ================= SHOP ================= -->
 
 <section id="shop" class="page">
 
@@ -2140,7 +1900,6 @@ Game ID &amp; Game Code —
 </p>
 
 </div>
-
 
 <div class="search-box">
 
@@ -2196,14 +1955,13 @@ stroke-linecap="round">
 <button
 type="button"
 class="clear-search"
-onclick="clearSearch()">
+onclick="clearSearch">
 
 ×
 
 </button>
 
 </div>
-
 
 <div
 id="shopProducts"
@@ -2214,9 +1972,6 @@ style="margin-top:25px">
 </div>
 
 </section>
-
-
-<!-- ================= CONTACT MODAL ================= -->
 
 <div
 id="contactModal"
@@ -2274,9 +2029,7 @@ onclick="closeContact()">
 ເລືອກຊ່ອງທາງທີ່ຕ້ອງການຕິດຕໍ່
 </div>
 
-
 <div class="contact-options">
-
 
 <a
 class="contact-option"
@@ -2304,7 +2057,6 @@ alt="Facebook">
 
 </a>
 
-
 <a
 class="contact-option"
 href="https://wa.me/8562092978004"
@@ -2331,7 +2083,6 @@ alt="WhatsApp">
 
 </a>
 
-
 </div>
 
 </div>
@@ -2339,9 +2090,6 @@ alt="WhatsApp">
 </div>
 
 </div>
-
-
-<!-- ================= DETAIL MODAL ================= -->
 
 <div
 id="detailModal"
@@ -2392,9 +2140,6 @@ class="modal-body">
 
 </div>
 
-
-<!-- ================= PAYMENT ================= -->
-
 <div
 id="paymentModal"
 class="modal"
@@ -2444,9 +2189,6 @@ class="modal-body">
 
 </div>
 
-
-<!-- ================= VIDEO ================= -->
-
 <div
 id="videoModal"
 class="modal"
@@ -2490,7 +2232,6 @@ allowfullscreen>
 
 </div>
 
-
 <footer>
 
 <div>
@@ -2499,10 +2240,7 @@ allowfullscreen>
 
 </footer>
 
-
 <script>
-
-/* ================= CONFIG ================= */
 
 const QR_IMAGE =
 "https://i.ibb.co/zhrYP1Qt/ad537117-f92d-4326-8ec3-cbf38e008e42.jpg";
@@ -2517,9 +2255,26 @@ const VIDEO_GAME =
 "https://www.youtube.com/embed/3KObkRoKfcQ";
 
 
-/* ================= PRODUCTS ================= */
-
 const products=[
+
+{
+ id:26,
+ name:"𝐄𝐏 #𝟎𝟎𝟐𝟔",
+ price:380000,
+ stock:true,
+ stockQty:1,
+ image:"https://i.ibb.co/Z6JT28DW/0297472f-db53-4489-acdf-4a5f8681f410.jpg",
+ gallery:[
+ "https://i.ibb.co/39wjbyJ9/2a0ce9a0-d9ff-4f78-b132-95106eb41400.jpg",
+ "https://i.ibb.co/Jwr42hHt/04f98ca0-55ed-4f51-9823-3adcbaaa4f7d.jpg",
+ "https://i.ibb.co/FqsMj3RK/315ea099-4786-4ca0-b486-8e823179eb7e.jpg"
+ ],
+ description:[
+ "ລ້ອກອີນດ້ວຍ Google",
+ "ປະກັນ 7 ວັນຖ້າຂໍ້ມູນປ່ຽນບໍ່ຜ່ານ",
+ "ຍົກໃຫ້ທັງ Google ກູ້ ແລະ ເກມພ້ອມຍ້າຍ"
+ ]
+},
 
 {
  id:28,
@@ -2779,9 +2534,6 @@ const products=[
 
 ];
 
-
-/* ================= PRICE ================= */
-
 function formatPrice(price){
 
  if(price===null || price===undefined || price===""){
@@ -2792,9 +2544,6 @@ function formatPrice(price){
  .format(price)+" ກີບ";
 
 }
-
-
-/* ================= ICON SYSTEM ================= */
 
 const ICONS={
 
@@ -2836,9 +2585,6 @@ function icon(name,size="md"){
  return `<span class="icon ${size}">${ICONS[name]||""}</span>`;
 }
 
-
-/* ================= CARD ================= */
-
 function createCard(product){
 
  const card=document.createElement("div");
@@ -2855,19 +2601,13 @@ function createCard(product){
    <img src="${product.image}" alt="${product.name}">
 
    <div class="available-badge">
-
     ${icon("check","sm")}
-
     ຍັງມີຢູ່
-
    </div>
 
    <div class="stock-count">
-
     ${icon("box","sm")}
-
     ເຫຼືອ ${qty} ໂຕ
-
    </div>
 
   </div>
@@ -2940,9 +2680,7 @@ function createCard(product){
    </div>
 
    <div class="product-status sold">
-
     ● ຂາຍແລ້ວ
-
    </div>
 
    <div class="product-buttons">
@@ -2967,9 +2705,6 @@ function createCard(product){
 
 }
 
-
-/* ================= STOCK ================= */
-
 function updateStockSummary(){
 
  const available=
@@ -2993,9 +2728,6 @@ function updateStockSummary(){
 
 }
 
-
-/* ================= RENDER ================= */
-
 function renderProducts(){
 
  const home=document.getElementById("homeProducts");
@@ -3009,18 +2741,13 @@ function renderProducts(){
  );
 
  sorted.forEach(product=>{
-
   home.appendChild(createCard(product));
   shop.appendChild(createCard(product));
-
  });
 
  updateStockSummary();
 
 }
-
-
-/* ================= PAGE ================= */
 
 function showPage(page){
 
@@ -3050,9 +2777,6 @@ function showPage(page){
 
 }
 
-
-/* ================= CONTACT ================= */
-
 function openContact(){
 
  document
@@ -3076,9 +2800,6 @@ function closeContactOutside(event){
  }
 
 }
-
-
-/* ================= SEARCH ================= */
 
 function normalizeSearch(value){
 
@@ -3124,7 +2845,6 @@ function searchProducts(){
   const keywordNumbers=keyword.replace(/\D/g,"");
 
   if(name.includes(keyword))return true;
-
   if(id===keyword)return true;
 
   if(
@@ -3137,7 +2857,6 @@ function searchProducts(){
   return false;
 
  });
-
 
  if(results.length===0){
 
@@ -3175,7 +2894,6 @@ function handleSearchKey(event){
  if(event.key==="Enter"){
 
   event.preventDefault();
-
   searchProducts();
 
  }
@@ -3189,15 +2907,10 @@ function clearSearch(){
  if(!input)return;
 
  input.value="";
-
  searchProducts();
-
  input.focus();
 
 }
-
-
-/* ================= DETAIL ================= */
 
 function openDetail(id){
 
@@ -3332,9 +3045,6 @@ function closeOutside(event){
 
 }
 
-
-/* ================= PAYMENT ================= */
-
 function openPayment(id){
 
  const product=products.find(p=>p.id===id);
@@ -3442,9 +3152,6 @@ function closePaymentOutside(event){
 
 }
 
-
-/* ================= VIDEO ================= */
-
 function openVideo(type){
 
  const modal=document.getElementById("videoModal");
@@ -3492,9 +3199,6 @@ function closeVideoOutside(event){
  }
 
 }
-
-
-/* ================= SNOW ================= */
 
 const snowCanvas=document.getElementById("snowCanvas");
 const snowCtx=snowCanvas.getContext("2d");
@@ -3551,11 +3255,7 @@ function initSnow(){
  :120;
 
  for(let i=0;i<amount;i++){
-
-  snowflakes.push(
-   createSnowflake()
-  );
-
+  snowflakes.push(createSnowflake());
  }
 
 }
@@ -3620,9 +3320,6 @@ function drawSnow(){
 
 }
 
-
-/* ================= START ================= */
-
 resizeSnow();
 
 window.addEventListener(
@@ -3642,3 +3339,4 @@ showPage("home");
 
 </body>
 </html>
+```
