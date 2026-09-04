@@ -1329,7 +1329,7 @@ body::after{
 
 .payment-methods{
  display:grid;
- grid-template-columns:1fr 1fr;
+ grid-template-columns:repeat(3,1fr);
  gap:12px;
 }
 
@@ -1381,6 +1381,18 @@ body::after{
  0 8px 22px rgba(215,25,32,.12);
 }
 
+.payment-method.umoney.active{
+ border-color:#ff8a00;
+ background:
+ linear-gradient(
+ 135deg,
+ rgba(255,138,0,.09),
+ rgba(255,255,255,.96)
+ );
+ box-shadow:
+ 0 8px 22px rgba(255,138,0,.14);
+}
+
 
 /* =========================================
    REAL BANK ICON
@@ -1411,6 +1423,11 @@ body::after{
 
 .bank-icon.bcel-logo{
  border-color:#ffd8da;
+ background:#fff;
+}
+
+.bank-icon.umoney-logo{
+ border-color:#ffd9ad;
  background:#fff;
 }
 
@@ -1460,6 +1477,11 @@ body::after{
  box-shadow:0 4px 10px rgba(215,25,32,.22);
 }
 
+.payment-method.umoney.active .bank-selected{
+ background:#ff8a00;
+ box-shadow:0 4px 10px rgba(255,138,0,.22);
+}
+
 .bank-name{
  margin-top:16px;
  padding:12px 14px;
@@ -1483,6 +1505,15 @@ body::after{
 
 .bank-name.bcel b{
  color:#d71920;
+}
+
+.bank-name.umoney{
+ background:#fff7ed;
+ border-color:#ffdfbd;
+}
+
+.bank-name.umoney b{
+ color:#ff8a00;
 }
 
 .qr-label{
@@ -1574,6 +1605,10 @@ footer{
 
  .products{
   grid-template-columns:repeat(3,1fr);
+ }
+
+ .payment-methods{
+  grid-template-columns:1fr 1fr;
  }
 
 }
@@ -2210,7 +2245,7 @@ alt="Free Fire">
 <svg viewBox="0 0 24 24"
 fill="none"
 stroke="currentColor"
-stroke-width="1.9">
+stroke-width="2">
 
 <path d="M7 8h10a5 5 0 0 1 4.8 6.4l-1 3.3a2 2 0 0 1-3.6.6l-1.6-2.3H8.4l-1.6 2.3a2 2 0 0 1-3.6-.6l-1-3.3A5 5 0 0 1 7 8Z"/>
 <path d="M7 11v4M5 13h4"/>
@@ -2516,6 +2551,7 @@ class="close-modal"
 onclick="closeContact()">
 
 ×
+
 </button>
 
 </div>
@@ -2628,6 +2664,7 @@ class="close-modal"
 onclick="closeDetail()">
 
 ×
+
 </button>
 
 </div>
@@ -2677,6 +2714,7 @@ class="close-modal"
 onclick="closePayment()">
 
 ×
+
 </button>
 
 </div>
@@ -2709,6 +2747,7 @@ class="close-modal"
 onclick="closeVideo()">
 
 ×
+
 </button>
 
 </div>
@@ -2755,7 +2794,10 @@ const PAYMENT_QR = {
  "https://i.ibb.co/zhrYP1Qt/ad537117-f92d-4326-8ec3-cbf38e008e42.jpg",
 
  BCELONE:
- "https://i.ibb.co/r2nJ8sQ5/1b059ba2-ba9a-4eea-95b0-9b1fc1b08b8b.jpg"
+ "https://i.ibb.co/r2nJ8sQ5/1b059ba2-ba9a-4eea-95b0-9b1fc1b08b8b.jpg",
+
+ UMONEY:
+ "https://i.ibb.co/HTVDbWxJ/433433d1-8d12-46e8-8f0d-af31de5b086b.jpg"
 
 };
 
@@ -2770,7 +2812,10 @@ const PAYMENT_ICON = {
  "https://i.ibb.co/RXFzRyg/f2d469ac-d381-4058-817c-5bc94d2c34f2.jpg",
 
  BCELONE:
- "https://i.ibb.co/0RLj9Www/1e6dc366-2c8f-4fbd-b538-89c7b8d3232c.jpg"
+ "https://i.ibb.co/0RLj9Www/1e6dc366-2c8f-4fbd-b538-89c7b8d3232c.jpg",
+
+ UMONEY:
+ "https://i.ibb.co/k2mVSCjD/79184134-4e26-4e71-8729-523478e32831.jpg"
 
 };
 
@@ -3688,19 +3733,28 @@ function renderPayment(id){
  const isBCEL=
   selectedPayment==="BCELONE";
 
+ const isUMONEY=
+  selectedPayment==="UMONEY";
+
  const bankName=
   isBCEL
   ?"BCEL ONE"
+  :isUMONEY
+  ?"U-MONEY"
   :"IB COOL";
 
  const bankFullName=
   isBCEL
   ?"ທະນາຄານ BCEL"
+  :isUMONEY
+  ?"U-MONEY"
   :"Indochina Bank";
 
  const qr=
   isBCEL
   ?PAYMENT_QR.BCELONE
+  :isUMONEY
+  ?PAYMENT_QR.UMONEY
   :PAYMENT_QR.IBCOOL;
 
  document.getElementById("paymentContent")
@@ -3725,6 +3779,8 @@ function renderPayment(id){
   </div>
 
   <div class="payment-methods">
+
+   <!-- IB COOL -->
 
    <button
    type="button"
@@ -3759,6 +3815,8 @@ function renderPayment(id){
    </button>
 
 
+   <!-- BCEL ONE -->
+
    <button
    type="button"
    class="payment-method bcel ${selectedPayment==="BCELONE"?"active":""}"
@@ -3791,9 +3849,50 @@ function renderPayment(id){
 
    </button>
 
+
+   <!-- U-MONEY -->
+
+   <button
+   type="button"
+   class="payment-method umoney ${selectedPayment==="UMONEY"?"active":""}"
+   onclick="selectPayment('UMONEY',${product.id})">
+
+    <div class="bank-icon umoney-logo">
+
+     <img
+     src="${PAYMENT_ICON.UMONEY}"
+     alt="U-MONEY"
+     onerror="this.style.display='none'">
+
+    </div>
+
+    <div class="bank-info">
+
+     <strong>
+      U-MONEY
+     </strong>
+
+     <span>
+      U-Money
+     </span>
+
+    </div>
+
+    <div class="bank-selected">
+     ✓
+    </div>
+
+   </button>
+
   </div>
 
-  <div class="bank-name ${isBCEL?"bcel":""}">
+  <div class="bank-name ${
+   isBCEL
+   ?"bcel"
+   :isUMONEY
+   ?"umoney"
+   :""
+  }">
 
    ທະນາຄານທີ່ເລືອກ:
    <b>${bankName}</b>
@@ -3882,11 +3981,15 @@ function sendWhatsApp(id){
  const bankName=
  selectedPayment==="BCELONE"
  ? "BCEL ONE"
+ :selectedPayment==="UMONEY"
+ ? "U-MONEY"
  : "IB COOL";
 
  const bankFullName=
  selectedPayment==="BCELONE"
  ? "ທະນາຄານ BCEL"
+ :selectedPayment==="UMONEY"
+ ? "U-MONEY"
  : "Indochina Bank";
 
  const message=`ສະບາຍດີ LAO GAMING PRO X3D
@@ -4137,3 +4240,4 @@ showPage("home");
 
 </body>
 </html>
+```
