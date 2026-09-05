@@ -2601,7 +2601,7 @@ onclick="showPage('shop')">
 
 <div class="stock-box">
 <div id="availableCount" class="stock-number">0</div>
-<div class="stock-label">ສິນຄ້າຍັງມີ</div>
+<div class="stock-label">ສິນຄ້າທີ່ສະຕ໋ອກທັງໝົດ</div>
 </div>
 
 <div class="stock-box">
@@ -3680,11 +3680,15 @@ function createCard(product){
 
 function updateStockSummary(){
 
- const available=
- products.filter(
- p=>p.stock===true &&
- Number(p.stockQty||0)>0
- ).length;
+ const totalStock=products.length;
+
+ const remaining=
+ products.reduce(
+ (sum,p)=>sum+
+ ((p.stock===true && Number(p.stockQty||0)>0)
+ ? Number(p.stockQty||0)
+ : 0),0
+ );
 
  const sold=
  products.filter(
@@ -3692,13 +3696,8 @@ function updateStockSummary(){
  Number(p.stockQty||0)<=0
  ).length;
 
- const totalQty=
- products.reduce(
- (sum,p)=>sum+Number(p.stockQty||0),0
- );
-
- document.getElementById("availableCount").textContent=available;
- document.getElementById("stockQtyCount").textContent=totalQty;
+ document.getElementById("availableCount").textContent=totalStock;
+ document.getElementById("stockQtyCount").textContent=remaining;
  document.getElementById("soldCount").textContent=sold;
 
 }
